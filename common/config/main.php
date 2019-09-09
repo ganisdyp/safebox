@@ -6,7 +6,7 @@ return [
         '@npm' => '@vendor/npm-asset',
     ],
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
-    'name' => 'Design in Education',
+    'name' => 'Safebox Siam',
     'modules' => [
         'stat' => [
             'class' => akiraz2\stat\Module::class,
