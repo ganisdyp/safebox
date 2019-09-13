@@ -38,31 +38,31 @@
                         'url' => '#',
                         'items' => [
                             [
-                                'label' => 'Courses',
+                                'label' => 'Brands',
                                 'icon' => 'pencil',
                                 'url' => '#',
                                 'items' => [
-                                    ['label' => 'Manage course', 'icon' => 'reorder', 'url' => Yii::$app->getHomeUrl().'content/course/index',],
+                                    ['label' => 'Manage brand', 'icon' => 'reorder', 'url' => Yii::$app->getHomeUrl().'content/brand/index',],
                                 ],
                             ],
                             [
-                                'label' => 'Showcases',
+                                'label' => 'Products',
                                 'icon' => 'file-photo-o',
                                 'url' => '#',
                                 'items' => [
-                                    ['label' => 'Categories', 'icon' => 'plus', 'url' => Yii::$app->getHomeUrl().'content/showcasetype/index',],
-                                    ['label' => 'Techniques', 'icon' => 'plus', 'url' => Yii::$app->getHomeUrl().'content/technique/index',],
-                                    ['label' => 'Manage showcases', 'icon' => 'th-large', 'url' => Yii::$app->getHomeUrl().'content/showcase/index',],
-                                    //  ['label' => 'Manage showcase profiles', 'icon' => 'circle-o', 'url' => '#',],
+                                    ['label' => 'Categories', 'icon' => 'plus', 'url' => Yii::$app->getHomeUrl().'content/producttype/index',],
+                                    ['label' => 'Tags', 'icon' => 'plus', 'url' => Yii::$app->getHomeUrl().'content/tag/index',],
+                                    ['label' => 'Manage products', 'icon' => 'th-large', 'url' => Yii::$app->getHomeUrl().'content/product/index',],
+                                    //  ['label' => 'Manage product profiles', 'icon' => 'circle-o', 'url' => '#',],
                                 ],
                             ],
                             [
-                                'label' => 'Study Trips',
+                                'label' => 'Blogs',
                                 'icon' => 'bullhorn',
                                 'url' => '#',
                                 'items' => [
-                                    ['label' => 'Categories', 'icon' => 'plus', 'url' => Yii::$app->getHomeUrl().'content/activitytype/index',],
-                                    ['label' => 'Manage study trips', 'icon' => 'th-large', 'url' => Yii::$app->getHomeUrl().'content/activity/index',],
+                                    ['label' => 'Categories', 'icon' => 'plus', 'url' => Yii::$app->getHomeUrl().'content/blogtype/index',],
+                                    ['label' => 'Manage blogs', 'icon' => 'th-large', 'url' => Yii::$app->getHomeUrl().'content/blog/index',],
                                     // ['label' => 'Manage activites photos', 'icon' => 'circle-o', 'url' => '#',],
                                 ],
                             ],

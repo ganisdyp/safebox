@@ -1,9 +1,9 @@
 <?php
-use common\models\ActivitySearch;
+use common\models\BlogSearch;
 /* @var $this yii\web\View */
 /* Yii::$app->db->open();*/
 $this->title = Yii::t('common', 'Home');
-$searchModel = new ActivitySearch();
+$searchModel = new BlogSearch();
 $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 define('PAGE_NAME', 'index');
 ?>
@@ -142,7 +142,7 @@ define('PAGE_NAME', 'index');
                 </div>
             </div>
 
-            <!-- start Study Trips -->
+            <!-- start Blogs -->
             <div class="col-lg-4 col-12 mt-lg-0 mt-4">
                 <div id="fieldtrip" class="main-section">
                     <div class="list-group viewpoint-animate d03s z-shadow" data-animation="fadeInRight">
@@ -152,50 +152,50 @@ define('PAGE_NAME', 'index');
                             </div>
                         </a>
                         <?php $recent_activities_list = $dataProvider->query->where([])->orderBy(['date_visited' => SORT_DESC])->all(); ?>
-                        <?php foreach($recent_activities_list as $activity) {
-                            if($activity->activityType->id == 1) {
+                        <?php foreach($recent_activities_list as $blog) {
+                            if($blog->blogType->id == 1) {
                                 $type = 'Animation studios';
-                            } else if($activity->activityType->id == 2) {
+                            } else if($blog->blogType->id == 2) {
                                 $type = 'Game companies';
-                            } else if($activity->activityType->id == 3) {
+                            } else if($blog->blogType->id == 3) {
                                 $type = 'Local enterprises';
                             } else {
-                                $type = $activity->activityType->name;
+                                $type = $blog->blogType->name;
                             }
                             ?>
-                            <a href="/site/studytrip-view?id=<?= $activity->id; ?>" class="list-group-item list-group-item-action flex-column align-items-start py-2">
+                            <a href="/site/blog-view?id=<?= $blog->id; ?>" class="list-group-item list-group-item-action flex-column align-items-start py-2">
                             <div class="badge badge-custom"><?php echo $type;?></div>
                                 <div class="row no-gutters">
                                     <div class="col-4 pr-3">
-                                        <?php $media_type = $activity->media_type;
+                                        <?php $media_type = $blog->media_type;
                                         if ($media_type == 1) { ?>
                                                 <iframe width="100%" height="90"
-                                                        src="<?= $activity->main_photo; ?>"></iframe>
+                                                        src="<?= $blog->main_photo; ?>"></iframe>
                                         <?php } else { ?>
 
                                             <div class="img-1by1 holder">
                                                 <img class="img-responsive corner-0"
-                                                     src="/backend/uploads/activity/<?= $activity->main_photo; ?>">
+                                                     src="/backend/uploads/blog/<?= $blog->main_photo; ?>">
 
                                             </div>
                                         <?php } ?>
 
                                     </div>
                                     <div class="col-8">
-                                        <?php $date_visited = date_create($activity->date_visited); ?>
+                                        <?php $date_visited = date_create($blog->date_visited); ?>
                                         <small class="smaller-80 text-muted"><?= date_format($date_visited, "j F Y") ?></small>
-                                        <p class="mt-1 mb-1"><?= $activity->headline; ?></p>
+                                        <p class="mt-1 mb-1"><?= $blog->headline; ?></p>
                                     </div>
                                 </div>
                             </a>
                         <?php } ?>
-                        <div href="/site/studytrip-category" class="list-group-item list-group-item-action flex-column align-items-start py-1 corner-0">
-                            <a href="/site/studytrip-category" class="smaller-90 py-2 block"><?php echo Yii::t('common', 'AllNews');?> <i class="fa fa-angle-right ml-1"></i></a>
+                        <div href="/site/blog-category" class="list-group-item list-group-item-action flex-column align-items-start py-1 corner-0">
+                            <a href="/site/blog-category" class="smaller-90 py-2 block"><?php echo Yii::t('common', 'AllNews');?> <i class="fa fa-angle-right ml-1"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- end Study Trips -->
+            <!-- end Blogs -->
         </div>
     </div>
 

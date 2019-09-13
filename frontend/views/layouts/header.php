@@ -69,7 +69,7 @@ echo '<div class="content">';
             <div class="">
                 <div class="mb-0 h3 bold inline mr-1">DC CMU</div>
                 <div class="smaller-50 d-md-inline-block d-none">
-                    <p class="mb-0">explorations in design activity</p>
+                    <p class="mb-0">explorations in design blog</p>
                     <p class="mb-0">and active learning in higher education</p>
                 </div>
                 <img src="images/logo.png" height="45px" class="mr-2">
