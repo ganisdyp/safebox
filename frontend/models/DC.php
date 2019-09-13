@@ -2,9 +2,9 @@
 namespace frontend\models;
 use Yii;
 use yii\base\Model;
-use common\models\CourseSearch;
-use common\models\ShowcaseTypeSearch;
-use common\models\ActivityTypeSearch;
+use common\models\BrandSearch;
+use common\models\ProductTypeSearch;
+use common\models\BlogTypeSearch;
 
 class DC extends Model {
     public static function get_menu() {
@@ -20,22 +20,22 @@ class DC extends Model {
                 'pagename' => 'about',
             ),
             array(
-                'text' => Yii::t('common', 'Courses'),
-                'link' => '/site/course',
-                'pagename' => 'course',
-                'subpage' => self::get_menu_courses(),
+                'text' => Yii::t('common', 'Brands'),
+                'link' => '/site/brand',
+                'pagename' => 'brand',
+                'subpage' => self::get_menu_brands(),
             ),
             array(
-                'text' => Yii::t('common', 'Design Showcase'),
-                'link' => '/site/showcase-category',
-                'pagename' => 'showcase',
-                'subpage' => self::get_menu_showcase(),
+                'text' => Yii::t('common', 'Product'),
+                'link' => '/site/product-category',
+                'pagename' => 'product',
+                'subpage' => self::get_menu_product(),
             ),
             array(
-                'text' => Yii::t('common', 'Study Trips'),
-                'link' => '/site/studytrip-category',
-                'pagename' => 'studytrip',
-                'subpage' => self::get_menu_studytrips(),
+                'text' => Yii::t('common', 'Blogs'),
+                'link' => '/site/blog-category',
+                'pagename' => 'blog',
+                'subpage' => self::get_menu_blogs(),
             ),
             array(
                 'text' => Yii::t('common', 'Contact'),
@@ -47,17 +47,17 @@ class DC extends Model {
         return $menu;
     }
 
-    public static function get_menu_courses() {
-        $searchModel = new CourseSearch();
+    public static function get_menu_brands() {
+        $searchModel = new BrandSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-        $courses = $dataProvider->query->where([])->orderBy(['code'=>SORT_ASC])->all();
+        $brands = $dataProvider->query->where([])->orderBy(['code'=>SORT_ASC])->all();
         $menu = array();
-        foreach($courses as $course){
+        foreach($brands as $brand){
             $arr_detail = array(
-                'text' => $course->name,
-                'code' => $course->code,
-                'link' => '/site/course-view?c='.$course->id,
-                'pagename' => 'course'
+                'text' => $brand->name,
+                'code' => $brand->code,
+                'link' => '/site/brand-view?c='.$brand->id,
+                'pagename' => 'brand'
             );
             array_push($menu,$arr_detail);
         }
@@ -65,16 +65,16 @@ class DC extends Model {
         return $menu;
     }
 
-    public static function get_menu_showcase() {
-        $searchModel = new ShowcaseTypeSearch();
+    public static function get_menu_product() {
+        $searchModel = new ProductTypeSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-        $showcase_category = $dataProvider->query->all();
+        $product_category = $dataProvider->query->all();
         $menu = array();
-        foreach($showcase_category as $category){
+        foreach($product_category as $category){
             $arr_detail = array(
                 'text' => $category->name,
-                'link' => '/site/showcase-list?id='.$category->id.'&c=all',
-                'pagename' => 'showcase'
+                'link' => '/site/product-list?id='.$category->id.'&c=all',
+                'pagename' => 'product'
             );
             array_push($menu,$arr_detail);
         }
@@ -82,16 +82,16 @@ class DC extends Model {
         return $menu;
     }
 
-    public static function get_menu_studytrips() {
-        $searchModel = new ActivityTypeSearch();
+    public static function get_menu_blogs() {
+        $searchModel = new BlogTypeSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-        $studytrip = $dataProvider->query->all();
+        $blog = $dataProvider->query->all();
         $menu = array();
-        foreach($studytrip as $trip){
+        foreach($blog as $trip){
             $arr_detail = array(
                 'text' => $trip->name,
-                'link' => '/site/studytrip-list?id='.$trip->id.'&c=all',
-                'pagename' => 'studytrip'
+                'link' => '/site/blog-list?id='.$trip->id.'&c=all',
+                'pagename' => 'blog'
             );
             array_push($menu,$arr_detail);
         }

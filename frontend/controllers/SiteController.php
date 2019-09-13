@@ -172,53 +172,53 @@ class SiteController extends Controller
     }
 
     /**
-     * Displays course page.
+     * Displays brand page.
      *
      * @return mixed
      */
-    public function actionCourse()
+    public function actionBrand()
     {
-        return $this->render('course');
+        return $this->render('brand');
     }
 
     /**
-     * Displays course view page.
+     * Displays brand view page.
      *
      * @return mixed
      */
-    public function actionCourseView()
+    public function actionBrandView()
     {
-        return $this->render('courseView');
+        return $this->render('brandView');
     }
 
     /**
-     * Displays showcase categories page.
+     * Displays product categories page.
      *
      * @return mixed
      */
-    public function actionShowcaseCategory()
+    public function actionProductCategory()
     {
-        return $this->render('showcaseCategory');
+        return $this->render('productCategory');
     }
 
     /**
-     * Displays showcase list page.
+     * Displays product list page.
      *
      * @return mixed
      */
-    public function actionShowcaseList()
+    public function actionProductList()
     {
-        return $this->render('showcaseList');
+        return $this->render('productList');
     }
 
     /**
-     * Displays showcase view page.
+     * Displays product view page.
      *
      * @return mixed
      */
-    public function actionShowcaseView()
+    public function actionProductView()
     {
-        return $this->render('showcaseView');
+        return $this->render('productView');
     }
 
     /**
@@ -228,7 +228,7 @@ class SiteController extends Controller
      */
     public function actionStudytripCategory()
     {
-        return $this->render('studytripCategory');
+        return $this->render('blogCategory');
     }
 
     /**
@@ -238,7 +238,7 @@ class SiteController extends Controller
      */
     public function actionStudytripList()
     {
-        return $this->render('studytripList');
+        return $this->render('blogList');
     }
 
     /**
@@ -248,7 +248,7 @@ class SiteController extends Controller
      */
     public function actionStudytripView()
     {
-        return $this->render('studytripView');
+        return $this->render('blogView');
     }
 
     /**
