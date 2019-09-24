@@ -2,7 +2,6 @@
 namespace frontend\models;
 use Yii;
 use yii\base\Model;
-use common\models\BrandSearch;
 use common\models\ProductTypeSearch;
 use common\models\BlogTypeSearch;
 
@@ -11,35 +10,34 @@ class DC extends Model {
         $menu = array(
             array(
                 'text' => Yii::t('common', 'Home'),
-                'link' => '/site/index',
+                'link' => Yii::$app->request->BaseUrl.'/site/index',
                 'pagename' => 'index',
             ),
             array(
                 'text' => Yii::t('common', 'About'),
-                'link' => '/site/about',
+                'link' => Yii::$app->request->BaseUrl.'/site/about',
                 'pagename' => 'about',
             ),
             array(
-                'text' => Yii::t('common', 'Brands'),
-                'link' => '/site/brand',
-                'pagename' => 'brand',
-                'subpage' => self::get_menu_brands(),
+                'text' => Yii::t('common', 'Services'),
+                'link' => Yii::$app->request->BaseUrl.'/site/services',
+                'pagename' => 'services',
             ),
             array(
                 'text' => Yii::t('common', 'Product'),
-                'link' => '/site/product-category',
+                'link' => Yii::$app->request->BaseUrl.'/site/product-category',
                 'pagename' => 'product',
                 'subpage' => self::get_menu_product(),
             ),
             array(
                 'text' => Yii::t('common', 'Blogs'),
-                'link' => '/site/blog-category',
+                'link' => Yii::$app->request->BaseUrl.'/site/blog-category',
                 'pagename' => 'blog',
                 'subpage' => self::get_menu_blogs(),
             ),
             array(
                 'text' => Yii::t('common', 'Contact'),
-                'link' => '/site/contact',
+                'link' => Yii::$app->request->BaseUrl.'/site/contact',
                 'pagename' => 'contact',
             )
         );
@@ -47,23 +45,23 @@ class DC extends Model {
         return $menu;
     }
 
-    public static function get_menu_brands() {
-        $searchModel = new BrandSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-        $brands = $dataProvider->query->where([])->orderBy(['code'=>SORT_ASC])->all();
-        $menu = array();
-        foreach($brands as $brand){
-            $arr_detail = array(
-                'text' => $brand->name,
-                'code' => $brand->code,
-                'link' => '/site/brand-view?c='.$brand->id,
-                'pagename' => 'brand'
-            );
-            array_push($menu,$arr_detail);
-        }
+    // public static function get_menu_brands() {
+    //     $searchModel = new BrandSearch();
+    //     $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+    //     $brands = $dataProvider->query->where([])->orderBy(['code'=>SORT_ASC])->all();
+    //     $menu = array();
+    //     foreach($brands as $brand){
+    //         $arr_detail = array(
+    //             'text' => $brand->name,
+    //             'code' => $brand->code,
+    //             'link' => '/site/brand-view?c='.$brand->id,
+    //             'pagename' => 'brand'
+    //         );
+    //         array_push($menu,$arr_detail);
+    //     }
 
-        return $menu;
-    }
+    //     return $menu;
+    // }
 
     public static function get_menu_product() {
         $searchModel = new ProductTypeSearch();

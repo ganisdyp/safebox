@@ -172,23 +172,13 @@ class SiteController extends Controller
     }
 
     /**
-     * Displays brand page.
+     * Displays services page.
      *
      * @return mixed
      */
-    public function actionBrand()
+    public function actionServices()
     {
-        return $this->render('brand');
-    }
-
-    /**
-     * Displays brand view page.
-     *
-     * @return mixed
-     */
-    public function actionBrandView()
-    {
-        return $this->render('brandView');
+        return $this->render('services');
     }
 
     /**

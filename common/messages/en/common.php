@@ -3,7 +3,7 @@ return [
     // Navbar and Common text
     'Home' => 'Home',
     'About' => 'About',
-    'Brands' => 'Brands',
+    'Services' => 'Services',
     'Product' => 'Product',
     'Blog' => 'Blog',
     'Blogs' => 'Blogs',
