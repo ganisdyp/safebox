@@ -229,7 +229,7 @@ a:hover img,
 .navbar-main-hero {
   background-attachment: inherit;
   background-position: 50% 40%;
-  background-image: url('../../images/main_hero.jpg');
+  background-image: url('../images/main_hero.jpg');
   overflow: hidden;
   min-height: 75vh;
   text-align: center;
@@ -240,12 +240,12 @@ a:hover img,
   background-size: cover;
   width: 100%;
   height: 100px;
-  background-position: 50% -50px;
+  background-position: 50% -400px;
   margin-bottom: 70px;
 }
 
 .navbar-sub-hero {
-  background-image: url('../../images/product_3_show_1.jpg');
+  background-image: url('../images/safebox-header-sub.jpg');
 }
 
 .text-shadow {
@@ -626,7 +626,11 @@ ul.navbar-nav li.dropdown:hover > .dropdown-menu {
 /* about */
 #section-about-point {
   position: relative;
-  background-color: #ececec;
+  /* background-color: #ececec; */
+  background-image: url('../images/need_q.jpg');
+  background-size: cover;
+  width: 100%;
+  background-position: 50% 50%;
 }
 
 .good-icon {
@@ -666,6 +670,13 @@ ul.navbar-nav li.dropdown:hover > .dropdown-menu {
   color: #444446!important;
 }
 
+.navbar-main .navbar-brand img {
+  height: 67px;
+}
+
+.navbar-sub .navbar-brand img {
+  height: 60px;
+}
 
 @media (max-width: 1199.98px) {
 	#index-1200 {
@@ -712,10 +723,6 @@ ul.navbar-nav li.dropdown:hover > .dropdown-menu {
 	}
 	.carousel-content .smaller {
 		font-size: 1.2rem !important;
-	}
-  .navbar-main,
-  .navbar-sub {
-    padding: 0.9rem 1rem !important;
   }
 
   .navbar-main .navbar-nav .nav-link {
@@ -736,6 +743,22 @@ ul.navbar-nav li.dropdown:hover > .dropdown-menu {
 
   .navbar-main-hero {
     min-height: 65vh;
+  }
+  
+  .navbar-main,
+  .navbar-sub {
+    /* padding: 0.9rem 1rem !important; */
+  }
+
+  .navbar-main .navbar-brand img,
+  .navbar-sub .navbar-brand img {
+    height: 50px;
+  }
+
+  .navbar-main .navbar-nav .nav-link,
+  .navbar-sub .navbar-nav .nav-link {
+    padding: .5rem .25rem;
+    font-size: 1rem;
   }
 }
 

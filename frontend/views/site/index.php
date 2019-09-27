@@ -122,13 +122,13 @@ $product_category = DC::get_menu_product();
 </div>
 <div class="container my-4">
   <div class="row align-items-center">
-    <div class="col-6 mb-4">
+    <div class="col-md-6 mb-md-4 mb-2">
       <div class="section-title mt-3 viewpoint-animate d03s" data-animation="fadeIn">
         <h2 class="letter-spacing-1 font-playfair"><?php echo Yii::t('common', 'Blog'); ?></h2>
         <hr>
       </div>
     </div>
-    <div class="col-6 text-right">
+    <div class="col-md-6 text-right d-md-block d-none">
       <a href="<?php echo Yii::$app->request->BaseUrl.'/site/blog-category'; ?>" class="btn btn-primary"><?php echo Yii::t('common', 'AllBlogs'); ?></a>
     </div>
   </div>
@@ -156,6 +156,9 @@ $product_category = DC::get_menu_product();
       </a>
     </div>
     <?php } ?>
+    <div class="col-12 d-md-none d-block">
+      <a href="<?php echo Yii::$app->request->BaseUrl.'/site/blog-category'; ?>" class="btn btn-primary btn-block"><?php echo Yii::t('common', 'AllBlogs'); ?></a>
+    </div>
   </div>
 </div>
 

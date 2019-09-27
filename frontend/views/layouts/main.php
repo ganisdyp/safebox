@@ -35,7 +35,7 @@ AppAsset::register($this);
 <body>
 <?php $this->beginBody() ?>
 <?php
-  if ($this->title == 'Home' || $this->title == 'About' || $this->title == 'หน้าหลัก' || $this->title == 'เกี่ยวกับเรา') {
+  if ($this->title == 'Home' || $this->title == 'หน้าหลัก') {
     echo $this->render('header.php');
   } else {
     echo $this->render('header_sub.php');

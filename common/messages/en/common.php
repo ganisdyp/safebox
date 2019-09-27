@@ -40,12 +40,18 @@ return [
     'message' => 'Message',
 
     // About
-    'About_Title' => 'Disaya Chudasri is a lecturer in the Program of Animation and Game at the College of Arts, Media and Technology (CAMT) in Chiang Mai University (CMU), Thailand.',
-    'About_Content' => 'Disaya started teaching in 2009. She formerly worked as a designer in design companies for over ten years. Disaya specializes in commercial projects, such as packaging design, corporate identity design and branding. During 2011 to 2015, Disaya studied for the Ph.D. in Design at Lancaster University, UK. Her doctoral thesis is entitled “An Investigation into the Potential of Design for Sustainability in the Handicrafts of Northern Thailand”. Currently, her research interests are extending into design for education, design for sustainability, design and culture, art and craft, marketing and design, and knowledge management. She has published several research papers in international journals, books, and conference proceedings.',
-    'About_Contact_1_1' => 'For more information about Disaya, see her',
-    'About_Contact_1_2' => 'webpage',
-    'About_Contact_1_3' => 'or',
-    'About_Contact_2' => 'Contact Disaya here',
+    'about_title' => 'About Safe Box Thailand',
+    'need_q' => 'NEED A QUOTE?',
+    'vision' => 'Vision',
+    'vision_content' => 'To be a trusted supplier of office supplies and equipment for individuals, small enterprises, and corporate.',
+    'mission' => 'Mission',
+    'mission_content' => 'Provide our customers with good service and good quality goods that will suit their individual needs, as well as excellent after-sales service.',
+    'tag_unique_selling' => 'unique selling point',
+    'why_us' => 'Why Choose Us?',
+    'why_point_1' => 'Free Delivery',
+    'why_point_1_content' => 'Duis aute irure dolor in reprehenderit in voluptate velit eu fugiat nulla pariatur.',
+    'why_point_2' => 'Support 12 hours',
+    'why_point_2_content' => 'Duis aute irure dolor in reprehenderit in voluptate velit eu fugiat nulla pariatur.',
     
     // Home
     'tag_highq' => 'high quality safes',
