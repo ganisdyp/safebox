@@ -1,30 +1,43 @@
 <?php
 return [
     // Navbar and Common text
+    'site_name' => 'เซฟบอกซ์ ไทยแลนด์',
     'Home' => 'หน้าหลัก',
     'About' => 'เกี่ยวกับเรา',
     'Services' => 'บริการ',
     'Product' => 'ผลิตภัณฑ์',
-    'Blog' => 'การเรียนรู้นอกสถานที่',
-    'Blogs' => 'การเรียนรู้นอกสถานที่',
+    'our_product' => 'ผลิตภัณฑ์ของเรา',
+    'our_brand' => 'แบรนด์ของเรา',
+    'Blog' => 'บทความ',
+    'Blogs' => 'บทความ',
     'Contact' => 'ติดต่อเรา',
     'Contact Us' => 'ติดต่อเรา',
-    'News' => 'ข่าวสาร',
-    'AllNews' => 'ดูข่าวสารทั้งหมด',
+    'AllBlogs' => 'ดูบทความทั้งหมด',
     'learn_more' => 'ดูเพิ่มเติม',
     'submit' => 'ส่ง',
     'all' => 'ทั้งหมด',
     'people joined this blog' => 'ผู้ร่วมกิจกรรม',
     'read_more' => 'อ่านต่อ',
+    'more' => 'รายละเอียดเพิ่มเติม',
+    'Allright' => '© 2019 เซฟ บ็อกซ์ ไทยแลนด์. ALL RIGHTS RESERVED.',
+    'site_map' => 'แผนผังเว็บไซต์',
 
     // Contact Us
+    'contact_content' => 'ข้อความหน้าติดต่อเรา',
     'address' => 'ที่อยู่',
-    'address_content_1' => 'วิทยาลัยศิลปะ สื่อ และเทคโนโลยี มหาวิทยาลัยเชียงใหม่',
-    'address_content_2' => '239 ถ.ห้วยแก้ว ต.สุเทพ อ.เมือง จ.เชียงใหม่ ประเทศไทย 50200',
+    'address_content_1' => '44-2, Jalan Kasuarina 6, Bandar Botanic,',
+    'address_content_2' => '41200 Klang, Selangor, Malaysia.',
     'phone' => 'โทรศัพท์',
     'email' => 'อีเมล',
     'website' => 'เว็บไซต์',
     'send_email' => 'ฝากข้อความ',
+
+    // Contact Us Form
+    'company_name' => 'บริษัท',
+    'contact_person' => 'ผู้ติดต่อ',
+    'phone_number' => 'เบอร์ติดต่อ',
+    'subject' => 'หัวข้อ',
+    'message' => 'ข้อความ',
 
     // About
     'About_Title' => 'ดิษยา จูฑะศรี เป็นอาจารย์ประจำหลักสูตรแอนนิเมชันและเกม ณ วิทยาลัยศิลปะ สื่อ และเทคโนโลยี (CAMT) มหาวิทยาลัยเชียงใหม่ (มช.) ประเทศไทย',
@@ -35,48 +48,9 @@ return [
     'About_Contact_2' => 'ติดต่อดิษยาได้ที่นี่',
 
     // Home
-    'HeroTitle_1_1' => 'การออกแบบเพื่อ',
-    'HeroTitle_1_2' => 'ส่งเสริมการเรียนรู้เชิงรุก',
-    'and' => 'และ',
-    'HeroTitle_2_1' => 'ทักษะเชิงนวัตกรรม',
-    'HeroTitle_2_2' => 'ของผู้เรียนในระดับอุดมศึกษา',
-    'HeroTitle_3' => 'โดย ดิษยา จูฑะศรี',
-    'Allright' => '© 2018 ดิษยา จูฑะศรี และมหาวิทยาลัยเชียงใหม่ All rights reserved.',
-    'Sponsor_1' => 'วิทยาลัยนานาชาตินวัตกรรมดิจิทัล มหาวิทยาลัยเชียงใหม่ ',
-    'Sponsor_2' => 'เป็นผู้ให้ทุนสนับสนุนการพัฒนาเว็บไซต์นี้ในปี พ.ศ. 2561',
-
-    'Content_Title_1' => 'มหาวิทยาลัยเชียงใหม่ (มช.) ประเทศไทย มุ่งส่งเสริม',
-    'Content_Title_2' => 'การเรียนรู้เชิงรุก',
-    'Content_Title_3' => 'พัฒนาทักษะเชิงนวัตกรรม',
-    'Content_Title_4' => 'ของผู้เรียน',
-    'Content_1_1' => 'โดยเฉพาะอย่างยิ่งความสามารถในการคิดสร้างสรรค์ การคิดวิเคราะห์และแก้ไขปัญหา การสื่อสาร และการให้ความร่วมมือ ทั้งสี่ทักษะเชิงนวัตกรรมนี้',
-    'Content_1_2' => ' อ้างอิงมาจากกรอบแนวคิดสำหรับการเรียนรู้ในศตวรรษที่ 21 ที่นำเสนอโดยองค์กรเพื่อการศึกษา P21 (Partnership for 21',
-    'Content_1_3' => ' Century Learning) และกรอบแนวคิดของสหภาพยุโรปว่าด้วยเรื่องภาษา : การเรียนรู้ การสอน การประเมินผล (CEFR)',
-    'sup_1' => '1',
-    'sup_2' => 'st',
-    'sup_3' => ' ',
-    'full_stop' => ' ',
-
-    'Content_2_1' => 'ดิษยาเป็นอาจารย์ประจำหลักสูตร',
-    'Content_2_2' => ' แอนนิเมชันและเกม ',
-    'Content_2_3' => 'ณ วิทยาลัยศิลปะ สื่อ และเทคโนโลยี (CAMT) ในมหาวิทยาลัยเชียงใหม่ ดิษยาสอนสามแบรนด์ ดังนี้',
-
-    'Content_3_1' => 'ชีวิตสมัยใหม่กับแอนนิเมชัน (951100) – แบรนด์ในหมวดแบรนด์ศึกษาทั่วไป/หมวดแบรนด์เลือกเสรี ที่เปิดสอนสำหรับนักศึกษาต่างหลักสูตร/คณะ',
-    'Content_3_2' => 'ภาพยนตร์ดิจิทัลเชิงพาณิชย์ (951356) – แบรนด์เอกเลือก ในหลักสูตรแอนนิเมชันและเกม',
-    'Content_3_3' => 'การตลาดสำหรับการออกแบบ (951451) – แบรนด์เอกเลือก ในหลักสูตรแอนนิเมชันและเกม',
-
-    'Content_4_1' => 'ดิษยาได้นำ ',
-    'Content_4_2' => '“ความรู้ด้านการออกแบบ”',
-    'Content_4_3' => ' มาใช้ในการเรียนการสอนทั้งสามแบรนด์ดังกล่าว ในด้านต่างๆ ยกตัวอย่างเช่น',
-
-    'Content_5_1' => 'การออกแบบแผนการสอน เนื้อหาและกิจกรรมการเรียนรู้',
-    'Content_5_2' => 'การพัฒนานักศึกษาด้วยการเรียนรู้แบบใช้โครงงานเป็นฐาน (project-based learning) ที่มุ่งส่งเสริมความคิดสร้างสรรค์ การเรียนรู้เกี่ยวกับกระบวนการออกแบบ การทำงานเป็นกลุ่ม การสร้างชิ้นงาน และการนำเสนอผลงานการออกแบบ',
-    'Content_5_3' => 'การออกแบบเว็บไซต์เพื่อเผยแพร่ผลงานการออกแบบที่โดดเด่น ซึ่งจัดทำโดยนักศึกษาที่ได้เรียนกับอาจารย์ดิษยา',
-
-    'Content_5_3_extra_1' => 'การออกแบบเว็บไซต์เพื่อเผยแพร่ผลงานการออกแบบที่โดดเด่น ซึ่งจัดทำโดยนักศึกษาที่ได้เรียนกับ',
-    'Content_5_3_extra_2' => 'อาจารย์ดิษยา',
-
-    'Content_6' => 'ดูข้อมูลเพิ่มเติมเกี่ยวกับสี่ทักษะเชิงนวัตกรรม (The 4Cs) ได้ที่',
+    'tag_highq' => 'เซฟบอกซ์เกรดคุณภาพ',
+    'content_about_1' => 'Safe Box Asia is a new company that aims at providing high quality safes and technical services to it\'s clients. Safe Box Asia has began operations on Jan 1, 2018. We will also be a one stop office solution to your business by providing a full comprehensive range of Office Equipment, Office Supplies, Toners & Inks, Business Machines, Office Furniture, Repair Safebox, Force Open Safebox, Safebox Relocation, Safebox Key Duplication.',
+    'content_about_2' => 'We supply to various businesses, schools & other big & small organizations. No matter who you are or what is your needs & requirements you will receive our dedicated customer service & care. We have a group of dedicated team with a vast wealth of knowledge to service you. Last but not least, we aim to be competitive in offering you products which are value for money.',
 
     'Academic Semester' => '',
     'Academic Year' => '',

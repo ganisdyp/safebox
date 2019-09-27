@@ -1,46 +1,91 @@
 <?php
 use frontend\models\DC;
-use frontend\models\System;
-
 $menu_list = DC::get_menu();
-?>
-<button class="btn-to-top" title="Go to top" style="width:50px;height:50px;">
-    <i class="fa fa-angle-double-up"></i>
-</button>
-</div>
 
-<footer class="dc-shadow">
-    <div class="container">
-        <?php /*
-        <div class="row smaller-90">
-            <div class="col-lg-4 col-12 mb-2">
-                <p class="mb-0">College of Arts, Media and Technology</p>
-                <p class="mb-0">Chiang Mai University</p>
-                <p class="mb-0">239 Huaykaew Road, Suthep, Muang,</p>
-                <p class="mb-0">Chiang Mai, Thailand 50200</p>
-                <p class="mt-3 mb-0">Tel. 053-920299 Fax. 053-941803</p>
-            </div>
-            <div class="col-lg-8 col-12 text-lg-right">
-                <ul class="footer-menu smaller-90">
-                    <?php foreach ($menu_list as $menu) { ?>
-                        <li class="nav-item">
-                            <a class="nav-link position-relative" href="<?php echo $menu['link'];?>"><?php echo $menu['text'];?></a>
-                        </li>
-                    <?php } ?>
-                </ul>
-            </div>
-            <div class="col-12">
-                <hr>
-            </div>
-        </div>
-        */ ?>
-        <div class="row">
-            <div class="col-lg-6 col-12 font-chatthai smaller-90"><?php echo Yii::t('common', 'Allright'); ?></div>
-            <div class="col-lg-6 col-12 text-lg-right"><a href="/site/contact"><?php echo Yii::t('common', 'Contact Us'); ?></a></div>
-        </div>
-    </div>
-</footer>
-
-<?php
 echo '</div>';
 ?>
+<footer>
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6 order-md-1 order-2 text-lg-left text-center my-2">
+        <img src="../images/logo.png" height="67px;" alt="safebox thailand">
+      </div>
+      <div class="col-md-6 order-md-2 order-1 text-lg-right text-center my-2">
+        <div class="social">
+          <a href="#" class="fa-stack mx-1" style="vertical-align: top;">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+          </a>
+          <a href="#" class="fa-stack mx-1" style="vertical-align: top;">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+          </a>
+          <a href="#" class="fa-stack mx-1" style="vertical-align: top;">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+          </a>
+          <a href="#" class="fa-stack mx-1" style="vertical-align: top;">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3 smaller-90 my-2">
+        <p class="text-uppercase bigger-120 mb-2"><?php echo Yii::t('common', 'Product'); ?></p>
+        <ul class="footer-nav nav flex-column align-items-start">
+          <li class="nav-item"><a href="#" class="nav-link">Regalia Safebox</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Falcon Safebox</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Lion Safebox</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Executive Table</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Director Table</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Conference Table</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3 smaller-90 my-2">
+        <p class="text-uppercase bigger-120 mb-2"><?php echo Yii::t('common', 'site_map'); ?></p>
+        <ul class="footer-nav nav flex-column align-items-start">
+        <?php foreach ($menu_list as $menu) { ?>
+          <li class="nav-item">
+            <a class="nav-link" href="<?php echo $menu['link']; ?>"><?php echo $menu['text']; ?></a>
+          </li>
+        <?php } ?>
+        </ul>
+      </div>
+      <div class="col-md-3 smaller-90 my-2">
+        <p class="text-uppercase bigger-120 mb-2"><?php echo Yii::t('common', 'Blog'); ?></p>
+        <ul class="footer-nav nav flex-column align-items-start">
+          <li class="nav-item"><a href="#" class="nav-link">Blog 1</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Blog 2</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Blog 3</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3 smaller-90 my-2">
+        <p class="text-uppercase bigger-120 mb-2"><?php echo Yii::t('common', 'Contact'); ?></p>
+        <div class="d-flex my-1">
+          <img src="../images/icons/pin-outline.svg" height="24px" class="mr-1">
+          <div>
+            Safe Box Thailand
+            <div class="smaller-90"><?php echo Yii::t('common', 'address_content_1'); ?></div>
+            <div class="smaller-90"><?php echo Yii::t('common', 'address_content_2'); ?></div>
+          </div>
+        </div>
+        <div class="d-flex my-2">
+          <img src="../images/icons/phone-outline.svg" height="24px" class="mr-1">
+          <div>089-9999999</div>
+        </div>
+        <div class="d-flex my-1">
+          <img src="../images/icons/email-outline.svg" height="24px" class="mr-1">
+          <div>email@gmail.com</div>
+        </div>
+      </div>
+      <div class="col-12">
+        <hr class="mt-1">
+        <div class="d-flex justify-content-between text-gray smaller-80">
+          <p><?php echo Yii::t('common', 'Allright'); ?></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

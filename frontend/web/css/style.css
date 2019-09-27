@@ -3,14 +3,14 @@
 }
 
 *::-webkit-scrollbar {
-	width: 12px;
+	width: 10px;
 	height: 12px;
 	background-color: #cccccc;
 }
 
 *::-webkit-scrollbar-thumb {
-	background-color: #465aef;
-	border-radius: 5px;
+	background-color: #2C3C4D;
+	border-radius: 0px;
 }
 
 html {
@@ -19,15 +19,19 @@ html {
 }
 
 body {
-	display: flex;
-	background-color:#eaeaea;
-	flex-direction: column;
-	min-height: 100vh;
-	height: 100vh;
-	word-wrap: break-word;
+  font-family: 'Prompt', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  display: flex;
+  background-color: #fff;
+  /* background-color:#eaeaea; */
+  color: #444446;
+  flex-direction: column;
+  min-height: 100vh;
+  word-wrap: break-word;
+  overflow-x: hidden;
 }
 
-.content {
+.content,
+.view-content {
 	flex: 1 0 auto;
 }
 

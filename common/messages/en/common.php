@@ -1,30 +1,43 @@
 <?php
 return [
     // Navbar and Common text
+    'site_name' => 'Safe Box Thailand',
     'Home' => 'Home',
     'About' => 'About',
     'Services' => 'Services',
     'Product' => 'Product',
+    'our_product' => 'Our Product',
+    'our_brand' => 'Our Brand',
     'Blog' => 'Blog',
     'Blogs' => 'Blogs',
     'Contact' => 'Contact',
     'Contact Us' => 'Contact Us',
-    'News' => 'News',
-    'AllNews' => 'See all news',
+    'AllBlogs' => 'All Blogs',
     'learn_more' => 'Learn more',
-    'submit' => 'Submit',
+    'submit' => 'Send',
     'all' => 'All',
     'people joined this blog' => 'people joined this blog',
     'read_more' => 'Read more',
+    'more' => 'Read more',
+    'Allright' => '© 2019 Safe Box Thailand. ALL RIGHTS RESERVED.',
+    'site_map' => 'Site map',
 
     // Contact Us
+    'contact_content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et aliqua.',
     'address' => 'Address',
-    'address_content_1' => 'College of Arts, Media and Technology, Chiang Mai University',
-    'address_content_2' => '239 Huaykaew Road, Suthep, Muang, Chiang Mai, Thailand 50200',
+    'address_content_1' => '44-2, Jalan Kasuarina 6, Bandar Botanic,',
+    'address_content_2' => '41200 Klang, Selangor, Malaysia.',
     'phone' => 'Phone',
     'email' => 'Email',
     'website' => 'Website',
-    'send_email' => 'Send an Email',
+    'send_email' => 'Get In Touch',
+
+    // Contact Us Form
+    'company_name' => 'Company Name',
+    'contact_person' => 'Contact Person',
+    'phone_number' => 'Phone Number',
+    'subject' => 'Subject',
+    'message' => 'Message',
 
     // About
     'About_Title' => 'Disaya Chudasri is a lecturer in the Program of Animation and Game at the College of Arts, Media and Technology (CAMT) in Chiang Mai University (CMU), Thailand.',
@@ -35,46 +48,9 @@ return [
     'About_Contact_2' => 'Contact Disaya here',
     
     // Home
-    'HeroTitle_1_1' => 'Design for',
-    'HeroTitle_1_2' => 'fostering active learning',
-    'and' => ' and ',
-    'HeroTitle_2_1' => 'innovative skills',
-    'HeroTitle_2_2' => ' of students in higher education',
-    'HeroTitle_3' => 'By Disaya Chudasri',
-
-    'Allright' => '© 2018 Disaya Chudasri and Chiang Mai University. All Rights Reserved.',
-    'Sponsor_1' => 'Chiang Mai University International College of Digital Innovation',
-    'Sponsor_2' => 'provides funding for developing this website in 2018.',
-
-    'Content_Title_1' => 'Chiang Mai University (CMU), Thailand commits to foster',
-    'Content_Title_2' => ' “ACTIVE LEARNING” ',
-    'Content_Title_3' => ' “INNOVATIVE SKILLS” ',
-    'Content_Title_4' => ' ',
-    'Content_1_1' => 'According to P21’s Framework for 21',
-    'Content_1_2' => ' Century Learning and Common European Framework of Reference for Languages: Learning, Teaching, Assessment (CEFR), ',
-    'Content_1_3' => 'these skills are addressed to creativity, critical thinking, problem solving, communication, and collaboration (the 4Cs)',
-    'sup_1' => 'st',
-    'sup_2' => ' ',
-    'sup_3' => '1',
-    'full_stop' => '.',
-    
-    'Content_2_1' => 'Disaya is a lecturer in the',
-    'Content_2_2' => ' Program of Animation and Game ',
-    'Content_2_3' => 'at the College of Arts, Media and Technology (CAMT) in CMU. She teaches three brands as follows.',
-
-    'Content_3_1' => 'Modern Life and Animation (951100) – a general education brand/an elective, which is available for the students from various programs/faculties',
-    'Content_3_2' => 'Digital Movie for Commerce (951356) – a major elective in the Program of Animation and Game',
-    'Content_3_3' => 'Marketing for Design (951451) – a major elective in the Program of Animation and Game',
-
-    'Content_4_1' => 'Disaya has applied ',
-    'Content_4_2' => '“Design Knowledge” in the teaching and learning',
-    'Content_4_3' => ' into these brands, covering various aspects, given example as follows.',
-
-    'Content_5_1' => 'Design of a teaching plan, a brand syllabus and learning blog',
-    'Content_5_2' => 'Enabling students’ development through project-based learning which fosters creativity, learning design process, team working, prototyping, and project presentation',
-    'Content_5_3' => 'Website design, displaying outstanding items done by students, who have studied with Disaya',
-    
-    'Content_6' => 'Further information about the 4Cs – innovative skills',
+    'tag_highq' => 'high quality safes',
+    'content_about_1' => 'Safe Box Asia is a new company that aims at providing high quality safes and technical services to it\'s clients. Safe Box Asia has began operations on Jan 1, 2018. We will also be a one stop office solution to your business by providing a full comprehensive range of Office Equipment, Office Supplies, Toners & Inks, Business Machines, Office Furniture, Repair Safebox, Force Open Safebox, Safebox Relocation, Safebox Key Duplication.',
+    'content_about_2' => 'We supply to various businesses, schools & other big & small organizations. No matter who you are or what is your needs & requirements you will receive our dedicated customer service & care. We have a group of dedicated team with a vast wealth of knowledge to service you. Last but not least, we aim to be competitive in offering you products which are value for money.',
 
     'Academic Semester' => '',
     'Academic Year' => '',
