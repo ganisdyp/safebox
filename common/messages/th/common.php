@@ -58,6 +58,20 @@ return [
     'content_about_1' => 'Safe Box Asia is a new company that aims at providing high quality safes and technical services to it\'s clients. Safe Box Asia has began operations on Jan 1, 2018. We will also be a one stop office solution to your business by providing a full comprehensive range of Office Equipment, Office Supplies, Toners & Inks, Business Machines, Office Furniture, Repair Safebox, Force Open Safebox, Safebox Relocation, Safebox Key Duplication.',
     'content_about_2' => 'We supply to various businesses, schools & other big & small organizations. No matter who you are or what is your needs & requirements you will receive our dedicated customer service & care. We have a group of dedicated team with a vast wealth of knowledge to service you. Last but not least, we aim to be competitive in offering you products which are value for money.',
 
+    // service
+    'service_title' => 'SAFEBOX RESPRAY',
+    'service_content_1' => 'Respray your safe can improving attractiveness of your equipment. We provide the services to respray of the whole piece. This can be useful if you wish to help your safe blend into the background , just update the colour or finish to a more modern look , or ensure it look professional. Some vaults have to be in the public eye , such as jewelers and some other businesses , so your security equipment needs to look the part.',
+    'service_content_2' => 'We will work with you to understand your needs and then we will provide you with the best products and services in the industry. Please call (03-33189422) one of our customer service representatives to find out how we can help you.',
+    'our_service' => 'บริการของเรา',
+    'service_content_3' => 'Safe Box Asia delivery and installation team will ensure that your office furniture looks as good as, or even better, than it did on the show floor or in the catalog. With our skills, equipment, and installation process, we will assemble your office as planned. Our installation teams\' goal is to provide you with a great facility and a great customer experience.',
+    'service_content_4' => 'Installation and Delivery Capabilities of Safe Box Asia:',
+    'service_type_1' => 'SAFE BOX USING MANUAL TRAINING',
+    'service_type_2' => 'SAFE BOX REPAIR',
+    'service_type_3' => 'RELOCATION SERVICE',
+    'service_type_1_content' => 'Duis aute irure dolor in reprehenderit in voluptate velit eu fugiat nulla pariatur.',
+    'service_type_2_content' => 'Repair Safe and Force Open Safe',
+    'service_type_3_content' => 'We have an experienced team of safe installers and movers who are fully trained to safely transport your safes or security products anywhere in Klang Valley. We have all the latest equipment required and ensure as little disruption as possible during the process.',
+
     'Academic Semester' => '',
     'Academic Year' => '',
     'Blog ID' => '',
