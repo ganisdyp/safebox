@@ -34,21 +34,21 @@ define('PAGE_NAME', 'about');
         <h2 class="letter-spacing-1 font-playfair"><?php echo Yii::t('common', 'about_title'); ?></h2>
         <hr>
       </div>
-      <div class="viewpoint-animate d03s" data-animation="fadeIn"">
+      <div class="viewpoint-animate d03s" data-animation="fadeIn">
         <?php 
           echo '<p>'.Yii::t('common', 'content_about_1').'</p>';
           echo '<p>'.Yii::t('common', 'content_about_2').'</p>';
         ?>
       </div>
     </div>
-    <div class="col-lg-5 col-md-4 text-center mt-lg-0 mt-3">
+    <div class="col-lg-5 col-md-4 text-center mt-lg-0 mt-3 viewpoint-animate d03s" data-animation="fadeIn">
       <img src="../images/home/ss1-to-5-ndt-6-1.png" class="img-fluid" alt="safebox thailand">
     </div>
   </div>
 </div>
 <div id="section-about-point" class="image-section overlay text-white">
   <div class="container">
-    <div class="row py-5 align-items-center">
+    <div class="row py-5 align-items-center viewpoint-animate d03s" data-animation="fadeIn">
       <div class="col-lg-6 mb-lg-0 mb-3">
         <div class="section-title">
           <h2 class="letter-spacing-1 font-playfair"><?php echo Yii::t('common', 'need_q'); ?></h2>
@@ -61,36 +61,36 @@ define('PAGE_NAME', 'about');
 <div class="container">
   <div class="row align-items-center mt-5 py-lg-3 py-2">
     <div class="col-lg-6 col-md-4 text-center order-md-1 order-2 mt-md-0 mt-4">
-      <div class="p-2">
+      <div class="p-2 viewpoint-animate d03s" data-animation="fadeIn">
         <div class="holder img-4by3">
           <img src="../images/about-vision.jpg" class="img-fluid" alt="safebox thailand vision">
         </div>
       </div>
     </div>
     <div class="col-lg-6 col-md-8 order-md-2 order-1 text-center">
-      <div class="section-title">
+      <div class="section-title viewpoint-animate d03s" data-animation="fadeInDown">
         <h2 class="letter-spacing-1 font-playfair"><?php echo Yii::t('common', 'mission'); ?></h2>
         <hr class="mx-auto">
       </div>
-      <div class="mt-4">
+      <div class="mt-4 viewpoint-animate d03s" data-animation="fadeIn">
         <p><?php echo Yii::t('common', 'mission_content'); ?></p>
       </div>
     </div>
   </div>
   <div class="row align-items-center mb-5 py-lg-3 py-2">
     <div class="col-lg-6 col-md-4 text-center order-md-2 order-1 mt-md-0 mt-4">
-      <div class="p-2">
+      <div class="p-2 viewpoint-animate d03s" data-animation="fadeIn">
         <div class="holder img-4by3">
           <img src="../images/about-mission.jpg" class="img-fluid" alt="safebox thailand mission">
         </div>
       </div>
     </div>
     <div class="col-lg-6 col-md-8 order-md-1 order-2 text-center">
-      <div class="section-title">
+      <div class="section-title viewpoint-animate d03s" data-animation="fadeInDown">
         <h2 class="letter-spacing-1 font-playfair"><?php echo Yii::t('common', 'vision'); ?></h2>
         <hr class="mx-auto">
       </div>
-      <div class="mt-4">
+      <div class="mt-4 viewpoint-animate d03s" data-animation="fadeIn">
         <p><?php echo Yii::t('common', 'vision_content'); ?></p>
       </div>  
     </div>
@@ -100,7 +100,7 @@ define('PAGE_NAME', 'about');
   <div class="container">
     <div class="row justify-content-center py-5">
       <div class="col-12">
-        <div class="section-title text-center mt-3">
+        <div class="section-title text-center mt-3 viewpoint-animate d03s" data-animation="fadeInDown">
           <span class="product-tag bg-blue-light"><?php echo Yii::t('common', 'tag_unique_selling'); ?></span>
           <h2 class="letter-spacing-1 font-playfair mt-3"><?php echo Yii::t('common', 'why_us'); ?></h2>
           <hr class="mx-auto">
