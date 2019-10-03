@@ -5,12 +5,12 @@ namespace backend\modules\content\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use common\models\Product;
+use common\models\Subcategory;
 
 /**
- * ProductSearch represents the model behind the search form of `common\models\Product`.
+ * SubcategorySearch represents the model behind the search form of `common\models\Subcategory`.
  */
-class ProductSearch extends Product
+class SubcategorySearch extends Subcategory
 {
     /**
      * @inheritdoc
@@ -18,8 +18,8 @@ class ProductSearch extends Product
     public function rules()
     {
         return [
-            [['id', 'subcategory_id', 'brand_id', 'product_type_id'], 'integer'],
-            [['date_published', 'main_photo'], 'safe'],
+            [['id'], 'integer'],
+            [['name'], 'safe'],
         ];
     }
 
@@ -41,7 +41,7 @@ class ProductSearch extends Product
      */
     public function search($params)
     {
-        $query = Product::find();
+        $query = Subcategory::find();
 
         // add conditions that should always apply here
 
@@ -60,13 +60,9 @@ class ProductSearch extends Product
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'subcategory_id' => $this->subcategory_id,
-            'brand_id' => $this->brand_id,
-            'product_type_id' => $this->product_type_id,
-            'date_published' => $this->date_published,
         ]);
 
-        $query->andFilterWhere(['like', 'main_photo', $this->main_photo]);
+        $query->andFilterWhere(['like', 'name', $this->name]);
 
         return $dataProvider;
     }

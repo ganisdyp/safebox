@@ -129,12 +129,12 @@ class ProductController extends Controller
 
                         ${'profile_file' . $c} = UploadedFile::getInstance($modelDetail, '[' . $c . ']' . 'product_photo');
                         if (isset(${'profile_file' . $c}->size) && ${'profile_file' . $c}->size != 0) {
-                            //  $modelDetail->product_url = ${'profile_file' . $c}->baseName . '.' . ${'profile_file' . $c}->extension;
+                            //  $modelDetail->photo_url = ${'profile_file' . $c}->baseName . '.' . ${'profile_file' . $c}->extension;
                             //  ${'profile_file' . $c}->saveAs('uploads/product/related_photo/' . ${'profile_file' . $c}->baseName . '.' . ${'profile_file' . $c}->extension);
 
                             $unique_name = "product_" . date("Y-m-d_H-i-s") . "_". uniqid();
                             $path = $unique_name . ".{${'profile_file' . $c}->extension}";
-                            $modelDetail->product_url = $path;
+                            $modelDetail->photo_url = $path;
                             ${'profile_file' . $c}->saveAs('uploads/product/related_photo/' . $path);
 
                         }
@@ -254,12 +254,12 @@ class ProductController extends Controller
                         //new or updated records go here
                         ${'profile_file' . $c} = UploadedFile::getInstance($modelDetail, '[' . $c . ']' . 'product_photo');
                         if (isset(${'profile_file' . $c}->size) && ${'profile_file' . $c}->size != 0) {
-                            //    $modelDetail->product_url = ${'profile_file' . $c}->baseName . '.' . ${'profile_file' . $c}->extension;
+                            //    $modelDetail->photo_url = ${'profile_file' . $c}->baseName . '.' . ${'profile_file' . $c}->extension;
                             //   ${'profile_file' . $c}->saveAs('uploads/product/related_photo/' . ${'profile_file' . $c}->baseName . '.' . ${'profile_file' . $c}->extension);
-                            $old_name = $modelDetail->product_url;
+                            $old_name = $modelDetail->photo_url;
                             $unique_name = "product_" . date("Y-m-d_H-i-s") . "_" . uniqid();
                             $path = $unique_name . ".{${'profile_file' . $c}->extension}";
-                            $modelDetail->product_url = $path;
+                            $modelDetail->photo_url = $path;
                             ${'profile_file' . $c}->saveAs('uploads/product/related_photo/' . $path);
                             if (isset($old_name)) {
                                 unlink('uploads/product/related_photo/' . $old_name);
@@ -344,7 +344,7 @@ class ProductController extends Controller
                          //new or updated records go here
                          ${'profile_file' . $c} = UploadedFile::getInstance($modelDetail, '[' . $c . ']' . 'product_photo');
                          if (${'profile_file' . $c}->size != 0) {
-                             $modelDetail->product_url = ${'profile_file' . $c}->baseName . '.' . ${'profile_file' . $c}->extension;
+                             $modelDetail->photo_url = ${'profile_file' . $c}->baseName . '.' . ${'profile_file' . $c}->extension;
                              ${'profile_file' . $c}->saveAs('uploads/product/related_photo/' . ${'profile_file' . $c}->baseName . '.' . ${'profile_file' . $c}->extension);
                          }
                          $modelDetail->product_id = $model->id;
@@ -377,7 +377,7 @@ class ProductController extends Controller
         }
         $product_photos = $this->findModel($id)->getProductPhotos()->where(['product_id' => $id])->all();
         foreach ($product_photos as $product_photo) {
-            unlink('uploads/product/related_photo/' . $product_photo->product_url);
+            unlink('uploads/product/related_photo/' . $product_photo->photo_url);
             $product_photo->delete();
         }
         if (isset($this->findModel($id)->main_photo)) {

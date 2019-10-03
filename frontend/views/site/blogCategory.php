@@ -8,7 +8,7 @@ use common\models\BlogTypeSearch;
 
 $this->title = Yii::t('common', 'Blog');
 $this->params['breadcrumbs'][] = $this->title;
-$category_list = DC::get_menu_brands();
+//$category_list = DC::get_menu_brands();
 $searchModel = new BlogTypeSearch();
 $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 $dataProvider->query->where([]);

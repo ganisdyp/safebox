@@ -51,7 +51,7 @@
                                 'url' => '#',
                                 'items' => [
                                     ['label' => 'Categories', 'icon' => 'plus', 'url' => Yii::$app->getHomeUrl().'content/producttype/index',],
-                                    ['label' => 'Tags', 'icon' => 'plus', 'url' => Yii::$app->getHomeUrl().'content/tag/index',],
+                                    ['label' => 'Subcategories', 'icon' => 'plus', 'url' => Yii::$app->getHomeUrl().'content/subcategory/index',],
                                     ['label' => 'Manage products', 'icon' => 'th-large', 'url' => Yii::$app->getHomeUrl().'content/product/index',],
                                     //  ['label' => 'Manage product profiles', 'icon' => 'circle-o', 'url' => '#',],
                                 ],
