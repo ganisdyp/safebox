@@ -15,9 +15,9 @@ $searchModel = new ProductTypeSearch();
 $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 $product_category = $dataProvider->query->where(['id' => $_GET['id']])->one();
 
-$searchModel = new BrandSearch();
-$dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-$brands = $dataProvider->query->where([])->orderBy(['code'=>SORT_ASC])->all();
+// $searchModel = new BrandSearch();
+// $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+// $brands = $dataProvider->query->where([])->orderBy(['code'=>SORT_ASC])->all();
 
 $searchModel = new ProductSearch();
 $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
@@ -26,7 +26,7 @@ $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
 $filter = '';
 
-if (isset($_GET['c']) && $_GET['c']!='all') {
+/* if (isset($_GET['c']) && $_GET['c']!='all') {
     $filter = $_GET['c'];
 ?>
 <div id="product-page" class="container">
@@ -82,14 +82,14 @@ if (isset($_GET['c']) && $_GET['c']!='all') {
     </div>
     <div class="clearfix"></div>
 </div>
-<?php } elseif(isset($_GET['c']) && $_GET['c']=='all'){
+<?php } elseif(isset($_GET['c']) && $_GET['c']=='all'){ */
     $filter = 'all';
 ?>
 <div id="product-page" class="container">
     <nav class="mt-2 fadeIn animated d07s">
         <ol class="breadcrumb smaller-90">
-            <li class="breadcrumb-item"><a href="/site/index"><?php echo Yii::t('common', 'Home');?></a></li>
-            <li class="breadcrumb-item"><a href="/site/product-category"><?php echo Yii::t('common', 'Product');?></a></li>
+            <li class="breadcrumb-item"><a href="<?php echo Yii::$app->request->BaseUrl; ?>/site/index"><?php echo Yii::t('common', 'Home');?></a></li>
+            <li class="breadcrumb-item"><a href="<?php echo Yii::$app->request->BaseUrl; ?>/site/product-category"><?php echo Yii::t('common', 'Product');?></a></li>
             <li class="breadcrumb-item active"><?= $product_category->name; ?></li>
         </ol>
     </nav>
@@ -99,6 +99,7 @@ if (isset($_GET['c']) && $_GET['c']!='all') {
             <div class=""><?= $product_category->description; ?></div>
         </div>
     </div>
+    <?php /*
     <div class="row">
         <div class="col-12">
             <ul class="nav nav-pills nav-fill">
@@ -114,12 +115,12 @@ if (isset($_GET['c']) && $_GET['c']!='all') {
                 </li>
             </ul>
         </div>
-    </div>
+    </div> */ ?>
     <div class="row mt-4 mb-4">
         <?php $products_per_category = $dataProvider->query->where(['product_type_id' => $_GET['id']])->all(); ?>
         <?php foreach ($products_per_category as $product) { ?>
             <div class="col-lg-3 col-md-4 col-12 fadeIn animated d03s">
-                <a href="/site/product-view?id=<?php echo $product->id; ?>" class="block">
+                <a href="<?php echo Yii::$app->request->BaseUrl; ?>/site/product-view?id=<?php echo $product->id; ?>" class="block">
                     <div class="media-wrapper corner-1">
                         <?php $media_type = $product->media_type;
                         if ($media_type == 1) { ?>
@@ -134,10 +135,10 @@ if (isset($_GET['c']) && $_GET['c']!='all') {
                         <div class="media-overlay corner-1"></div>
                     </div>
                 </a>
-                <a href="/site/product-view?id=<?= $product->id; ?>" class="mt-2 mb-3 block bold"><?= $product->name; ?></a>
+                <a href="<?php echo Yii::$app->request->BaseUrl; ?>/site/product-view?id=<?= $product->id; ?>" class="mt-2 mb-3 block bold"><?= $product->name; ?></a>
             </div>
         <?php } ?>
     </div>
     <div class="clearfix"></div>
 </div>
-<?php } ?>
+<?php //} ?>
