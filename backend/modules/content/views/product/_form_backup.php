@@ -45,25 +45,7 @@ use kartik\date\DatePicker;
             <?= $form->field($model, 'brand_id')->dropDownList(ArrayHelper::map(BrandLang::find()->all(), 'brand_id', 'name'), ['prompt' => '- Select -'])->label('Related Brand') ?>
         </div>
         <div class="col-md-6">
-            <label class="control-label">Study Timeline</label>
-            <?php
-             echo DatePicker::widget([
 
-                'model' => $model,
-                'attribute' => 'from_date',
-                'attribute2' => 'to_date',
-                'options' => ['placeholder' => 'Start date'],
-                'options2' => ['placeholder' => 'End date'],
-                'type' => DatePicker::TYPE_RANGE,
-                'form' => $form,
-                'pluginOptions' => [
-                    'startView' => 'year',
-                    'minViewMode' => 'months',
-                    'format' => 'mm-yyyy',
-                    'autoclose' => true,
-                ]
-            ]);
-            ?>
         </div>
     </div>
     <div class="row">

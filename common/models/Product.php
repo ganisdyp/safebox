@@ -15,14 +15,14 @@ use omgdef\multilingual\MultilingualQuery;
  * @property string $date_published
  * @property string $main_photo
  * @property string $keyword
- * @property int $tag_id
+ * @property int $subcategory_id
  * @property int $media_type
  * @property string $from_date
  * @property string $to_date
  *
  * @property Brand $brand
  * @property ProductType $productType
- * @property Tag $technique
+ * @property Subcategory $technique
  * @property ProductLang[] $productLangs
  * @property ProductOwner[] $productOwners
  * @property ProductPhoto[] $productPhotos
@@ -69,15 +69,15 @@ class Product extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['brand_id', 'product_type_id', 'tag_id','name', 'description'], 'required'],
-            [['brand_id', 'product_type_id', 'tag_id','media_type'], 'integer'],
+            [['brand_id', 'product_type_id', 'subcategory_id','name', 'description'], 'required'],
+            [['brand_id', 'product_type_id', 'subcategory_id','media_type'], 'integer'],
             [['date_published'], 'safe'],
             [['keyword','description'], 'string'],
-            [['main_photo', 'from_date', 'to_date','name'], 'string', 'max' => 100],
+            [['main_photo', 'name'], 'string', 'max' => 100],
             [['main_photo_file'],'file','skipOnEmpty' => true, 'on' => 'update', 'extensions' => 'jpg,png,gif'],
             [['brand_id'], 'exist', 'skipOnError' => true, 'targetClass' => Brand::className(), 'targetAttribute' => ['brand_id' => 'id']],
             [['product_type_id'], 'exist', 'skipOnError' => true, 'targetClass' => ProductType::className(), 'targetAttribute' => ['product_type_id' => 'id']],
-            [['tag_id'], 'exist', 'skipOnError' => true, 'targetClass' => Tag::className(), 'targetAttribute' => ['tag_id' => 'id']],
+            [['subcategory_id'], 'exist', 'skipOnError' => true, 'targetClass' => Subcategory::className(), 'targetAttribute' => ['subcategory_id' => 'id']],
         ];
     }
 
@@ -93,9 +93,7 @@ class Product extends \yii\db\ActiveRecord
             'date_published' => Yii::t('common', 'Date Published'),
             'main_photo' => Yii::t('common', 'Main Photo'),
             'keyword' => Yii::t('common', 'Keyword'),
-            'tag_id' => Yii::t('common', 'Tag ID'),
-            'from_date' => Yii::t('common', 'From Date'),
-            'to_date' => Yii::t('common', 'To Date'),
+            'subcategory_id' => Yii::t('common', 'Subcategory ID'),
             'media_type' => Yii::t('common', 'Media Type'),
         ];
     }
@@ -119,9 +117,9 @@ class Product extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getTag()
+    public function getSubcategory()
     {
-        return $this->hasOne(Tag::className(), ['id' => 'tag_id']);
+        return $this->hasOne(Subcategory::className(), ['id' => 'subcategory_id']);
     }
 
     /**

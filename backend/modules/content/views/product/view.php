@@ -48,7 +48,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
             //  'id',
             'name',
-            'tag.tag',
+            'subcategory.name',
             //'brand.name',
             /*[
                 'attribute' => 'brand.name',
@@ -69,23 +69,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
                 },
                 'label' => 'Category',
-            ],
-            [
-                'attribute' => 'from_date',
-                'value' => function ($model) {
-                    if($model->from_date) {
-                        $from_date_arr = explode(" ", $model->from_date);
-                        $to_date_arr = explode(" ", $model->to_date);
-                        if ($from_date_arr[1] == $to_date_arr[1]) {
-                            return $from_date_arr[0] . " - " . $to_date_arr[0] . " " . $to_date_arr[1];
-                        } else {
-                            return $model->from_date . " - " . $model->to_date;
-                        }
-                    }
-
-
-                },
-                'label' => 'Study Period',
             ],
             'date_published',
 
@@ -110,7 +93,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     foreach ($related_photos as $photo) {
 
-        echo Html::img(Yii::$app->getHomeUrl() . 'uploads/product/related_photo/' . $photo->product_url,
+        echo Html::img(Yii::$app->getHomeUrl() . 'uploads/product/related_photo/' . $photo->photo_url,
                 ['class' => 'thumbnail inline', 'width' => '100']) . " ";
     }
 

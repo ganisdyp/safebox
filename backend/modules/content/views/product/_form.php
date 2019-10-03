@@ -3,10 +3,10 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use common\models\BrandLang;
-use common\models\Tag;
+use common\models\Subcategory;
 use common\models\ProductTypeLang;
 use common\models\ProductPhoto;
-use common\models\ProductOwner;
+//use common\models\ProductOwner;
 use yii\helpers\ArrayHelper;
 use kartik\date\DatePicker;
 use kartik\file\FileInput;
@@ -30,19 +30,7 @@ use dosamigos\tinymce\TinyMce;
         }
 
     });
-        $('.delete-button-owner').click(function() {
-        var detail = $(this).closest('.product-owner');
-        var updateType = detail.find('.update-type');
-        if (updateType.val() === " . json_encode(ProductOwner::UPDATE_TYPE_UPDATE) . ") {
-            //marking the row for deletion
-            updateType.val(" . json_encode(ProductOwner::UPDATE_TYPE_DELETE) . ");
-            detail.hide();
-        } else {
-            //if the row is a new row, delete the row
-            detail.remove();
-        }
-
-    });
+       
 ");
 ?>
 
@@ -273,27 +261,8 @@ use dosamigos\tinymce\TinyMce;
             echo $form->field($model, 'media_type')->hiddenInput()->label(false) ?>
             <div class="col-md-6">
                 <?= $form->field($model, 'product_type_id')->dropDownList(ArrayHelper::map(ProductTypeLang::find()->all(), 'product_type_id', 'name'), ['prompt' => '- Select -'])->label('Product Category') ?>
-                <?= $form->field($model, 'tag_id')->dropDownList(ArrayHelper::map(Tag::find()->all(), 'id', 'tag'), ['prompt' => '- Select -'])->label('Tag') ?>
+                <?= $form->field($model, 'subcategory_id')->dropDownList(ArrayHelper::map(Subcategory::find()->all(), 'id', 'name'), ['prompt' => '- Select -'])->label('Subcategory') ?>
                 <?= $form->field($model, 'brand_id')->dropDownList(ArrayHelper::map(BrandLang::find()->all(), 'brand_id', 'name'), ['prompt' => '- Select -'])->label('Related Brand') ?>
-                <label class="control-label">Study Timeline</label>
-                <?php
-                echo DatePicker::widget([
-
-                    'model' => $model,
-                    'attribute' => 'from_date',
-                    'attribute2' => 'to_date',
-                    'options' => ['placeholder' => 'Start date'],
-                    'options2' => ['placeholder' => 'End date'],
-                    'type' => DatePicker::TYPE_RANGE,
-                    'form' => $form,
-                    'pluginOptions' => [
-                        'startView' => 'year',
-                        'minViewMode' => 'months',
-                        'format' => 'M yyyy',
-                        'autoclose' => true,
-                    ]
-                ]);
-                ?>
                 <?= $form->field($model, 'keyword')->textInput(['maxlength' => true]) ?>
             </div>
         </div>
@@ -306,8 +275,6 @@ use dosamigos\tinymce\TinyMce;
             <?= $form->errorSummary($modelDetails2); ?>
             <ul class="nav nav-tabs">
                 <li class="active"><a data-toggle="tab" href="#photo">Related photos</a></li>
-                <li><a data-toggle="tab" href="#student">Students</a></li>
-
             </ul>
         </div>
         <!-- Tab content -->
@@ -325,12 +292,12 @@ use dosamigos\tinymce\TinyMce;
                                 'options' => ['accept' => 'image/*'], 'pluginOptions' => [
                                     'showUpload' => false,
                                     'initialPreview' => [
-                                        ["http://www.designineducation.com/backend/uploads/product/related_photo/$modelDetail->product_url"]
+                                        ["http://www.designineducation.com/backend/uploads/product/related_photo/$modelDetail->photo_url"]
                                     ],
                                     'initialPreviewAsData' => true,
-                                    'initialCaption' => "$modelDetail->product_url",
+                                    'initialCaption' => "$modelDetail->photo_url",
                                     'initialPreviewConfig' =>[
-                                        ['caption' => $modelDetail->product_url]
+                                        ['caption' => $modelDetail->photo_url]
                                     ],
                                     'overwriteInitial' => false,
                                     'maxFileSize' => 100000
@@ -348,61 +315,6 @@ use dosamigos\tinymce\TinyMce;
                 </div>
                 <div class="col-md-12 text-center">
                 <?= Html::submitButton('<i class="fa fa-plus"></i> photo', ['name' => 'addRowPhoto', 'value' => 'true', 'class' => 'btn btn-info']) ?>
-                </div>
-            </div>
-            <div id="student" class="tab-pane fade">
-                <div class="col-md-12">
-                    <br>
-                    <?php foreach ($modelDetails2 as $i => $modelDetail2) : ?>
-                        <div class="row product-owner product-owner-<?= $i ?>">
-                            <div class="col-md-12">
-                                <?= Html::activeHiddenInput($modelDetail2, "[$i]id") ?>
-                                <?= Html::activeHiddenInput($modelDetail2, "[$i]updateType", ['class' => 'update-type']) ?>
-                                <div class="col-md-3">
-                                    <?= $form->field($modelDetail2, "[$i]first_name")->textInput() ?>
-                                </div>
-                                <div class="col-md-3">
-                                    <?= $form->field($modelDetail2, "[$i]last_name")->textInput() ?>
-                                </div>
-                                <div class="col-md-3">
-                                    <?= $form->field($modelDetail2, "[$i]student_code")->textInput() ?>
-                                </div>
-                                <div class="col-md-6">
-                                    <?= $form->field($modelDetail2, "[$i]faculty")->dropDownList([
-                                        '1' => '01-Faculty of Humanities',
-                                        '2' => '02-Faculty of Education',
-                                        '3' => '03-Faculty of Fine Arts',
-                                        '4' => '04-Faculty of Social Sciences',
-                                        '5' => '05-Faculty of Science',
-                                        '6' => '06-Faculty of Engineering',
-                                        '7' => '07-Faculty of Medicine',
-                                        '8' => '08-Faculty of Agriculture',
-                                        '9' => '09-Faculty of Dentistry',
-                                        '10' => '10-Faculty of Pharmacy',
-                                        '11' => '11-Faculty of Associated Medical Science',
-                                        '12' => '12-Faculty of Nursing',
-                                        '13' => '13-Faculty of Agro-Industry',
-                                        '14' => '14-Faculty of Veterinary Medicine',
-                                        '15' => '15-Faculty of Business Administration',
-                                        '16' => '16-Faculty of Economics',
-                                        '17' => '17-Faculty of Architecture',
-                                        '18' => '18-Faculty of Mass Communication',
-                                        '19' => '19-Faculty of Political Science and Public Administration',
-                                        '20' => '20-Faculty of Law',
-                                        '21' => '21-College of Arts, Media and Technology']); ?>
-                                </div>
-                                <div class="col-md-6 text-right">
-                                    <?= Html::button('x', ['class' => 'delete-button-owner btn btn-danger', 'data-target' => "product-owner-$i"]) ?>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <hr style="border-top: 1px solid #c8c8c8; margin-top: 0px;">
-                            </div>
-                        </div>
-                    <?php endforeach; ?>
-                    <div class="col-md-12 text-center">
-                    <?= Html::submitButton('<i class="fa fa-plus"></i> student', ['name' => 'addRowOwner', 'value' => 'true', 'class' => 'btn btn-info']) ?>
-                    </div>
                 </div>
             </div>
         </div>

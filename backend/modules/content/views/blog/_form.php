@@ -266,7 +266,6 @@ use dosamigos\tinymce\TinyMce;
             }
             echo $form->field($model, 'media_type')->hiddenInput()->label(false) ?>
             <div class="col-md-6">
-                <?= $form->field($model, 'brand_id')->dropDownList(ArrayHelper::map(BrandLang::find()->all(), 'brand_id', 'name'), ['prompt' => '- Select -'])->label('Related Brand') ?>
                 <?= $form->field($model, 'blog_type_id')->dropDownList(ArrayHelper::map(BlogTypeLang::find()->all(), 'blog_type_id', 'name'), ['prompt' => '- Select -'])->label('Blog Category') ?>
 
                 <?php echo $form->field($model, 'date_visited')->widget(DatePicker::classname(), [

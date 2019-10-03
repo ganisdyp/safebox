@@ -8,7 +8,7 @@ use Yii;
  * This is the model class for table "product_photo".
  *
  * @property int $id
- * @property string $product_url
+ * @property string $photo_url
  * @property int $product_id
  *
  * @property Product $product
@@ -60,7 +60,7 @@ class ProductPhoto extends \yii\db\ActiveRecord
             [['product_id'], 'required','except' => self::SCENARIO_BATCH_UPDATE],
             [['product_id'], 'integer'],
             [['product_photo'],'file','skipOnEmpty' => true, 'on' => 'update', 'extensions' => 'jpg,png,gif'],
-            [['product_url'], 'string', 'max' => 100],
+            [['photo_url'], 'string', 'max' => 100],
             [['product_id'], 'exist', 'skipOnError' => true, 'targetClass' => Product::className(), 'targetAttribute' => ['product_id' => 'id']],
         ];
     }
@@ -72,7 +72,7 @@ class ProductPhoto extends \yii\db\ActiveRecord
     {
         return [
             'id' => Yii::t('common', 'ID'),
-            'product_url' => Yii::t('common', 'Product Url'),
+            'photo_url' => Yii::t('common', 'Product Url'),
             'product_id' => Yii::t('common', 'Product ID'),
         ];
     }

@@ -50,10 +50,10 @@ define('PAGE_NAME', 'product');
             if ($media_type == 1) { ?>
                 <iframe width="100%" height="280" src="<?= $product->main_photo;?>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"></iframe>
             <?php } else { ?>
-                <a href="/backend/uploads/product/<?= $product->main_photo; ?>" data-lightbox="trip">
+                <a href="<?= Yii::$app->request->BaseUrl;?>/backend/uploads/product/<?= $product->main_photo; ?>" data-lightbox="trip">
                 <div class="img-16by9 holder">
                     <img class="card-img-top img-responsive corner-0"
-                         src="/backend/uploads/product/<?= $product->main_photo; ?>">
+                         src="<?= Yii::$app->request->BaseUrl;?>/backend/uploads/product/<?= $product->main_photo; ?>">
                 </div>
                 </a>
             <?php } ?>
@@ -82,41 +82,18 @@ define('PAGE_NAME', 'product');
                         <?= $product->brand->name . " (" . $product->brand->code . ")"; ?>
                     </p>
                 </div>
-                <?php if($product->from_date) { ?>
-                <div class="col-md-6 col-12">
-                    <p class="text-muted smaller-90 my-1">
-                        <i class="fa fa-group mr-2"></i>
-                        <?php
-                        $from_date_arr = explode(" ", $product->from_date);
-                        $to_date_arr = explode(" ", $product->to_date);
-                        if ($from_date_arr[1] == $to_date_arr[1]) {
-                            $study_period = $from_date_arr[0] . " -> " . $to_date_arr[0] . " " . $to_date_arr[1];
-                        } else {
-                            $study_period = $product->from_date . " -> " . $product->to_date;
-                        }
-                        ?>
-                        <?= $study_period; ?>
-                    </p>
-                </div>
-                <?php } ?>
+
             </div>
             <hr class="d-lg-none d-block">
             <div class=""> <?= $product->description; ?> </div>
-            <?php
-            $related_students = $product->getProductOwners()->where(['product_id' => $product->id])->orderBy(['student_code'=>SORT_ASC])->all();
-            ?>
-            <div class="py-2 smaller-90">
-                <?php foreach ($related_students as $student) { ?>
-                    <li><?= "<b>".$student->student_code."</b> ".$student->first_name . " " . $student->last_name ." /". (Content::getFacultyLabel($student->faculty)) ?></li>
-                <?php } ?>
-            </div>
+
             <hr>
 
             <?php /* <i class="fa fa-map mr-2"></i> */ ?>
-            <span>Tags/themes: </span>
+            <span>Categories: </span>
             <?php
-            if($product->tag) {
-            echo "<span title='Tag' class='badge badge-dark' style='font-size:11pt; font-weight:normal;'><b>" . $product->tag->tag . " </b></span> ";
+            if($product->subcategory) {
+            echo "<span title='Subcategory' class='badge badge-dark' style='font-size:11pt; font-weight:normal;'><b>" . $product->subcategory->name . " </b></span> ";
             }
             if($product->keyword) {
                 $keywords = explode(",", $product->keyword);
