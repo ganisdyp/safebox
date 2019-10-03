@@ -28,7 +28,7 @@ class DC extends Model {
         'text' => Yii::t('common', 'Product'),
         'link' => Yii::$app->request->BaseUrl.'/site/product-category',
         'pagename' => 'product',
-        'subpage' => self::get_menu_product(),
+        // 'subpage' => self::get_menu_product(),
       ),
       array(
         'text' => Yii::t('common', 'Blogs'),
@@ -55,7 +55,7 @@ class DC extends Model {
           $arr_detail = array(
               'text' => $brand->name,
               'code' => $brand->code,
-              'link' => '/site/brand-view?c='.$brand->id,
+              'link' => Yii::$app->request->BaseUrl.'/site/brand-view?c='.$brand->id,
               'pagename' => 'brand'
           );
           array_push($menu,$arr_detail);
@@ -72,7 +72,7 @@ class DC extends Model {
       foreach($product_category as $category){
           $arr_detail = array(
               'text' => $category->name,
-              'link' => '/site/product-list?id='.$category->id.'&c=all',
+              'link' => Yii::$app->request->BaseUrl.'/site/product-list?id='.$category->id.'&c=all',
               'pagename' => 'product'
           );
           array_push($menu,$arr_detail);
