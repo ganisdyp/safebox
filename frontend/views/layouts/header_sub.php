@@ -44,4 +44,8 @@ echo '<div class="view-content">';
     </div>
   </div>
 </nav>
-<div class="navbar-sub-hero image-section"></div>
+<?php if ($this->title != 'Home' && $this->title != 'หน้าหลัก') {
+  echo '<div class="navbar-sub-hero image-section"></div>';
+} else {
+  echo '<div style="height: 86px;"></div>';
+} ?>
