@@ -129,7 +129,7 @@ $filter = '';
                             <!-- </div>-->
                         <?php } else { ?>
                             <div class="img-16by9 holder corner-1">
-                                <img class="card-img-top img-responsive" src="/backend/uploads/product/<?= $product->main_photo; ?>">
+                                <img class="card-img-top img-responsive" src="<?php echo Yii::$app->request->BaseUrl; ?>/backend/uploads/product/<?= $product->main_photo; ?>">
                             </div>
                         <?php } ?>
                         <div class="media-overlay corner-1"></div>
