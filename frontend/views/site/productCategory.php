@@ -48,14 +48,14 @@ venenatis et at orci.</p>
         <?php foreach ($product_categories as $product_category) { ?>
         <div class="col-lg-4 col-md-6 col-12">
             <div class="card dc-card mb-4 corner-0 z-shadow fadeIn animated d03s">
-                <a href="<?php echo Yii::$app->request->BaseUrl; ?>product-list?id=<?= $product_category->id; ?>&c=all" class="hover-box">
+                <a href="<?php echo Yii::$app->request->BaseUrl; ?>/site/product-list?id=<?= $product_category->id; ?>" class="hover-box">
                     <div class="img-16by9 holder">
                         <img class="card-img-top img-responsive corner-0"
-                                src="/backend/uploads/product_type/<?= $product_category->main_photo; ?>">
+                                src="<?php echo Yii::$app->request->BaseUrl; ?>/backend/uploads/product_type/<?= $product_category->main_photo; ?>">
                     </div>
                 </a>
                 <div class="card-body text-center">
-                    <a href="<?php echo Yii::$app->request->BaseUrl; ?>product-list?id=<?= $product_category->id; ?>&c=all"
+                    <a href="<?php echo Yii::$app->request->BaseUrl; ?>/site/product-list?id=<?= $product_category->id; ?>"
                         class="card-title font-weight-normal bigger-110 my-0 block"><?= $product_category->name;?></a>
                 </div>
             </div>

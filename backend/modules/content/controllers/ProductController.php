@@ -71,20 +71,20 @@ class ProductController extends Controller
     {
         $model = new Product();
         $modelDetails = [];
-        $modelDetails2 = [];
+       // $modelDetails2 = [];
         $formDetails = Yii::$app->request->post('ProductPhoto', []);
-        $formDetails2 = Yii::$app->request->post('ProductOwner', []);
+       // $formDetails2 = Yii::$app->request->post('ProductOwner', []);
         //   print_r($formDetails);
         foreach ($formDetails as $i => $formDetail) {
             $modelDetail = new ProductPhoto(['scenario' => ProductPhoto::SCENARIO_BATCH_UPDATE]);
             $modelDetail->setAttributes($formDetail);
             $modelDetails[] = $modelDetail;
         }
-        foreach ($formDetails2 as $i => $formDetail2) {
+       /* foreach ($formDetails2 as $i => $formDetail2) {
             $modelDetail2 = new ProductOwner(['scenario' => ProductOwner::SCENARIO_BATCH_UPDATE]);
             $modelDetail2->setAttributes($formDetail2);
             $modelDetails2[] = $modelDetail2;
-        }
+        }*/
         //handling if the addRow button has been pressed
         if (Yii::$app->request->post('addRowPhoto') == 'true') {
             $model->load(Yii::$app->request->post());
@@ -92,10 +92,10 @@ class ProductController extends Controller
             return $this->render('create', [
                 'model' => $model,
                 'modelDetails' => $modelDetails,
-                'modelDetails2' => $modelDetails2,
+         //       'modelDetails2' => $modelDetails2,
             ]);
         }
-        if (Yii::$app->request->post('addRowOwner') == 'true') {
+      /*  if (Yii::$app->request->post('addRowOwner') == 'true') {
             $model->load(Yii::$app->request->post());
             $modelDetails2[] = new ProductOwner(['scenario' => ProductOwner::SCENARIO_BATCH_UPDATE]);
             return $this->render('create', [
@@ -103,7 +103,7 @@ class ProductController extends Controller
                 'modelDetails' => $modelDetails,
                 'modelDetails2' => $modelDetails2,
             ]);
-        }
+        }*/
         if ($model->load(Yii::$app->request->post())) {
 
 
@@ -122,7 +122,7 @@ class ProductController extends Controller
                 }
                 $model->save();
                 //  print_r($model);
-                if (Model::validateMultiple($modelDetails) && Model::validateMultiple($modelDetails2)) {
+                if (Model::validateMultiple($modelDetails)) {
 
 
                     foreach ($modelDetails as $c => $modelDetail) {
@@ -141,11 +141,11 @@ class ProductController extends Controller
                         $modelDetail->product_id = $model->id;
                         $modelDetail->save();
                     }
-                    foreach ($modelDetails2 as $c => $modelDetail2) {
+                  /*  foreach ($modelDetails2 as $c => $modelDetail2) {
 
                         $modelDetail2->product_id = $model->id;
                         $modelDetail2->save();
-                    }
+                    }*/
                     return $this->redirect(['view', 'id' => $model->id]);
                 }
             }
@@ -155,7 +155,7 @@ class ProductController extends Controller
         return $this->render('create', [
             'model' => $model,
             'modelDetails' => $modelDetails,
-            'modelDetails2' => $modelDetails2,
+            //'modelDetails2' => $modelDetails2,
         ]);
     }
 
@@ -170,10 +170,10 @@ class ProductController extends Controller
     {
         $model = $this->findModel($id);
         $modelDetails = $model->productPhotos;
-        $modelDetails2 = $model->productOwners;
+      //  $modelDetails2 = $model->productOwners;
 
         $formDetails = Yii::$app->request->post('ProductPhoto', []);
-        $formDetails2 = Yii::$app->request->post('ProductOwner', []);
+      //  $formDetails2 = Yii::$app->request->post('ProductOwner', []);
         foreach ($formDetails as $i => $formDetail) {
             //loading the models if they are not new
             if (isset($formDetail['id']) && isset($formDetail['updateType']) && $formDetail['updateType'] != ProductPhoto::UPDATE_TYPE_CREATE) {
@@ -190,22 +190,7 @@ class ProductController extends Controller
             }
 
         }
-        foreach ($formDetails2 as $i => $formDetail2) {
-            //loading the models if they are not new
-            if (isset($formDetail2['id']) && isset($formDetail2['updateType']) && $formDetail2['updateType'] != ProductOwner::UPDATE_TYPE_CREATE) {
-                //making sure that it is actually a child of the main model
-                $modelDetail2 = ProductOwner::findOne(['id' => $formDetail2['id'], 'product_id' => $model->id]);
-                $modelDetail2->setScenario(ProductOwner::SCENARIO_BATCH_UPDATE);
-                $modelDetail2->setAttributes($formDetail2);
-                $modelDetails2[$i] = $modelDetail2;
-                //validate here if the modelDetail loaded is valid, and if it can be updated or deleted
-            } else {
-                $modelDetail2 = new ProductOwner(['scenario' => ProductOwner::SCENARIO_BATCH_UPDATE]);
-                $modelDetail2->setAttributes($formDetail2);
-                $modelDetails2[] = $modelDetail2;
-            }
 
-        }
 
         //handling if the addRow button has been pressed
         if (Yii::$app->request->post('addRowPhoto') == 'true') {
@@ -213,22 +198,22 @@ class ProductController extends Controller
             return $this->render('update', [
                 'model' => $model,
                 'modelDetails' => $modelDetails,
-                'modelDetails2' => $modelDetails2
+               // 'modelDetails2' => $modelDetails2
             ]);
         }
-        if (Yii::$app->request->post('addRowOwner') == 'true') {
+      /*  if (Yii::$app->request->post('addRowOwner') == 'true') {
             $modelDetails2[] = new ProductOwner(['scenario' => ProductOwner::SCENARIO_BATCH_UPDATE]);
             return $this->render('update', [
                 'model' => $model,
                 'modelDetails' => $modelDetails,
                 'modelDetails2' => $modelDetails2
             ]);
-        }
+        }*/
 
         if ($model->load(Yii::$app->request->post())) {
 
 
-            if (Model::validateMultiple($modelDetails) && Model::validateMultiple($modelDetails2) && $model->validate()) {
+            if (Model::validateMultiple($modelDetails) && $model->validate()) {
                 $file = UploadedFile::getInstance($model, 'main_photo_file');
                 //print_r($file);
                 if (isset($file->size) && $file->size !== 0) {
@@ -271,7 +256,7 @@ class ProductController extends Controller
                         $modelDetail->save();
                     }
                 }
-                foreach ($modelDetails2 as $c => $modelDetail2) {
+               /* foreach ($modelDetails2 as $c => $modelDetail2) {
                     //details that has been flagged for deletion will be deleted
                     if ($modelDetail2->updateType == ProductOwner::UPDATE_TYPE_DELETE) {
                         $modelDetail2->delete();
@@ -281,7 +266,7 @@ class ProductController extends Controller
                         $modelDetail2->product_id = $model->id;
                         $modelDetail2->save();
                     }
-                }
+                }*/
                 return $this->redirect(['view', 'id' => $model->id]);
             }
         }
@@ -290,7 +275,7 @@ class ProductController extends Controller
         return $this->render('update', [
             'model' => $model,
             'modelDetails' => $modelDetails,
-            'modelDetails2' => $modelDetails2
+          //  'modelDetails2' => $modelDetails2
         ]);
 
     }

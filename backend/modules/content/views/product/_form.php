@@ -242,7 +242,7 @@ use dosamigos\tinymce\TinyMce;
                             'options' => ['accept' => 'image/*'], 'pluginOptions' => [
                                 'showUpload' => false,
                                 'initialPreview' => [
-                                    ["http://www.designineducation.com/backend/uploads/product/$model->main_photo"]
+                                    [Yii::$app->request->BaseUrl."/backend/uploads/product/$model->main_photo"]
                                 ],
                                 'initialPreviewAsData' => true,
                                 'initialCaption' => "$model->main_photo",
@@ -272,7 +272,6 @@ use dosamigos\tinymce\TinyMce;
     <div class="row">
         <div class="col-md-12">
             <?= $form->errorSummary($modelDetails); ?>
-            <?= $form->errorSummary($modelDetails2); ?>
             <ul class="nav nav-tabs">
                 <li class="active"><a data-toggle="tab" href="#photo">Related photos</a></li>
             </ul>
@@ -292,7 +291,7 @@ use dosamigos\tinymce\TinyMce;
                                 'options' => ['accept' => 'image/*'], 'pluginOptions' => [
                                     'showUpload' => false,
                                     'initialPreview' => [
-                                        ["http://www.designineducation.com/backend/uploads/product/related_photo/$modelDetail->photo_url"]
+                                        [Yii::$app->request->BaseUrl."/backend/uploads/product/related_photo/$modelDetail->photo_url"]
                                     ],
                                     'initialPreviewAsData' => true,
                                     'initialCaption' => "$modelDetail->photo_url",

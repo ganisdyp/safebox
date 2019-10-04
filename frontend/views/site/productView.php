@@ -62,10 +62,10 @@ define('PAGE_NAME', 'product');
                 $related_photos = $product->getProductPhotos()->where(['product_id' => $product->id])->all();
                 foreach ($related_photos as $photo) { ?>
                     <div class="col-2 pr-2 mb-2">
-                        <a href="<?= Yii::$app->getHomeUrl() . 'backend/uploads/product/related_photo/' . $photo->product_url; ?>"
+                        <a href="<?= Yii::$app->getHomeUrl() . 'backend/uploads/product/related_photo/' . $photo->photo_url; ?>"
                            data-lightbox="trip">
                             <div class="img-1by1 holder">
-                                <?= Html::img(Yii::$app->getHomeUrl() . 'backend/uploads/product/related_photo/' . $photo->product_url,
+                                <?= Html::img(Yii::$app->getHomeUrl() . 'backend/uploads/product/related_photo/' . $photo->photo_url,
                                     ['class' => 'thumbnail inline', 'width' => '100']) . " "; ?>
                             </div>
                         </a>
@@ -78,7 +78,7 @@ define('PAGE_NAME', 'product');
                 <div class="col-md-6 col-12">
                     <p class="text-muted smaller-90 my-1">
                         <?php /* <i class="fa fa-group mr-2"></i> */ ?>
-                        <span>Subject: </span>
+                        <span>Brand: </span>
                         <?= $product->brand->name . " (" . $product->brand->code . ")"; ?>
                     </p>
                 </div>
@@ -90,10 +90,12 @@ define('PAGE_NAME', 'product');
             <hr>
 
             <?php /* <i class="fa fa-map mr-2"></i> */ ?>
-            <span>Categories: </span>
+            <span>Tags: </span>
             <?php
-            if($product->subcategory) {
-            echo "<span title='Subcategory' class='badge badge-dark' style='font-size:11pt; font-weight:normal;'><b>" . $product->subcategory->name . " </b></span> ";
+            if($product->subcategory->name == '--Not Specified--') {
+            //echo "<span title='Subcategory' class='badge badge-dark' style='font-size:11pt; font-weight:normal;'><b>" . $product->subcategory->name . " </b></span> ";
+            }else{
+                echo "<span title='Subcategory' class='badge badge-dark' style='font-size:11pt; font-weight:normal;'><b>" . $product->subcategory->name . " </b></span> ";
             }
             if($product->keyword) {
                 $keywords = explode(",", $product->keyword);
