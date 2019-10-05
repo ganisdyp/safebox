@@ -6,14 +6,15 @@ use yii\helpers\Html;
 use frontend\models\DC;
 use common\models\BlogTypeSearch;
 
+define('PAGE_NAME', 'blog');
 $this->title = Yii::t('common', 'Blog');
 $this->params['breadcrumbs'][] = $this->title;
+
 //$category_list = DC::get_menu_brands();
 $searchModel = new BlogTypeSearch();
 $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-$dataProvider->query->where([]);
+// $dataProvider->query->where([]);
 $blog_categories = $dataProvider->getModels();
-define('PAGE_NAME', 'blog');
 ?>
 <div id="blog-page" class="container">
     <?php ?>

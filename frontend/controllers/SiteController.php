@@ -216,7 +216,7 @@ class SiteController extends Controller
      *
      * @return mixed
      */
-    public function actionStudytripCategory()
+    public function actionBlogCategory()
     {
         return $this->render('blogCategory');
     }
@@ -226,7 +226,7 @@ class SiteController extends Controller
      *
      * @return mixed
      */
-    public function actionStudytripList()
+    public function actionBlogList()
     {
         return $this->render('blogList');
     }
@@ -236,7 +236,7 @@ class SiteController extends Controller
      *
      * @return mixed
      */
-    public function actionStudytripView()
+    public function actionBlogView()
     {
         return $this->render('blogView');
     }

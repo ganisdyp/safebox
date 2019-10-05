@@ -623,6 +623,40 @@ ul.navbar-nav li.dropdown:hover > .dropdown-menu {
 	background-color: #f5f6fa;
 }
 
+/* product */
+.card.product-category {
+	border-color: #2C3C4D;
+	border-radius: 0px;
+}
+.product-category .card-header {
+	background-color: #14172A;
+	border-radius: 0px;
+	color: #fff;
+	border-color: #2C3C4D;
+}
+.product-category .card-body {
+	border-radius: 0px;
+	background-color: #fafafa;
+}
+.product-category .card-body ul {
+    padding-left: 0px;
+    list-style-type: none;
+}
+.product-category .card-body ul li {
+	padding-top: 0.15rem;
+	padding-bottom: 0.15rem;
+}
+.product-category .card-body ul li a {
+	color: #444446;
+}
+.product-category .card-body ul li:hover a {
+	color: #0085BA;
+}
+.product-category .card-body ul li.active a {
+	color: #0085BA;
+	font-weight: bold;
+}
+
 /* about */
 #section-about-point {
   position: relative;
