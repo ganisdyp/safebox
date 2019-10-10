@@ -9,10 +9,10 @@ use yii\helpers\Html;
 use frontend\models\DC;
 
 use common\models\BlogSearch;
-use common\models\BlogTypeSearch;
+use common\models\BlogtypeSearch;
 
 $this->title = Yii::t('common', 'Blog');
-$searchModel = new BlogTypeSearch();
+$searchModel = new BlogtypeSearch();
 $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 $blog_category = $dataProvider->query->where(['id' => $_GET['id']])->one();
 
@@ -126,9 +126,9 @@ define('PAGE_NAME', 'blog');
                                 </a>
                             </div>
                             <div class="col-md-8 col-12">
-                                <?php $date_visited = date_create($blog->date_visited); ?>
+                                <?php $date_published = date_create($blog->date_published); ?>
                                 <a href="/site/blog-view?id=<?php echo $blog->id; ?>"
-                                    class="bigger-110 card-title mb-0 bold block mt-lg-0 mt-2"><?= date_format($date_visited, "j F Y")." – ".$blog->headline; ?></a>
+                                    class="bigger-110 card-title mb-0 bold block mt-lg-0 mt-2"><?= date_format($date_published, "j F Y")." – ".$blog->headline; ?></a>
                                 <div class="row my-lg-1 my-0">
                                     <?php /*
                                     <div class="col-md-4 col-12">

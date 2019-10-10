@@ -20,6 +20,7 @@ class BlogSearch extends Blog
         return [
             [['id', 'blog_type_id'], 'integer'],
             [['date_published', 'main_photo'], 'safe'],
+            [['keyword'], 'string'],
         ];
     }
 
@@ -62,6 +63,7 @@ class BlogSearch extends Blog
             'id' => $this->id,
             'blog_type_id' => $this->blog_type_id,
             'date_published' => $this->date_published,
+            'keyword' => $this->keyword,
         ]);
 
         $query->andFilterWhere(['like', 'main_photo', $this->main_photo]);

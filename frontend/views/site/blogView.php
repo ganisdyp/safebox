@@ -17,10 +17,9 @@ define('PAGE_NAME', 'blog');
 <div id="blog-page" class="container">
     <nav class="mt-2">
         <ol class="breadcrumb smaller-90 mb-2">
-            <li class="breadcrumb-item"><a href="/site/index"><?php echo Yii::t('common', 'Home');?></a></li>
-            <li class="breadcrumb-item"><a href="/site/blog-category"><?php echo Yii::t('common', 'Blog');?></a></li>
+            <li class="breadcrumb-item"><a href="<?php echo Yii::$app->request->BaseUrl ?>/site/index"><?php echo Yii::t('common', 'Home');?></a></li>
             <li class="breadcrumb-item bold"><a
-                        href="/site/blog-list?id=<?= $blog->blogType->id; ?>&c=all"><?= $blog->blogType->name; ?></a>
+                        href="<?php echo Yii::$app->request->BaseUrl ?>/site/blog-category"><?= $blog->blogType->name; ?></a>
             </li>
             <li class="breadcrumb-item active"><?= $blog->headline; ?></li>
         </ol>
@@ -28,17 +27,11 @@ define('PAGE_NAME', 'blog');
     <div class="clearfix"></div>
     <div class="row">
         <div class="col-12">
-            <?php $date_visited = date_create($blog->date_visited); ?>
-            <p class="bigger-160 mb-1 text-purple font-weight-normal"><?= strtoupper(date_format($date_visited, "j F Y")." – ".$blog->headline); ?></p>
+            <?php $date_publish = date_create($blog->date_published); ?>
+            <p class="bigger-160 mb-1 text-purple font-weight-normal"><?= strtoupper(date_format($date_publish, "j F Y")." – ".$blog->headline); ?></p>
         </div>
         <div class="col-md-6 col-12">
-            <p class="text-muted smaller-90 my-1">
-              <!--  <i class="fa fa-clock-o mr-2"></i>-->
-                <?php
-                $date_publish = date_create($blog->date_published);
-                ?>
-                <?//= date_format($date_publish, "D, j M Y h:i A") ?>
-            </p>
+
         </div>
     </div>
     <div class="row mt-3 mb-5">
@@ -47,10 +40,10 @@ define('PAGE_NAME', 'blog');
             if ($media_type == 1) { ?>
                 <iframe width="100%" height="280" src="<?= $blog->main_photo;?>" allowfullscreen></iframe>
             <?php } else { ?>
-                <a href="/backend/uploads/blog/<?= $blog->main_photo; ?>" data-lightbox="trip">
-                    <div class="img-16by9 holder">
+                <a href="<?php echo Yii::$app->request->BaseUrl ?>/backend/uploads/blog/<?= $blog->main_photo; ?>" data-lightbox="trip">
+                    <div class="">
                         <img class="card-img-top img-responsive corner-0"
-                            src="/backend/uploads/blog/<?= $blog->main_photo; ?>">
+                            src="<?php echo Yii::$app->request->BaseUrl ?>/backend/uploads/blog/<?= $blog->main_photo; ?>">
                     </div>
                 </a>
             <?php } ?>
@@ -72,22 +65,15 @@ define('PAGE_NAME', 'blog');
             </div>
         </div>
         <div class="col-lg-7 col-12">
-            <div class="row mb-2">
-                <div class="col-12">
-                    <p class="text-muted smaller-90 my-1">
-                        <i class="fa fa-group mr-2"></i>
-                        <?= $blog->participant." ".Yii::t('common','people joined this blog'); ?>
-                    </p>
-                </div>
-                <div class="col-12">
-                    <p class="text-muted smaller-90 my-1">
-                        <i class="fa fa-map mr-2"></i>
-                        <?= $blog->location; ?>
-                    </p>
-                </div>
-            </div>
-            <hr class="my-2">
+                       <hr class="my-2">
             <div class=""> <?= $blog->description; ?></div>
+            <hr class="my-2">
+           <? if($blog->keyword) {
+            $keywords = explode(",", $blog->keyword);
+            foreach ($keywords as $keyword) {
+            echo "<span title='Keyword' class='badge badge-info' style='font-size:11pt; font-weight:normal;background-color:#0085BA;'> <b>" . ltrim(rtrim($keyword)) . " </b></span> ";
+            }
+            } ?>
         </div>
     </div>
 </div>

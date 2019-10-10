@@ -31,7 +31,7 @@ use kartik\file\FileInput;
                     'options' => ['accept' => 'image/*'], 'pluginOptions' => [
                         'showUpload' => false,
                         'initialPreview' => [
-                            ["http://www.designineducation.com/backend/uploads/product_type/$model->main_photo"]
+                            [Yii::$app->request->BaseUrl."/backend/uploads/product_type/$model->main_photo"]
                         ],
                         'initialPreviewAsData' => true,
                         'initialCaption' => "$model->main_photo",

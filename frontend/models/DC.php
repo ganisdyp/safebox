@@ -4,7 +4,7 @@ use Yii;
 use yii\base\Model;
 use common\models\BrandSearch;
 use common\models\ProductTypeSearch;
-use common\models\BlogTypeSearch;
+use common\models\BlogtypeSearch;
 
 class DC extends Model {
   public static function get_menu() {
@@ -82,7 +82,7 @@ class DC extends Model {
     }
 
     // public static function get_menu_blogs() {
-    //     $searchModel = new BlogTypeSearch();
+    //     $searchModel = new BlogtypeSearch();
     //     $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
     //     $blog = $dataProvider->query->all();
     //     $menu = array();

@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-use common\models\BlogTypeLang;
+use common\models\BlogtypeLang;
 use common\models\BlogPhoto;
 use common\models\BrandLang;
 use yii\helpers\ArrayHelper;
@@ -50,9 +50,6 @@ use dosamigos\tinymce\TinyMce;
                 <br>
                 <div class="col-md-6">
                     <?= $form->field($model, 'headline')->textInput(['maxlength' => true]) ?>
-                </div>
-                <div class="col-md-6">
-                    <?= $form->field($model, 'location')->textInput(['maxlength' => true]) ?>
                 </div>
                 <div class="col-md-12">
                     <?= $form->field($model, 'description')->widget(TinyMce::className(), [
@@ -115,9 +112,6 @@ use dosamigos\tinymce\TinyMce;
                 <br>
                 <div class="col-md-6">
                     <?= $form->field($model, 'headline_th')->textInput(['maxlength' => true]) ?>
-                </div>
-                <div class="col-md-6">
-                    <?= $form->field($model, 'location_th')->textInput(['maxlength' => true]) ?>
                 </div>
                 <div class="col-md-12">
                     <?= $form->field($model, 'description_th')->widget(TinyMce::className(), [
@@ -248,7 +242,7 @@ use dosamigos\tinymce\TinyMce;
                             'options' => ['accept' => 'image/*'], 'pluginOptions' => [
                                 'showUpload' => false,
                                 'initialPreview' => [
-                                    ["http://www.designineducation.com/backend/uploads/blog/$model->main_photo"]
+                                    [Yii::$app->request->BaseUrl."/backend/uploads/blog/$model->main_photo"]
                                 ],
                                 'initialPreviewAsData' => true,
                                 'initialCaption' => "$model->main_photo",
@@ -266,20 +260,8 @@ use dosamigos\tinymce\TinyMce;
             }
             echo $form->field($model, 'media_type')->hiddenInput()->label(false) ?>
             <div class="col-md-6">
-                <?= $form->field($model, 'blog_type_id')->dropDownList(ArrayHelper::map(BlogTypeLang::find()->all(), 'blog_type_id', 'name'), ['prompt' => '- Select -'])->label('Blog Category') ?>
-
-                <?php echo $form->field($model, 'date_visited')->widget(DatePicker::classname(), [
-                    'options' => ['placeholder' => 'Enter visiting date ...'],
-                    'pluginOptions' => [
-                        'autoclose' => true,
-                        'format' => 'yyyy-mm-dd'
-                    ]
-
-                ]);
-                ?>
-
-                <label class="control-label">How manay people joined this trip?</label>
-                <?= $form->field($model, 'participant')->textInput()->label(false) ?>
+                <?= $form->field($model, 'blog_type_id')->dropDownList(ArrayHelper::map(BlogtypeLang::find()->all(), 'blog_type_id', 'name'), ['prompt' => '- Select -'])->label('Blog Category') ?>
+                <?= $form->field($model, 'keyword')->textInput(['maxlength' => true,  'placeholder' => 'Please use comma (,) in order to split each keyword']) ?>
             </div>
         </div>
     </div>
@@ -306,7 +288,7 @@ use dosamigos\tinymce\TinyMce;
                                         'options' => ['accept' => 'image/*'], 'pluginOptions' => [
                                             'showUpload' => false,
                                             'initialPreview' => [
-                                                ["http://www.designineducation.com/backend/uploads/blog/related_photo/$modelDetail->photo_url"]
+                                                [Yii::$app->request->BaseUrl."/backend/uploads/blog/related_photo/$modelDetail->photo_url"]
                                             ],
                                             'initialPreviewAsData' => true,
                                             'initialCaption' => "$modelDetail->photo_url",

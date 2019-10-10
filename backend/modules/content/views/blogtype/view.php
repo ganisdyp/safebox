@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model common\models\BlogType */
+/* @var $model common\models\Blogtype */
 
 $this->title = $model->id;
 $this->params['breadcrumbs'][] = ['label' => Yii::t('backend', 'Blog Types'), 'url' => ['index']];

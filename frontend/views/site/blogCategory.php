@@ -4,7 +4,7 @@
 
 use yii\helpers\Html;
 use frontend\models\DC;
-use common\models\BlogTypeSearch;
+use common\models\BlogtypeSearch;
 use common\models\BlogSearch;
 
 define('PAGE_NAME', 'blog');
@@ -12,7 +12,7 @@ $this->title = Yii::t('common', 'Blog');
 $this->params['breadcrumbs'][] = $this->title;
 
 //$category_list = DC::get_menu_brands();
-$searchModel = new BlogTypeSearch();
+$searchModel = new BlogtypeSearch();
 $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 $blog_categories = $dataProvider->getModels();
 
@@ -55,7 +55,7 @@ $blog_list = $dataProvider_blog->query->where([])->all();
                 <iframe width="100%" height="220" src="<?= $blog->main_photo; ?>"
                   allowfullscreen></iframe>
                 <?php } else { ?>
-                  <div class="img-16by9 holder">
+                  <div class="img-4by3 holder">
                     <img class="card-img-top img-fluid"
                       src="/backend/uploads/blog/<?= $blog->main_photo; ?>">
                   </div>
@@ -63,8 +63,8 @@ $blog_list = $dataProvider_blog->query->where([])->all();
               </div>
             </div>
             <div class="card-body">
-              <?php $date_visited = date_create($blog->date_visited); ?>
-              <div class="card-datetime smaller-90"><?php echo date_format($date_visited, "j F Y"); ?></div>
+              <?php $date_published = date_create($blog->date_published); ?>
+              <div class="card-datetime smaller-90"><?php echo date_format($date_published, "j F Y"); ?></div>
               <div class="card-title bold"><?php echo $blog->headline; ?></div>
               <div class="card-detail">
                 <?php

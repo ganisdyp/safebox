@@ -12,9 +12,8 @@ use omgdef\multilingual\MultilingualQuery;
  * @property int $blog_type_id
  * @property string $date_published
  * @property string $main_photo
- * @property int $brand_id
  *
- * @property BlogType $blogType
+ * @property Blogtype $blogType
  * @property BlogLang[] $blogLangs
  * @property BlogPhoto[] $blogPhotos
  */
@@ -35,7 +34,7 @@ class Blog extends \yii\db\ActiveRecord
                 'defaultLanguage' => 'en',
                 'langForeignKey' => 'blog_id',
                 'tableName' => "{{%blog_lang}}",
-                'attributes' => ['headline', 'description','location']
+                'attributes' => ['headline', 'description']
 
             ],
             //  TimestampBehavior::className(),
@@ -60,13 +59,12 @@ class Blog extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['blog_type_id','headline','description','location','participant','date_visited','brand_id'], 'required'],
-            [['blog_type_id','participant','media_type','brand_id'], 'integer'],
-            [['date_published','date_visited'], 'safe'],
-            [['main_photo'], 'string', 'max' => 100],
+            [['blog_type_id','headline','description'], 'required'],
+            [['blog_type_id','media_type'], 'integer'],
+            [['date_published'], 'safe'],
+            [['main_photo','keyword'], 'string', 'max' => 100],
             [['main_photo_file'],'file','skipOnEmpty' => true, 'on' => 'update', 'extensions' => 'jpg,png,gif'],
-            [['blog_type_id'], 'exist', 'skipOnError' => true, 'targetClass' => BlogType::className(), 'targetAttribute' => ['blog_type_id' => 'id']],
-            [['brand_id'], 'exist', 'skipOnError' => true, 'targetClass' => Brand::className(), 'targetAttribute' => ['brand_id' => 'id']],
+            [['blog_type_id'], 'exist', 'skipOnError' => true, 'targetClass' => Blogtype::className(), 'targetAttribute' => ['blog_type_id' => 'id']],
         ];
     }
 
@@ -80,7 +78,8 @@ class Blog extends \yii\db\ActiveRecord
             'blog_type_id' => Yii::t('common', 'Blog Type ID'),
             'date_published' => Yii::t('common', 'Date Published'),
             'main_photo' => Yii::t('common', 'Main Photo'),
-            'brand_id' =>  Yii::t('common', 'Brand ID'),
+            'keyword' => Yii::t('common', 'Keyword'),
+          //  'brand_id' =>  Yii::t('common', 'Brand ID'),
         ];
     }
 
@@ -89,7 +88,7 @@ class Blog extends \yii\db\ActiveRecord
      */
     public function getBlogType()
     {
-        return $this->hasOne(BlogType::className(), ['id' => 'blog_type_id']);
+        return $this->hasOne(Blogtype::className(), ['id' => 'blog_type_id']);
     }
 
     /**
@@ -110,8 +109,5 @@ class Blog extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getBrand()
-    {
-        return $this->hasOne(Brand::className(), ['id' => 'brand_id']);
-    }
+
 }

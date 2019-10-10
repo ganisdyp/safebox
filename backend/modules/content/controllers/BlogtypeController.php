@@ -3,15 +3,15 @@
 namespace backend\modules\content\controllers;
 
 use Yii;
-use common\models\BlogType;
-use backend\modules\content\models\BlogTypeSearch;
+use common\models\Blogtype;
+use backend\modules\content\models\BlogtypeSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\UploadedFile;
 
 /**
- * BlogTypeController implements the CRUD actions for BlogType model.
+ * BlogTypeController implements the CRUD actions for Blogtype model.
  */
 class BlogtypeController extends Controller
 {
@@ -31,12 +31,12 @@ class BlogtypeController extends Controller
     }
 
     /**
-     * Lists all BlogType models.
+     * Lists all Blogtype models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new BlogTypeSearch();
+        $searchModel = new BlogtypeSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -46,7 +46,7 @@ class BlogtypeController extends Controller
     }
 
     /**
-     * Displays a single BlogType model.
+     * Displays a single Blogtype model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -59,13 +59,13 @@ class BlogtypeController extends Controller
     }
 
     /**
-     * Creates a new BlogType model.
+     * Creates a new Blogtype model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new BlogType();
+        $model = new Blogtype();
 
         if ($model->load(Yii::$app->request->post())) {
             $file = UploadedFile::getInstance($model, 'main_photo_file');
@@ -85,7 +85,7 @@ class BlogtypeController extends Controller
     }
 
     /**
-     * Updates an existing BlogType model.
+     * Updates an existing Blogtype model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -122,7 +122,7 @@ class BlogtypeController extends Controller
 
 
     /**
-     * Deletes an existing BlogType model.
+     * Deletes an existing Blogtype model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -145,15 +145,15 @@ class BlogtypeController extends Controller
     }
 
     /**
-     * Finds the BlogType model based on its primary key value.
+     * Finds the Blogtype model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return BlogType the loaded model
+     * @return Blogtype the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = BlogType::find()->multilingual()->where(['blog_type.id' => $id])->one()) !== null) {
+        if (($model = Blogtype::find()->multilingual()->where(['blog_type.id' => $id])->one()) !== null) {
             return $model;
         }
 

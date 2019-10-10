@@ -4,7 +4,7 @@ use yii\helpers\Html;
 
 
 /* @var $this yii\web\View */
-/* @var $model common\models\BlogType */
+/* @var $model common\models\Blogtype */
 
 $this->title = Yii::t('backend', 'Create Blog Category');
 $this->params['breadcrumbs'][] = ['label' => Yii::t('backend', 'Blog Types'), 'url' => ['index']];
