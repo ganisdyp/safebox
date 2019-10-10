@@ -13,9 +13,9 @@ use Yii;
  * @property string $main_photo
  *
  * @property Blog[] $activities
- * @property BlogTypeLang[] $blogTypeLangs
+ * @property BlogtypeLang[] $blogTypeLangs
  */
-class BlogType extends \yii\db\ActiveRecord
+class Blogtype extends \yii\db\ActiveRecord
 {
     public $main_photo_file;
     public function behaviors()
@@ -28,7 +28,7 @@ class BlogType extends \yii\db\ActiveRecord
                     'en' => 'English',
                 ],
                 'requireTranslations' => true,
-                'langClassName' => BlogTypeLang::className(),
+                'langClassName' => BlogtypeLang::className(),
                 'defaultLanguage' => 'en',
                 'langForeignKey' => 'blog_type_id',
                 'tableName' => "{{%blog_type_lang}}",
@@ -88,6 +88,6 @@ class BlogType extends \yii\db\ActiveRecord
      */
     public function getBlogTypeLangs()
     {
-        return $this->hasMany(BlogTypeLang::className(), ['blog_type_id' => 'id']);
+        return $this->hasMany(BlogtypeLang::className(), ['blog_type_id' => 'id']);
     }
 }

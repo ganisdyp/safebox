@@ -5,7 +5,7 @@ use yii\grid\GridView;
 use yii\widgets\Pjax;
 use fedemotta\datatables\DataTables;
 /* @var $this yii\web\View */
-/* @var $searchModel backend\modules\content\models\BlogTypeSearch */
+/* @var $searchModel backend\modules\content\models\BlogtypeSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = Yii::t('backend', 'Blog Categories');

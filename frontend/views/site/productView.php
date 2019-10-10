@@ -25,6 +25,7 @@ define('PAGE_NAME', 'product');
             <li class="breadcrumb-item active"><?php echo $product->name; ?></li>
         </ol>
     </nav>
+    
     <div class="clearfix"></div>
     <?php /*
     <div class="row">
@@ -48,7 +49,7 @@ define('PAGE_NAME', 'product');
                 <iframe width="100%" height="280" src="<?= $product->main_photo;?>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"></iframe>
             <?php } else { ?>
                 <a href="<?= Yii::$app->request->BaseUrl;?>/backend/uploads/product/<?= $product->main_photo; ?>" data-lightbox="trip">
-                <div class="img-16by9 holder">
+                <div class="img-1by1 holder">
                     <img class="card-img-top img-responsive corner-0"
                          src="<?= Yii::$app->request->BaseUrl;?>/backend/uploads/product/<?= $product->main_photo; ?>">
                 </div>

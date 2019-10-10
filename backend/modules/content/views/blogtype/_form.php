@@ -6,7 +6,7 @@ use dosamigos\tinymce\TinyMce;
 use kartik\file\FileInput;
 
 /* @var $this yii\web\View */
-/* @var $model common\models\BlogType */
+/* @var $model common\models\Blogtype */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
@@ -34,7 +34,7 @@ use kartik\file\FileInput;
                     'options' => ['accept' => 'image/*'], 'pluginOptions' => [
                         'showUpload' => false,
                         'initialPreview' => [
-                            ["http://www.designineducation.com/backend/uploads/blog_type/$model->main_photo"]
+                            [Yii::$app->request->BaseUrl."/backend/uploads/blog_type/$model->main_photo"]
                         ],
                         'initialPreviewAsData' => true,
                         'initialCaption' => "$model->main_photo",

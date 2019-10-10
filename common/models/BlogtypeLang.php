@@ -13,9 +13,9 @@ use Yii;
  * @property string $description
  * @property string $language
  *
- * @property BlogType $blogType
+ * @property Blogtype $blogType
  */
-class BlogTypeLang extends \yii\db\ActiveRecord
+class BlogtypeLang extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc
@@ -36,7 +36,7 @@ class BlogTypeLang extends \yii\db\ActiveRecord
             [['description'], 'string'],
             [['name'], 'string', 'max' => 100],
             [['language'], 'string', 'max' => 10],
-            [['blog_type_id'], 'exist', 'skipOnError' => true, 'targetClass' => BlogType::className(), 'targetAttribute' => ['blog_type_id' => 'id']],
+            [['blog_type_id'], 'exist', 'skipOnError' => true, 'targetClass' => Blogtype::className(), 'targetAttribute' => ['blog_type_id' => 'id']],
         ];
     }
 
@@ -59,6 +59,6 @@ class BlogTypeLang extends \yii\db\ActiveRecord
      */
     public function getBlogType()
     {
-        return $this->hasOne(BlogType::className(), ['id' => 'blog_type_id']);
+        return $this->hasOne(Blogtype::className(), ['id' => 'blog_type_id']);
     }
 }

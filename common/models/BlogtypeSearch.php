@@ -5,12 +5,12 @@ namespace common\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use common\models\BlogType;
+use common\models\Blogtype;
 
 /**
- * BlogTypeSearch represents the model behind the search form of `common\models\BlogType`.
+ * BlogtypeSearch represents the model behind the search form of `common\models\Blogtype`.
  */
-class BlogTypeSearch extends BlogType
+class BlogtypeSearch extends Blogtype
 {
     /**
      * @inheritdoc
@@ -41,7 +41,7 @@ class BlogTypeSearch extends BlogType
      */
     public function search($params)
     {
-        $query = BlogType::find();
+        $query = Blogtype::find();
 
         // add conditions that should always apply here
 

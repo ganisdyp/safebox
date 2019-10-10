@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model common\models\BlogType */
+/* @var $model common\models\Blogtype */
 
 $this->title = Yii::t('backend', 'Update Blog Category: {nameAttribute}', [
     'nameAttribute' => $model->id,

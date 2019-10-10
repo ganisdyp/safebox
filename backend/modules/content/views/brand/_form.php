@@ -200,7 +200,7 @@ use common\models\BrandPhoto;
                                 'options' => ['accept' => 'image/*'], 'pluginOptions' => [
                                     'showUpload' => false,
                                     'initialPreview' => [
-                                        ["http://www.designineducation.com/backend/uploads/brand/$model->main_photo"]
+                                        [Yii::$app->request->BaseUrl."/backend/uploads/brand/$model->main_photo"]
                                     ],
                                     'initialPreviewAsData' => true,
                                     'initialCaption' => "$model->main_photo",
@@ -232,7 +232,7 @@ use common\models\BrandPhoto;
                                                 'options' => ['accept' => 'image/*'], 'pluginOptions' => [
                                                     'showUpload' => false,
                                                     'initialPreview' => [
-                                                        ["http://www.designineducation.com/backend/uploads/brand/related_photo/$modelDetail->photo_url"]
+                                                        [Yii::$app->request->BaseUrl."/backend/uploads/brand/related_photo/$modelDetail->photo_url"]
                                                     ],
                                                     'initialPreviewAsData' => true,
                                                     'initialCaption' => "$modelDetail->photo_url",
