@@ -25,6 +25,7 @@ define('PAGE_NAME', 'product');
             <li class="breadcrumb-item active"><?php echo $product->name; ?></li>
         </ol>
     </nav>
+    
     <div class="clearfix"></div>
     <?php /*
     <div class="row">
