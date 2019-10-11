@@ -81,7 +81,7 @@ $product_category = DC::get_menu_product();
           <div class="card card-event">
             <div class="card-image pos-rel">
               <div class="img-4by3 holder">
-                <img class="card-img-top img-fluid" src="../images/home/p-regalia-safebox.jpg">
+                <img class="card-img-top img-fluid" src="<?= Yii::$app->request->BaseUrl;?>/backend/uploads/product_type/<?= $product_c['main_photo']; ?>">
               </div>
             </div>
             <div class="card-body text-center py-0">

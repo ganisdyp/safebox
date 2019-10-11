@@ -25,7 +25,7 @@ define('PAGE_NAME', 'product');
             <li class="breadcrumb-item active"><?php echo $product->name; ?></li>
         </ol>
     </nav>
-    
+
     <div class="clearfix"></div>
     <?php /*
     <div class="row">
@@ -75,11 +75,10 @@ define('PAGE_NAME', 'product');
             <p class="bigger-160 mb-1 text-purple font-weight-normal"><?php echo $product->name; ?></p>
             <div class="row mb-2">
                 <div class="col-md-6 col-12">
-                    <p class="text-muted smaller-90 my-1">
-                        <?php /* <i class="fa fa-group mr-2"></i> */ ?>
-                        <span>Brand: </span>
-                        <?= $product->brand->name . " (" . $product->brand->code . ")"; ?>
-                    </p>
+
+                        <span><?= $product->brand->name . " (" . $product->brand->code . ")"; ?></span>
+
+
                 </div>
 
             </div>
@@ -89,7 +88,7 @@ define('PAGE_NAME', 'product');
             <hr>
 
             <?php /* <i class="fa fa-map mr-2"></i> */ ?>
-            <span>Tags: </span>
+            <span><?= Yii::t('common', 'tag').':' ?></span>
             <?php
             if($product->subcategory->name == '--Not Specified--') {
             //echo "<span title='Subcategory' class='badge badge-dark' style='font-size:11pt; font-weight:normal;'><b>" . $product->subcategory->name . " </b></span> ";

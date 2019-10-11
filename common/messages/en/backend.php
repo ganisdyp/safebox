@@ -18,7 +18,7 @@
  */
 return [
     'Are you sure you want to delete this item?' => '',
-    'Brands' => strtoupper('COURSES'),
+    'Brands' => strtoupper('ฺฺBRANDS'),
     'Create Category' => '',
     'Create Brand' => '',
     'Create Product' => '',
