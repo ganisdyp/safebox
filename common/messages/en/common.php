@@ -71,7 +71,8 @@ return [
     'service_type_1_content' => 'Duis aute irure dolor in reprehenderit in voluptate velit eu fugiat nulla pariatur.',
     'service_type_2_content' => 'Repair Safe and Force Open Safe',
     'service_type_3_content' => 'We have an experienced team of safe installers and movers who are fully trained to safely transport your safes or security products anywhere in Klang Valley. We have all the latest equipment required and ensure as little disruption as possible during the process.',
-
+    'brand' => 'Brand',
+    'tag' => 'Tag',
     'Academic Semester' => '',
     'Academic Year' => '',
     'Blog ID' => '',

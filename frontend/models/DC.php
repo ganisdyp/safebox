@@ -72,7 +72,8 @@ class DC extends Model {
       foreach($product_category as $category){
           $arr_detail = array(
               'text' => $category->name,
-              'link' => Yii::$app->request->BaseUrl.'/site/product-list?id='.$category->id.'&c=all',
+              'link' => Yii::$app->request->BaseUrl.'/site/product-list?id='.$category->id,
+              'main_photo' => $category->main_photo,
               'pagename' => 'product'
           );
           array_push($menu,$arr_detail);

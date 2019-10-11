@@ -242,7 +242,7 @@ use dosamigos\tinymce\TinyMce;
                             'options' => ['accept' => 'image/*'], 'pluginOptions' => [
                                 'showUpload' => false,
                                 'initialPreview' => [
-                                    [Yii::$app->request->BaseUrl."/backend/uploads/blog/$model->main_photo"]
+                                    ["www.safeboxasia.com/backend/uploads/blog/$model->main_photo"]
                                 ],
                                 'initialPreviewAsData' => true,
                                 'initialCaption' => "$model->main_photo",
@@ -288,7 +288,7 @@ use dosamigos\tinymce\TinyMce;
                                         'options' => ['accept' => 'image/*'], 'pluginOptions' => [
                                             'showUpload' => false,
                                             'initialPreview' => [
-                                                [Yii::$app->request->BaseUrl."/backend/uploads/blog/related_photo/$modelDetail->photo_url"]
+                                                ["www.safeboxasia.com/backend/uploads/blog/related_photo/$modelDetail->photo_url"]
                                             ],
                                             'initialPreviewAsData' => true,
                                             'initialCaption' => "$modelDetail->photo_url",
