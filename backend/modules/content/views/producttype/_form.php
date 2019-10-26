@@ -31,7 +31,7 @@ use kartik\file\FileInput;
                     'options' => ['accept' => 'image/*'], 'pluginOptions' => [
                         'showUpload' => false,
                         'initialPreview' => [
-                            [Yii::$app->request->BaseUrl."/backend/uploads/product_type/$model->main_photo"]
+                            ["http://www.safeboxasia.com/backend/uploads/product_type/$model->main_photo"]
                         ],
                         'initialPreviewAsData' => true,
                         'initialCaption' => "$model->main_photo",

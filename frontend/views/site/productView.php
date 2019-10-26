@@ -90,11 +90,6 @@ define('PAGE_NAME', 'product');
             <?php /* <i class="fa fa-map mr-2"></i> */ ?>
             <span><?= Yii::t('common', 'tag').':' ?></span>
             <?php
-            if($product->subcategory->name == '--Not Specified--') {
-            //echo "<span title='Subcategory' class='badge badge-dark' style='font-size:11pt; font-weight:normal;'><b>" . $product->subcategory->name . " </b></span> ";
-            }else{
-                echo "<span title='Subcategory' class='badge badge-dark' style='font-size:11pt; font-weight:normal;'><b>" . $product->subcategory->name . " </b></span> ";
-            }
             if($product->keyword) {
                 $keywords = explode(",", $product->keyword);
                 foreach ($keywords as $keyword) {

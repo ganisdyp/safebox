@@ -36,13 +36,6 @@ $this->params['breadcrumbs'][] = $this->title;
                 'label' => 'Category',
             ],
             [
-                'attribute' => 'subcategory.name',
-                'value' => function ($dataProvider) {
-                    return $dataProvider->subcategory->name;
-                },
-                'label' => 'Theme',
-            ],
-            [
                 'attribute' => 'brand.name',
                 'value' => function ($dataProvider) {
                     return $dataProvider->brand->name;
