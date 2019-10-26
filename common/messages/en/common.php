@@ -10,6 +10,7 @@ return [
     'our_brand' => 'Our Brand',
     'Blog' => 'Blog',
     'Blogs' => 'Blogs',
+    'Latest Blogs' => 'Latest Blogs',
     'Contact' => 'Contact',
     'Contact Us' => 'Contact Us',
     'AllBlogs' => 'All Blogs',

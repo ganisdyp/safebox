@@ -13,20 +13,16 @@ echo '</div>';
       <div class="col-md-6 order-md-2 order-1 text-lg-right text-center my-2">
         <div class="social">
           <a href="#" class="fa-stack mx-1" style="vertical-align: top;">
-            <i class="fas fa-circle fa-stack-2x"></i>
-            <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-facebook-f fa-stack-1x fa-inverse"></i>
           </a>
           <a href="#" class="fa-stack mx-1" style="vertical-align: top;">
-            <i class="fas fa-circle fa-stack-2x"></i>
-            <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
           </a>
           <a href="#" class="fa-stack mx-1" style="vertical-align: top;">
-            <i class="fas fa-circle fa-stack-2x"></i>
-            <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
-          </a>
-          <a href="#" class="fa-stack mx-1" style="vertical-align: top;">
-            <i class="fas fa-circle fa-stack-2x"></i>
-            <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-phone fa-stack-1x fa-inverse"></i>
           </a>
         </div>
       </div>
@@ -36,11 +32,6 @@ echo '</div>';
         <p class="text-uppercase bigger-120 mb-2"><?php echo Yii::t('common', 'Product'); ?></p>
         <ul class="footer-nav nav flex-column align-items-start">
           <li class="nav-item"><a href="#" class="nav-link">Regalia Safebox</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Falcon Safebox</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Lion Safebox</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Executive Table</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Director Table</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Conference Table</a></li>
         </ul>
       </div>
       <div class="col-md-3 smaller-90 my-2">
@@ -54,11 +45,9 @@ echo '</div>';
         </ul>
       </div>
       <div class="col-md-3 smaller-90 my-2">
-        <p class="text-uppercase bigger-120 mb-2"><?php echo Yii::t('common', 'Blog'); ?></p>
+        <p class="text-uppercase bigger-120 mb-2"><?php echo Yii::t('common', 'Latest Blogs'); ?></p>
         <ul class="footer-nav nav flex-column align-items-start">
           <li class="nav-item"><a href="#" class="nav-link">Blog 1</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Blog 2</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Blog 3</a></li>
         </ul>
       </div>
       <div class="col-md-3 smaller-90 my-2">

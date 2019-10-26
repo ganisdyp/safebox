@@ -128,7 +128,7 @@ $filter = '';
                             <iframe width="100%" height="150" src="<?= $product->main_photo;?>" allowfullscreen></iframe>
                             <!-- </div>-->
                         <?php } else { ?>
-                            <div class="img-16by9 holder corner-1">
+                            <div class="img-1by1 holder corner-1">
                                 <img class="card-img-top img-responsive" src="<?php echo Yii::$app->request->BaseUrl; ?>/backend/uploads/product/<?= $product->main_photo; ?>">
                             </div>
                         <?php } ?>
