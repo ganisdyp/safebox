@@ -3,7 +3,6 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use common\models\BrandLang;
-use common\models\Subcategory;
 use common\models\ProductTypeLang;
 use common\models\ProductPhoto;
 //use common\models\ProductOwner;
@@ -261,7 +260,6 @@ use dosamigos\tinymce\TinyMce;
             echo $form->field($model, 'media_type')->hiddenInput()->label(false) ?>
             <div class="col-md-6">
                 <?= $form->field($model, 'product_type_id')->dropDownList(ArrayHelper::map(ProductTypeLang::find()->all(), 'product_type_id', 'name'), ['prompt' => '- Select -'])->label('Product Category') ?>
-                <?= $form->field($model, 'subcategory_id')->dropDownList(ArrayHelper::map(Subcategory::find()->all(), 'id', 'name'), ['prompt' => '- Select -'])->label('Subcategory') ?>
                 <?= $form->field($model, 'brand_id')->dropDownList(ArrayHelper::map(BrandLang::find()->all(), 'brand_id', 'name'), ['prompt' => '- Select -'])->label('Related Brand') ?>
                 <?= $form->field($model, 'keyword')->textInput(['maxlength' => true]) ?>
             </div>

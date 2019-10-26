@@ -15,14 +15,12 @@ use omgdef\multilingual\MultilingualQuery;
  * @property string $date_published
  * @property string $main_photo
  * @property string $keyword
- * @property int $subcategory_id
  * @property int $media_type
  * @property string $from_date
  * @property string $to_date
  *
  * @property Brand $brand
  * @property ProductType $productType
- * @property Subcategory $technique
  * @property ProductLang[] $productLangs
  * @property ProductOwner[] $productOwners
  * @property ProductPhoto[] $productPhotos
@@ -69,15 +67,14 @@ class Product extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['brand_id', 'product_type_id', 'subcategory_id','name', 'description'], 'required'],
-            [['brand_id', 'product_type_id', 'subcategory_id','media_type'], 'integer'],
+            [['brand_id', 'product_type_id','name', 'description'], 'required'],
+            [['brand_id', 'product_type_id','media_type'], 'integer'],
             [['date_published'], 'safe'],
             [['keyword','description'], 'string'],
             [['main_photo', 'name'], 'string', 'max' => 100],
             [['main_photo_file'],'file','skipOnEmpty' => true, 'on' => 'update', 'extensions' => 'jpg,png,gif'],
             [['brand_id'], 'exist', 'skipOnError' => true, 'targetClass' => Brand::className(), 'targetAttribute' => ['brand_id' => 'id']],
             [['product_type_id'], 'exist', 'skipOnError' => true, 'targetClass' => ProductType::className(), 'targetAttribute' => ['product_type_id' => 'id']],
-            [['subcategory_id'], 'exist', 'skipOnError' => true, 'targetClass' => Subcategory::className(), 'targetAttribute' => ['subcategory_id' => 'id']],
         ];
     }
 
@@ -93,7 +90,6 @@ class Product extends \yii\db\ActiveRecord
             'date_published' => Yii::t('common', 'Date Published'),
             'main_photo' => Yii::t('common', 'Main Photo'),
             'keyword' => Yii::t('common', 'Keyword'),
-            'subcategory_id' => Yii::t('common', 'Subcategory ID'),
             'media_type' => Yii::t('common', 'Media Type'),
         ];
     }
@@ -112,14 +108,6 @@ class Product extends \yii\db\ActiveRecord
     public function getProductType()
     {
         return $this->hasOne(ProductType::className(), ['id' => 'product_type_id']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getSubcategory()
-    {
-        return $this->hasOne(Subcategory::className(), ['id' => 'subcategory_id']);
     }
 
     /**

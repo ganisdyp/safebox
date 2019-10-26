@@ -48,7 +48,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
             //  'id',
             'name',
-            'subcategory.name',
             //'brand.name',
             /*[
                 'attribute' => 'brand.name',

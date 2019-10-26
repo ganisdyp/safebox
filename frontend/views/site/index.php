@@ -120,21 +120,21 @@ $product_category = DC::get_menu_product();
     </div>
   </div>
 </div>
-<div class="container my-4">
+<!-- <div class="container my-4">
   <div class="row align-items-center">
     <div class="col-md-6 mb-md-4 mb-2">
       <div class="section-title mt-3 viewpoint-animate d03s" data-animation="fadeIn">
-        <h2 class="letter-spacing-1 font-playfair"><?php echo Yii::t('common', 'Blog'); ?></h2>
+        <h2 class="letter-spacing-1 font-playfair"></h2>
         <hr>
       </div>
     </div>
     <div class="col-md-6 text-right d-md-block d-none">
-      <a href="<?php echo Yii::$app->request->BaseUrl.'/site/blog-category'; ?>" class="btn btn-primary"><?php echo Yii::t('common', 'AllBlogs'); ?></a>
+      <a href="" class="btn btn-primary"></a>
     </div>
-  </div>
-  <div class="row">
-    <?php for ($i = 0; $i < 3; $i++) { ?>
-    <div class="col-lg-4 col-md-6 mb-lg-0 mb-4 viewpoint-animate d03s" data-animation="fadeIn">
+  </div> -->
+  <!-- <div class="row"> -->
+
+      <!--   <div class="col-lg-4 col-md-6 mb-lg-0 mb-4 viewpoint-animate d03s" data-animation="fadeIn">
       <a href="blog-detail.php">
         <div class="card card-event">
           <div class="card-image pos-rel">
@@ -149,18 +149,18 @@ $product_category = DC::get_menu_product();
               Duis aute irure dolor in reprehenderit in voluptate velit eu fugiat nulla pariatur.
             </div>
             <div class="text-center mt-4">
-              <div class="btn btn-outline-dark btn-block px-5"><?php echo Yii::t('common', 'read_more'); ?></div>
+              <div class="btn btn-outline-dark btn-block px-5"></div>
             </div>
           </div>
         </div>
       </a>
-    </div>
-    <?php } ?>
-    <div class="col-12 d-md-none d-block">
-      <a href="<?php echo Yii::$app->request->BaseUrl.'/site/blog-category'; ?>" class="btn btn-primary btn-block"><?php echo Yii::t('common', 'AllBlogs'); ?></a>
-    </div>
-  </div>
-</div>
+    </div> -->
+
+  <!--  <div class="col-12 d-md-none d-block">
+      <a href="" class="btn btn-primary btn-block"></a>
+    </div> -->
+  <!-- </div> -->
+ <!-- </div> -->
 
 <?php /*
 <div class="container">
