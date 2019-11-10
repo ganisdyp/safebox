@@ -20,7 +20,7 @@ return [
     'people joined this blog' => 'people joined this blog',
     'read_more' => 'Read more',
     'more' => 'Read more',
-    'Allright' => '© 2019 Safe Box Thailand. ALL RIGHTS RESERVED.',
+    'Allright' => '© 2019 Safe Box Siam. ALL RIGHTS RESERVED.',
     'site_map' => 'Site map',
 
     // Contact Us

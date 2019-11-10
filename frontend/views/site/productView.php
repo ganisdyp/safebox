@@ -20,7 +20,7 @@ define('PAGE_NAME', 'product');
         <ol class="breadcrumb smaller-90 mb-2">
             <li class="breadcrumb-item"><a href="<?php echo Yii::$app->request->BaseUrl.'/site/index'; ?>"><?php echo Yii::t('common', 'Home');?></a></li>
             <li class="breadcrumb-item"><a href="<?php echo Yii::$app->request->BaseUrl.'/site/product-category'; ?>"><?php echo Yii::t('common', 'Product');?></a></li>
-            <li class="breadcrumb-item bold"><a href="/site/product-category?id=<?php echo $product->productType->id; ?>"><?= $product->productType->name; ?></a>
+            <li class="breadcrumb-item bold"><a href="/site/product-list?id=<?php echo $product->productType->id; ?>"><?= $product->productType->name; ?></a>
             </li>
             <li class="breadcrumb-item active"><?php echo $product->name; ?></li>
         </ol>

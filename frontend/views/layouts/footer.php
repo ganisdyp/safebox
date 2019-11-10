@@ -67,7 +67,7 @@ echo '</div>';
       <div class="col-md-3 smaller-90 my-2">
         <p class="text-uppercase bigger-120 mb-2"><?php echo Yii::t('common', 'Latest Blogs'); ?></p>
         <ul class="footer-nav nav flex-column align-items-start">
-          <li class="nav-item"><a href="#" class="nav-link"><?= $blog_list[0]->headline; ?></a></li>
+          <li class="nav-item"><a href="<?= Yii::$app->request->BaseUrl.'/site/blog-view?id='.$blog_list[0]->id ?>" class="nav-link"><?= $blog_list[0]->headline; ?></a></li>
         </ul>
       </div>
       <div class="col-md-3 smaller-90 my-2">

@@ -20,7 +20,7 @@ return [
     'people joined this blog' => 'ผู้ร่วมกิจกรรม',
     'read_more' => 'อ่านต่อ',
     'more' => 'รายละเอียดเพิ่มเติม',
-    'Allright' => '© 2019 เซฟ บ็อกซ์ ไทยแลนด์. ALL RIGHTS RESERVED.',
+    'Allright' => '© 2019 เซฟ บ็อกซ์ สยาม. ALL RIGHTS RESERVED.',
     'site_map' => 'แผนผังเว็บไซต์',
 
     // Contact Us
