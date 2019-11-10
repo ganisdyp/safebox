@@ -80,7 +80,7 @@ venenatis et at orci.</p>
         </ol>
     </nav>
     <div class="row fadeIn animated d03s mt-3 mb-4">
-        <div class="col-lg-3 order-lg-1 order-2">
+        <div class="col-lg-3">
             <div class="card product-category">
                 <div class="card-header text-center bold">
                     Product Brands
@@ -100,7 +100,7 @@ venenatis et at orci.</p>
                 </div>
             </div>
         </div>
-        <div class="col-lg-9 order-lg-2 order-1">
+        <div class="col-lg-9">
             <div class="row">
                 <?php /*
           <div class="col-12 mb-3">
