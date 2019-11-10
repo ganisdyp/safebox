@@ -1,7 +1,7 @@
 <?php
 return [
     // Navbar and Common text
-    'site_name' => 'เซฟบอกซ์ ไทยแลนด์',
+    'site_name' => 'เซฟบอกซ์ สยาม',
     'Home' => 'หน้าหลัก',
     'About' => 'เกี่ยวกับเรา',
     'Services' => 'บริการ',
@@ -24,9 +24,9 @@ return [
     'site_map' => 'แผนผังเว็บไซต์',
 
     // Contact Us
-    'contact_content' => 'ข้อความหน้าติดต่อเรา',
+    'contact_content' => ' ',
     'address' => 'ที่อยู่',
-    'address_content_1' => '44-2, Jalan Kasuarina 6, Bandar Botanic,',
+    'address_content_1' => 'บริษัท เซฟบ็อกซ์สยาม จำกัด<br>9415 เจปาร์ค 112/118 หมู่ 18<br>ตำบลคลองหนึ่ง อำเภอคลองหลวง<br> ปทุมธานี 12120',
     'address_content_2' => '41200 Klang, Selangor, Malaysia.',
     'phone' => 'โทรศัพท์',
     'email' => 'อีเมล',
@@ -41,14 +41,14 @@ return [
     'message' => 'ข้อความ',
 
     // About
-    'about_title' => 'เกี่ยวกับ เซฟบอกซ์ ไทยแลนด์',
+    'about_title' => 'เกี่ยวกับ เซฟบอกซ์ สยาม',
     'need_q' => 'ต้องการใบเสนอราคา?',
     'vision' => 'วิสัยทัศน์',
-    'vision_content' => 'To be a trusted supplier of office supplies and equipment for individuals, small enterprises, and corporate.',
+    'vision_content' => 'เป็นผู้จัดจำหน่ายที่น่าเชื่อถือในการจัดจำหน่ายอุปกรณ์ที่ใช้ภายในสำนักงานไม่ว่าจะเป็นทั้งอุปกรณ์ที่ใช้งานภายในสำนักงานขนาดเล็กรวมไปถึงสำนักงานบริษัทขนาดใหญ่',
     'mission' => 'ภารกิจ',
-    'mission_content' => 'Provide our customers with good service and good quality goods that will suit their individual needs, as well as excellent after-sales service.',
+    'mission_content' => 'ให้บริการลูกค้าด้วยสินค้าที่มีคุณภาพ เหมาะสมต่อความต้องการของลูกค้ารวมถึงมีบริการหลังการขาย',
     'tag_unique_selling' => 'จุดเด่นของเรา',
-    'why_us' => 'ทำไมต้องเลือก เซฟบอกซ์ ไทยแลนด์',
+    'why_us' => 'ทำไมต้องเลือก เซฟบอกซ์ สยาม',
     'why_point_1' => 'บริการส่งฟรี',
     'why_point_1_content' => 'เนื้อหาเกี่ยวกับหัวข้อแรก',
     'why_point_2' => 'ซัพพอร์ตตลอด 12 ชั่วโมง',
@@ -56,22 +56,24 @@ return [
 
     // Home
     'tag_highq' => 'เซฟบอกซ์เกรดคุณภาพ',
-    'content_about_1' => 'Safe Box Asia is a new company that aims at providing high quality safes and technical services to it\'s clients. Safe Box Asia has began operations on Jan 1, 2018. We will also be a one stop office solution to your business by providing a full comprehensive range of Office Equipment, Office Supplies, Toners & Inks, Business Machines, Office Furniture, Repair Safebox, Force Open Safebox, Safebox Relocation, Safebox Key Duplication.',
-    'content_about_2' => 'We supply to various businesses, schools & other big & small organizations. No matter who you are or what is your needs & requirements you will receive our dedicated customer service & care. We have a group of dedicated team with a vast wealth of knowledge to service you. Last but not least, we aim to be competitive in offering you products which are value for money.',
+    'content_about_1' => '<b><u>เซฟบ็อกซ์สยาม</u></b>  เป็นบริษัทที่ก่อตั้งใหม่โดยมุ่งเน้นการจัดจำหน่ายตู้เซฟที่มี<b>คุณภาพสูง</b> และ <b>การบริการด้านเทคนิค</b>แก่ลูกค้า นอกจากนี้เรายังเป็นศูนย์รวมครบวงจรบริการให้กับลูกค้า ไม่ว่าจะเป็น
+<br><br>•	อุปกรณ์ที่ในสำนักงาน<br>•	เครื่องใช้ในสำนักงาน<br>•	โทนเนอร์และแท้งก์หมึก<br>•	เครื่องตรวจธนบัตร<br>•	เฟอร์นิเจอร์ในสำนักงาน<br>•	การซ่อมแซมตู้เซฟ<br>•	ซ่อมแซมการเปิดตู้เซฟ
+<br>•	การเคลื่อนย้ายตู้เซฟ<br>•	ซ่อมแซมกุญแจที่หาย หรือ ชำรุด',
+    'content_about_2' => ' ',
 
     // service
     'service_title' => 'SAFEBOX RESPRAY',
     'service_content_1' => 'Respray your safe can improving attractiveness of your equipment. We provide the services to respray of the whole piece. This can be useful if you wish to help your safe blend into the background , just update the colour or finish to a more modern look , or ensure it look professional. Some vaults have to be in the public eye , such as jewelers and some other businesses , so your security equipment needs to look the part.',
     'service_content_2' => 'We will work with you to understand your needs and then we will provide you with the best products and services in the industry. Please call (03-33189422) one of our customer service representatives to find out how we can help you.',
-    'our_service' => 'บริการของเรา',
-    'service_content_3' => 'Safe Box Asia delivery and installation team will ensure that your office furniture looks as good as, or even better, than it did on the show floor or in the catalog. With our skills, equipment, and installation process, we will assemble your office as planned. Our installation teams\' goal is to provide you with a great facility and a great customer experience.',
+    'our_service' => 'สินค้าและบริการจากเซฟบ็อกซ์สยาม',
+    'service_content_3' => 'เคลื่อนย้ายตู้เซฟ | เปิดตู้เซฟ | แนะนำการใช้งาน | ซ่อมตู้เซฟ',
     'service_content_4' => 'Installation and Delivery Capabilities of Safe Box Asia:',
-    'service_type_1' => 'SAFE BOX USING MANUAL TRAINING',
-    'service_type_2' => 'SAFE BOX REPAIR',
-    'service_type_3' => 'RELOCATION SERVICE',
-    'service_type_1_content' => 'Duis aute irure dolor in reprehenderit in voluptate velit eu fugiat nulla pariatur.',
-    'service_type_2_content' => 'Repair Safe and Force Open Safe',
-    'service_type_3_content' => 'We have an experienced team of safe installers and movers who are fully trained to safely transport your safes or security products anywhere in Klang Valley. We have all the latest equipment required and ensure as little disruption as possible during the process.',
+    'service_type_1' => 'สอนการใช้งานตู้เซฟแบบหมุนรหัส',
+    'service_type_2' => 'การซ่อมแซมตู้เซฟ',
+    'service_type_3' => 'การเคลื่อนย้ายตู้เซฟ',
+    'service_type_1_content' => 'ทางเซฟบ็อกซ์สยามมีบริการหลังการขายโดยสอนวิธีการใช้งานตู้เซฟแบบหมุนรหัสไม่ว่าจะเป็นการใช้เปิดการใช้งานทั่วไป  การตั้งรหัสใหม่ หรือการใช้งานกุญแจที่มากับรหัสหมุนที่แตกต่างกัน',
+    'service_type_2_content' => 'ในกรณีที่ลูกค้าเกิดปัญหาการใช้งานของตู้เซฟไม่ว่าจะเป็นการลืมรหัส ตั้งรหัสการใช้งานแบบไม่ถูกต้อง   กุญแจหายหรือเกิดชำรุด เปิดตู้ไม่ได้ โดยเรามีช่างเทคนิคที่เชี่ยวชาญในการแก้ไขปัญหาที่จะเกิดขึ้นให้บริการลูกค้า',
+    'service_type_3_content' => 'เรามีทีมงานที่ชำนาญการด้านการติดตั้งและเคลื่อนย้ายตู้เซฟที่ประสบการณ์เชี่ยวชาญด้านการขนส่ง รวมถึงการวางแผนเพื่อรักษาความปลอดภัยของสินค้าในการขนย้ายตู้ พร้อมทั้งมีอุปกรณ์ที่ช่วยในการขนย้ายให้ง่ายขึ้นไม่ว่าที่ใดก็ตามในประเทศไทยเราพร้อมบริการ',
 
     // Product
     'brand' => 'แบรนด์',
