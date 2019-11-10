@@ -57,6 +57,7 @@ class AppAsset extends AssetBundle
         'lib/select2/select2.min.js',
       //  'js/jquery-3.2.1.min.js',
         'js/system.js',
+        'js/main.js',
 
     ];
     public $depends = [

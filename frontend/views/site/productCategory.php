@@ -141,18 +141,9 @@ venenatis et at orci.</p>
                     ?>
                     <div class="col-lg-4 col-md-6 col-12">
                         <div class="card dc-card mb-4 corner-0 z-shadow fadeIn animated d03s">
-                            <a href="<?php echo Yii::$app->request->BaseUrl; ?>/site/product-list?id=<?php echo $selected_category->id; ?>"
-                               class="hover-box">
-                                <div class="media-wrapper corner-1">
-                                    <div class="img-1by1 holder corner-1">
-                                        <img class="card-img-top img-responsive"
-                                             src="<?php echo Yii::$app->request->BaseUrl; ?>/backend/uploads/product_type/<?= $selected_category->main_photo; ?>">
-                                    </div>
-                                    <div class="media-overlay corner-1"></div>
-                                </div>
-                            </a>
+
                             <div class="card-body text-center py-3">
-                                <a href="<?php echo Yii::$app->request->BaseUrl; ?>/site/product-view?id=<?= $selected_category->id; ?>"
+                                <a href="<?php echo Yii::$app->request->BaseUrl; ?>/site/product-list?id=<?= $selected_category->id; ?>"
                                    class="card-title font-weight-normal smaller-90 my-0 block"><?= $selected_category->name; ?></a>
                             </div>
                         </div>

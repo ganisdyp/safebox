@@ -20,7 +20,7 @@ return [
     'people joined this blog' => 'people joined this blog',
     'read_more' => 'Read more',
     'more' => 'Read more',
-    'Allright' => '© 2019 Safe Box Thailand. ALL RIGHTS RESERVED.',
+    'Allright' => '© 2019 Safe Box Siam. ALL RIGHTS RESERVED.',
     'site_map' => 'Site map',
 
     // Contact Us
@@ -32,7 +32,9 @@ return [
     'email' => 'Email',
     'website' => 'Website',
     'send_email' => 'Get In Touch',
-
+    'send_enquiry' => 'An Enquiry',
+    'enquiry_about' => 'Enquiry about',
+    'enquiry_subject'=>'Enquiry Subject',
     // Contact Us Form
     'company_name' => 'Company Name',
     'contact_person' => 'Contact Person',

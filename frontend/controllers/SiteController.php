@@ -13,6 +13,7 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
+use frontend\models\EnquiryForm;
 
 /**
  * Site controller
@@ -75,7 +76,7 @@ class SiteController extends Controller
     {
         Yii::$app->view->registerMetaTag([
             'name' => 'description',
-            'content' => 'Design for fostering active learning and innovative skills of students in higher education'
+            'content' => 'Safe Box Siam is a new company that aims at providing high quality safes and technical services to its clients. We will also be the one stop office solution to your business by providing a full comprehensive range of equipments'
         ]);
 
         return $this->render('index');
@@ -158,7 +159,26 @@ class SiteController extends Controller
             ]);
         }
     }
+    public function actionEnquiry()
+    {
+        $model = new EnquiryForm();
 
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+         //   if ($model->sendEmail('safeboxsiam@gmail.com') && $model->sendEmail('info@safeboxasia.com')) {
+            if ($model->sendEmail('ganis.dyp@gmail.com')) {
+                Yii::$app->session->setFlash('successEnquiry');
+                return $this->redirect('product-view?id='.$model->product_id);
+            } else {
+                Yii::$app->session->setFlash('errorEnquiry');
+                return $this->refresh();
+            }
+        } else {
+            return $this->renderAjax('enquiry', [
+                'model' => $model,
+                'product_id' => Yii::$app->request->get('product_id')
+            ]);
+        }
+    }
     /**
      * Displays about page.
      *

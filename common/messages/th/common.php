@@ -20,7 +20,7 @@ return [
     'people joined this blog' => 'ผู้ร่วมกิจกรรม',
     'read_more' => 'อ่านต่อ',
     'more' => 'รายละเอียดเพิ่มเติม',
-    'Allright' => '© 2019 เซฟ บ็อกซ์ ไทยแลนด์. ALL RIGHTS RESERVED.',
+    'Allright' => '© 2019 เซฟ บ็อกซ์ สยาม. ALL RIGHTS RESERVED.',
     'site_map' => 'แผนผังเว็บไซต์',
 
     // Contact Us
@@ -32,7 +32,9 @@ return [
     'email' => 'อีเมล',
     'website' => 'เว็บไซต์',
     'send_email' => 'ฝากข้อความ',
-
+    'send_enquiry' => 'สอบถามข้อมูล',
+    'enquiry_about' => 'สอบถามข้อมูลเกี่ยวกับ',
+    'enquiry_subject'=>'หัวข้อในการสอบถาม',
     // Contact Us Form
     'company_name' => 'บริษัท',
     'contact_person' => 'ผู้ติดต่อ',

@@ -22,15 +22,17 @@ AppAsset::register($this);
   <?= Html::csrfMetaTags() ?>
   <title><?= Html::encode($this->title); ?></title>
   <?php $this->head() ?>
-  <meta name="google-site-verification" content="5VD4-oGZ4XNZg131M63y8at0hTC6rBYBbOClIMJa4vk" />
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119537596-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date())
-    gtag('config', 'UA-119537596-1');
-  </script>
+    <meta name="google-site-verification" content="bWJzp1M0m4qpJozmEFu5iQj6nfnzpLYPE9tG0bb18fI" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151865490-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-151865490-1');
+    </script>
+
 </head>
 <body>
 <?php $this->beginBody() ?>
