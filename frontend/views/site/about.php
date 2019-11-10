@@ -42,7 +42,7 @@ define('PAGE_NAME', 'about');
       </div>
     </div>
     <div class="col-lg-5 col-md-4 text-center mt-lg-0 mt-3 viewpoint-animate d03s" data-animation="fadeIn">
-      <img src="../images/home/ss1-to-5-ndt-6-1.png" class="img-fluid" alt="safebox thailand">
+      <img src="../images/about/about.jpg" class="img-fluid" alt="safebox thailand">
     </div>
   </div>
 </div>
@@ -111,14 +111,14 @@ define('PAGE_NAME', 'about');
           <img src="../images/icons/shopping-bag-outline.svg" height="54px;">
         </div>
         <p class="text-uppercase bold bigger-110 my-3"><?php echo Yii::t('common', 'why_point_1'); ?></p>
-        <p><?php echo Yii::t('common', 'why_point_1_content'); ?></p>
+       
       </div>
       <div class="col-md-4 text-center mt-4 good-point viewpoint-animate d03s" data-animation="fadeIn">
         <div class="good-icon shadow">
           <img src="../images/icons/heart-outline.svg" height="54px;">
         </div>
         <p class="text-uppercase bold bigger-110 my-3"><?php echo Yii::t('common', 'why_point_2'); ?></p>
-        <p><?php echo Yii::t('common', 'why_point_2_content'); ?></p>
+        
       </div>
     </div>
   </div>

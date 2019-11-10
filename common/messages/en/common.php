@@ -1,7 +1,7 @@
 <?php
 return [
     // Navbar and Common text
-    'site_name' => 'Safe Box Thailand',
+    'site_name' => 'Safe Box Siam',
     'Home' => 'Home',
     'About' => 'About',
     'Services' => 'Services',
@@ -24,9 +24,9 @@ return [
     'site_map' => 'Site map',
 
     // Contact Us
-    'contact_content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et aliqua.',
+    'contact_content' => ' ',
     'address' => 'Address',
-    'address_content_1' => '44-2, Jalan Kasuarina 6, Bandar Botanic,',
+    'address_content_1' => 'Safe Box Siam co.,ltd<br> 9415 Jpark 112/118 Moo 18,<br> Khlong Neung, Khlong Luang,<br> Pathum Thani, 12120',
     'address_content_2' => '41200 Klang, Selangor, Malaysia.',
     'phone' => 'Phone',
     'email' => 'Email',
@@ -41,7 +41,7 @@ return [
     'message' => 'Message',
 
     // About
-    'about_title' => 'About Safe Box Thailand',
+    'about_title' => 'About Safe Box Siam',
     'need_q' => 'NEED A QUOTE?',
     'vision' => 'Vision',
     'vision_content' => 'To be a trusted supplier of office supplies and equipment for individuals, small enterprises, and corporate.',
@@ -56,22 +56,22 @@ return [
     
     // Home
     'tag_highq' => 'high quality safes',
-    'content_about_1' => 'Safe Box Asia is a new company that aims at providing high quality safes and technical services to it\'s clients. Safe Box Asia has began operations on Jan 1, 2018. We will also be a one stop office solution to your business by providing a full comprehensive range of Office Equipment, Office Supplies, Toners & Inks, Business Machines, Office Furniture, Repair Safebox, Force Open Safebox, Safebox Relocation, Safebox Key Duplication.',
-    'content_about_2' => 'We supply to various businesses, schools & other big & small organizations. No matter who you are or what is your needs & requirements you will receive our dedicated customer service & care. We have a group of dedicated team with a vast wealth of knowledge to service you. Last but not least, we aim to be competitive in offering you products which are value for money.',
+    'content_about_1' => '<b><u>Safe Box Siam</u></b> is a new company that aims at providing <b>high quality safes</b> and <b>technical services</b> to its clients. We will also be the one stop office solution to your business by providing a full comprehensive range of
+<br><br>•	Office Equipment,<br>•	Office Supplies,<br>•	Toners & Inks,<br>•	Business Machines,<br>•	Office Furniture,<br>•	Repair Safebox,<br>•	Force Open Safebox,<br>•	Safebox Relocation,<br>•	Safebox Key Duplication',
+    'content_about_2' => ' ',
 
     // service
     'service_title' => 'SAFEBOX RESPRAY',
     'service_content_1' => 'Respray your safe can improving attractiveness of your equipment. We provide the services to respray of the whole piece. This can be useful if you wish to help your safe blend into the background , just update the colour or finish to a more modern look , or ensure it look professional. Some vaults have to be in the public eye , such as jewelers and some other businesses , so your security equipment needs to look the part.',
     'service_content_2' => 'We will work with you to understand your needs and then we will provide you with the best products and services in the industry. Please call (03-33189422) one of our customer service representatives to find out how we can help you.',
-    'our_service' => 'Our Service',
-    'service_content_3' => 'Safe Box Asia delivery and installation team will ensure that your office furniture looks as good as, or even better, than it did on the show floor or in the catalog. With our skills, equipment, and installation process, we will assemble your office as planned. Our installation teams\' goal is to provide you with a great facility and a great customer experience.',
-    'service_content_4' => 'Installation and Delivery Capabilities of Safe Box Asia:',
+    'our_service' => 'Our Product & Services',
+    'service_content_3' => ' ',
     'service_type_1' => 'SAFE BOX USING MANUAL TRAINING',
     'service_type_2' => 'SAFE BOX REPAIR',
     'service_type_3' => 'RELOCATION SERVICE',
-    'service_type_1_content' => 'Duis aute irure dolor in reprehenderit in voluptate velit eu fugiat nulla pariatur.',
-    'service_type_2_content' => 'Repair Safe and Force Open Safe',
-    'service_type_3_content' => 'We have an experienced team of safe installers and movers who are fully trained to safely transport your safes or security products anywhere in Klang Valley. We have all the latest equipment required and ensure as little disruption as possible during the process.',
+    'service_type_1_content' => 'Safe Box Siam also have after sales services. How To Use Safe Box Manual Training, Free for customers and feel free to contact.',
+    'service_type_2_content' => 'In case that you got problem to using the safe, whether forgetting the password Incorrect usage code set Lost or damaged keys Can\'t open the cabinet We have technicians who are expert in solving problems that will occur to serve customers.',
+    'service_type_3_content' => 'We have an experienced team of safe installers and movers who are fully trained to safely transport your safes or security products anywhere in Thailand. We have all the latest equipment required and ensure as little disruption as possible during the process.',
     'brand' => 'Brand',
     'tag' => 'Tag',
     'Academic Semester' => '',

@@ -3,7 +3,7 @@
 use frontend\models\DC;
 use common\models\BlogSearch;
 use common\models\ProductTypeSearch;
-
+use common\models\BrandSearch;
 /* @var $this yii\web\View */
 /* Yii::$app->db->open();*/
 $this->title = Yii::t('common', 'Home');
@@ -12,6 +12,8 @@ $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 define('PAGE_NAME', 'index');
 
 $product_category = DC::get_menu_product();
+$brands = DC::get_menu_brands();
+
 // echo '<pre>';
 // print_r($product_category);
 // echo '</pre>';
@@ -26,13 +28,13 @@ $product_category = DC::get_menu_product();
       </ol>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img class="d-block w-100" src="../images/home/Safe-Box-Asia.jpg">
+          <img class="d-block w-100" src="../images/home/banner-01.png">
         </div>
         <div class="carousel-item">
-          <img class="d-block w-100" src="../images/home/Safe-Box-Asia-Table.jpg">
+          <img class="d-block w-100" src="../images/home/banner-01.png">
         </div>
         <div class="carousel-item">
-          <img class="d-block w-100" src="../images/home/Falcon-Safebox.jpg">
+          <img class="d-block w-100" src="../images/home/banner-01.png">
         </div>
       </div>
       <a class="carousel-control-prev" href="#carouselHero" role="button" data-slide="prev">
@@ -48,44 +50,45 @@ $product_category = DC::get_menu_product();
   <div class="container mt-5">
     <div class="row">
       <div class="col-lg-4 text-lg-right text-center">
-        <img src="../images/home/ss1-to-5-ndt-6-1.png" class="img-fluid" alt="safebox thailand">
+        <img src="../images/about/about.jpg" class="img-fluid" alt="safebox thailand">
       </div>
       <div class="col-lg-8 mt-lg-0 mt-4">
         <span class="product-tag bg-blue-light viewpoint-animate d03s" data-animation="fadeInDown"><?php echo Yii::t('common', 'tag_highq'); ?></span>
-        <h2 class="page-title my-3 viewpoint-animate d03s" data-animation="fadeInDown"><?php echo Yii::t('common', 'site_name'); ?></h2>
+       <!-- <h2 class="page-title my-3 viewpoint-animate d03s" data-animation="fadeInDown"></h2> -->
         <div class="product-detail mt-4 mb-lg-4 mb-3 viewpoint-animate d03s" data-animation="fadeIn">
           <?php 
             echo '<p>'.Yii::t('common', 'content_about_1').'</p>';
             echo '<p>'.Yii::t('common', 'content_about_2').'</p>';
           ?>
         </div>
-        <a href="product-detail.php" class="btn btn-primary"><?php echo Yii::t('common', 'more'); ?></a>
+        <!--<a href="product-detail.php" class="btn btn-primary"></a> -->
       </div>
     </div>
   </div>
 </div>
+    <div class="bg-blue-dark">
 <div class="container">
   <div class="row py-5">
     <div class="col-12 mb-3">
       <div class="section-title text-center mt-3 viewpoint-animate d03s" data-animation="fadeIn">
-        <h2 class="letter-spacing-1 font-playfair"><?php echo Yii::t('common', 'our_product'); ?></h2>
+        <h2 class="letter-spacing-1 font-playfair text-white"><?php echo Yii::t('common', 'our_brand'); ?></h2>
         <hr class="mx-auto">
       </div>
     </div>
-    <?php for ($i = 0; $i < count($product_category); $i++) {
-      $product_c = $product_category[$i];
+    <?php for ($i = 0; $i < count($brands); $i++) {
+      $brand = $brands[$i];
       // print_r($product_c);
       ?>
       <div class="col-lg-4 col-md-6 mb-4">
-        <a href="<?php echo $product_c['link']; ?>">
+        <a href="<?php echo $brand['link']; ?>">
           <div class="card card-event">
             <div class="card-image pos-rel">
               <div class="img-4by3 holder">
-                <img class="card-img-top img-fluid" src="<?= Yii::$app->request->BaseUrl;?>/backend/uploads/product_type/<?= $product_c['main_photo']; ?>">
+                <img class="card-img-top img-fluid" src="<?= Yii::$app->request->BaseUrl;?>/backend/uploads/brand/<?= $brand['main_photo']; ?>">
               </div>
             </div>
             <div class="card-body text-center py-0">
-              <div class="card-title bold"><?php echo $product_c['text']; ?></div>
+              <div class="card-title bold"><?php echo $brand['text']; ?></div>
             </div>
           </div>
         </a>
@@ -93,33 +96,8 @@ $product_category = DC::get_menu_product();
     <?php } ?>
   </div>
 </div>
-<div class="bg-blue-dark">
-  <div class="container py-4">
-    <div class="row justify-content-between">
-      <div class="col-12">
-        <div class="section-title text-center mt-3 viewpoint-animate d03s" data-animation="fadeIn">
-          <h2 class="letter-spacing-1 font-playfair text-white"><?php echo Yii::t('common', 'our_brand'); ?></h2>
-          <hr class="mx-auto">
-        </div>
-      </div>
-      <div class="col-md-3 mb-lg-0 mb-3">
-        <a href="/site/product-category/">
-          <img src="../images/home/logo-regalia-white.png" class="img-fluid" alt="safebox thailand regalia">
-        </a>
-      </div>
-      <div class="col-md-3 mb-lg-0 mb-3">
-        <a href="/site/product-category/">
-          <img src="../images/home/logo-falcon-safe.png" class="img-fluid" alt="safebox thailand falcon">
-        </a>
-      </div>
-      <div class="col-md-3 mb-lg-0 mb-3">
-        <a href="/site/product-category/">
-          <img src="../images/home/logo-lion-steelworks.png" class="img-fluid" alt="safebox thailand lion steelworks">
-        </a>
-      </div>
-    </div>
-  </div>
 </div>
+
 <!-- <div class="container my-4">
   <div class="row align-items-center">
     <div class="col-md-6 mb-md-4 mb-2">

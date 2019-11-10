@@ -53,14 +53,20 @@ class ContactForm extends Model
     public function sendEmail($email)
     {
 
-     //return $this->name." ".$email." ".$this->email." ".$this->body;
+        $company_name = $this->company_name;
+        $contact_person = $this->name;
+        $tel = $this->tel;
+        $full_body = '<html><body>';
+        $full_body .= '<b>' . Yii::t('common', 'company_name') . ':</b> ' . $company_name . '<br>' .
+            '<b>' . Yii::t('common', 'contact_person') . ':</b> ' . $contact_person . '<br>' .
+            '<b>' . Yii::t('common', 'phone_number') . ':</b> ' . $tel . '<br><hr><p>' . $this->body . '</p>';
+        $full_body .= '</body></html>';
 
-     //   print_r($this);
         return Yii::$app->mailer->compose()
             ->setTo($email)
             ->setFrom([$this->email => $this->name])
             ->setSubject($this->subject)
-            ->setTextBody($this->body)
+            ->setHtmlBody($full_body)
             ->send();
     }
 }

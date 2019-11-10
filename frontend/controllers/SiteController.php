@@ -144,9 +144,7 @@ class SiteController extends Controller
 
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
 
-            if ($model->sendEmail('dchudasri@yahoo.com')) {
-           //     if ($model->sendEmail('ganis.dyp@gmail.com')) {
-                // echo $model->sendEmail('info@designineducation.com');
+            if ($model->sendEmail('safeboxsiam@gmail.com') && $model->sendEmail('info@safeboxasia.com')) {
                 Yii::$app->session->setFlash('successContact');
                 return $this->refresh();
             } else {
@@ -156,7 +154,7 @@ class SiteController extends Controller
             }
         } else {
             return $this->render('contact', [
-                'model' => $model,
+                'model' => $model
             ]);
         }
     }
@@ -199,6 +197,16 @@ class SiteController extends Controller
     public function actionProductList()
     {
         return $this->render('productList');
+    }
+
+    /**
+     * Displays product view page.
+     *
+     * @return mixed
+     */
+    public function actionProductModel()
+    {
+        return $this->render('productModel');
     }
 
     /**

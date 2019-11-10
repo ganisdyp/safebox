@@ -49,13 +49,15 @@ class DC extends Model {
   public static function get_menu_brands() {
       $searchModel = new BrandSearch();
       $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-      $brands = $dataProvider->query->where([])->orderBy(['code'=>SORT_ASC])->all();
+      $brands = $dataProvider->query->where(['<>','code', '--'])->orderBy(['code'=>SORT_ASC])->all();
       $menu = array();
       foreach($brands as $brand){
           $arr_detail = array(
+              'id' => $brand->id,
               'text' => $brand->name,
               'code' => $brand->code,
-              'link' => Yii::$app->request->BaseUrl.'/site/brand-view?c='.$brand->id,
+              'link' => Yii::$app->request->BaseUrl.'/site/product-category?id='.$brand->id,
+              'main_photo' => $brand->main_photo,
               'pagename' => 'brand'
           );
           array_push($menu,$arr_detail);
