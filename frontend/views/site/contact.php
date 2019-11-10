@@ -14,8 +14,18 @@ define('PAGE_NAME', 'contact');
 ?>
 <div id="contact-page" class="container mb-5 pb-4">
   <div class="row">
+      <div class="col-12">
+          <div class="section-title text-center viewpoint-animate d03s" data-animation="fadeInDown">
+              <h2 class="letter-spacing-1 font-playfair"><?php echo Yii::t('common', 'Contact Us'); ?></h2>
+              <hr class="mx-auto">
+          </div>
+          <div class="mt-4 viewpoint-animate d03s" data-animation="fadeIn">
+              <?php
+              echo '<center><p>'.Yii::t('common', 'service_content_3').'</p></center>';
+              ?>
+          </div>
+      </div>
     <div class="offset-md-3 col-md-6 text-center mb-4 viewpoint-animate d03s" data-animation="fadeInDown">
-      <h2 class="page-title"><?php echo Yii::t('common', 'Contact Us'); ?></h2>
       <div class="my-4"><?php echo Yii::t('common', 'contact_content'); ?></div>
     </div>
     <div class="col-md-4 text-center mb-2 fadeIn animated d03s">

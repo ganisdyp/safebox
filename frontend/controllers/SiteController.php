@@ -173,7 +173,7 @@ class SiteController extends Controller
                 return $this->refresh();
             }
         } else {
-            return $this->renderAjax('enquiry', [
+            return $this->render('enquiry', [
                 'model' => $model,
                 'product_id' => Yii::$app->request->get('product_id')
             ]);
