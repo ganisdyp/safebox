@@ -32,7 +32,9 @@ return [
     'email' => 'อีเมล',
     'website' => 'เว็บไซต์',
     'send_email' => 'ฝากข้อความ',
-
+    'send_enquiry' => 'สอบถามข้อมูล',
+    'enquiry_about' => 'สอบถามข้อมูลเกี่ยวกับ',
+    'enquiry_subject'=>'หัวข้อในการสอบถาม',
     // Contact Us Form
     'company_name' => 'บริษัท',
     'contact_person' => 'ผู้ติดต่อ',

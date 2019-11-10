@@ -32,7 +32,9 @@ return [
     'email' => 'Email',
     'website' => 'Website',
     'send_email' => 'Get In Touch',
-
+    'send_enquiry' => 'An Enquiry',
+    'enquiry_about' => 'Enquiry about',
+    'enquiry_subject'=>'Enquiry Subject',
     // Contact Us Form
     'company_name' => 'Company Name',
     'contact_person' => 'Contact Person',
