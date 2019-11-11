@@ -20,7 +20,7 @@ return [
                 ]
             ],
             'googleAnalytics' => [ // false by default
-                'id' => 'UA-119537596-1',
+                'id' => 'UA-151865490-1',
             ],
             'ownStat' => true, //false by default
             'ownStatCookieId' => 'yii2_counter_id', // 'yii2_counter_id' default

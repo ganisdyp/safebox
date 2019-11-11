@@ -47,27 +47,44 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
 
             //  'id',
-            'name',
+
             //'brand.name',
-            /*[
+            [
                 'attribute' => 'brand.name',
                 'value' => function ($model) {
                     $name_en = $model->brand->getBrandLangs()->where(['brand_lang.brand_id' => $model->brand_id, 'brand_lang.language' => 'en'])->one();
-                    $name_th = $model->brand->getBrandLangs()->where(['brand_lang.brand_id' => $model->brand_id, 'brand_lang.language' => 'th'])->one();
-                    return $name_en->name." (".$name_th->name.")";
+                   // $name_th = $model->brand->getBrandLangs()->where(['brand_lang.brand_id' => $model->brand_id, 'brand_lang.language' => 'th'])->one();
+                    return $name_en->name;
 
                 },
                 'label' => 'Brand',
-            ], */
+            ],
             [
                 'attribute' => 'productType.name',
                 'value' => function ($model) {
                     $name_en = $model->productType->getProductTypeLangs()->where(['product_type_lang.product_type_id' => $model->product_type_id, 'product_type_lang.language' => 'en'])->one();
-                    $name_th = $model->productType->getProductTypeLangs()->where(['product_type_lang.product_type_id' => $model->product_type_id, 'product_type_lang.language' => 'th'])->one();
-                    return $name_en->name . " (" . $name_th->name . ")";
+                  //  $name_th = $model->productType->getProductTypeLangs()->where(['product_type_lang.product_type_id' => $model->product_type_id, 'product_type_lang.language' => 'th'])->one();
+                    return $name_en->name;
 
                 },
                 'label' => 'Category',
+            ],
+            'name',
+            [
+                'attribute' => 'description',
+                'value' => function ($model) {
+                    return $model->description;
+                },
+                'label' => 'Description (EN)',
+                'format' => 'html'
+            ],
+            [
+                'attribute' => 'description_th',
+                'value' => function ($model) {
+                    return $model->description_th;
+                },
+                'label' => 'Description (TH)',
+                'format' => 'html'
             ],
             'date_published',
 
@@ -93,7 +110,7 @@ $this->params['breadcrumbs'][] = $this->title;
     foreach ($related_photos as $photo) {
 
         echo Html::img(Yii::$app->getHomeUrl() . 'uploads/product/related_photo/' . $photo->photo_url,
-                ['class' => 'thumbnail inline', 'width' => '100']) . " ";
+                ['class' => 'thumbnail inline', 'height' => '150']) . " ";
     }
 
 

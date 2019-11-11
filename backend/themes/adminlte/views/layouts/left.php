@@ -33,6 +33,7 @@
                     ['label' => 'Menu for Admin', 'options' => ['class' => 'header']],
                     ['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest],
                     [
+                            'active'=>true,
                         'label' => 'Content Management',
                         'icon' => 'edit',
                         'url' => '#',
@@ -46,21 +47,23 @@
                                 ],
                             ],
                             [
+                                    'active' => true,
                                 'label' => 'Products',
                                 'icon' => 'file-photo-o',
                                 'url' => '#',
                                 'items' => [
-                                    ['label' => 'Categories', 'icon' => 'plus', 'url' => Yii::$app->getHomeUrl().'content/producttype/index',],
+                                    ['label' => 'Product categories', 'icon' => 'plus', 'url' => Yii::$app->getHomeUrl().'content/producttype/index',],
                                     ['label' => 'Manage products', 'icon' => 'th-large', 'url' => Yii::$app->getHomeUrl().'content/product/index',],
                                     //  ['label' => 'Manage product profiles', 'icon' => 'circle-o', 'url' => '#',],
                                 ],
                             ],
                             [
+                                    'active'=>true,
                                 'label' => 'Blogs',
                                 'icon' => 'bullhorn',
                                 'url' => '#',
                                 'items' => [
-                                    ['label' => 'Categories', 'icon' => 'plus', 'url' => Yii::$app->getHomeUrl().'content/blogtype/index',],
+                                    ['label' => 'Blog categories', 'icon' => 'plus', 'url' => Yii::$app->getHomeUrl().'content/blogtype/index',],
                                     ['label' => 'Manage blogs', 'icon' => 'th-large', 'url' => Yii::$app->getHomeUrl().'content/blog/index',],
                                     // ['label' => 'Manage activites photos', 'icon' => 'circle-o', 'url' => '#',],
                                 ],

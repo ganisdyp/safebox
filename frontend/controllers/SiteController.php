@@ -164,8 +164,8 @@ class SiteController extends Controller
         $model = new EnquiryForm();
 
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-         //   if ($model->sendEmail('safeboxsiam@gmail.com') && $model->sendEmail('info@safeboxasia.com')) {
-            if ($model->sendEmail('ganis.dyp@gmail.com')) {
+            if ($model->sendEmail('safeboxsiam@gmail.com') && $model->sendEmail('info@safeboxasia.com')) {
+         //   if ($model->sendEmail('ganis.dyp@gmail.com')) {
                 Yii::$app->session->setFlash('successEnquiry');
                 return $this->redirect('product-view?id='.$model->product_id);
             } else {

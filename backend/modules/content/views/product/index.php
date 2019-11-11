@@ -26,7 +26,24 @@ $this->params['breadcrumbs'][] = $this->title;
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
+            ['attribute' => 'main_photo',
+                'format' => 'html',
+                'value' => function ($dataProvider) {
+                    /*  $path_parts = pathinfo($dataProvider->main_photo);
+                      $extension = $path_parts['extension'];*/
 
+                    $media_type = $dataProvider->media_type;
+                    if ($media_type == 1) {
+
+                        return '<center>'.Html::img(Yii::$app->getHomeUrl() . 'uploads/product/youtube-video-icon.png',
+                                ['class' => 'thumbnail', 'height' => '100']).'</center>';
+                    } else {
+                        return '<center>'.Html::img(Yii::$app->getHomeUrl() . 'uploads/product/' . $dataProvider->main_photo,
+                                ['class' => 'thumbnail', 'height' => '100']).'</center>';
+                    }
+
+                }
+            ],
             'name',
             [
                 'attribute' => 'productType.name',
@@ -45,24 +62,7 @@ $this->params['breadcrumbs'][] = $this->title;
             //  'academic_year',
             //'academic_semester',
             //'date_published',
-            ['attribute' => 'main_photo',
-                'format' => 'html',
-                'value' => function ($dataProvider) {
-                    /*  $path_parts = pathinfo($dataProvider->main_photo);
-                      $extension = $path_parts['extension'];*/
 
-                    $media_type = $dataProvider->media_type;
-                    if ($media_type == 1) {
-
-                        return Html::img(Yii::$app->getHomeUrl() . 'uploads/product/youtube-video-icon.png',
-                            ['class' => 'thumbnail', 'width' => '100']);
-                    } else {
-                        return Html::img(Yii::$app->getHomeUrl() . 'uploads/product/' . $dataProvider->main_photo,
-                            ['class' => 'thumbnail', 'width' => '100']);
-                    }
-
-                }
-            ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

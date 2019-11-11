@@ -34,6 +34,12 @@ $product = $dataProvider->query->where(['id' => $product_id])->one();
       <h4 class="mb-3"><?php echo Yii::t('common', 'send_enquiry');?></h4>
       <?php $form = ActiveForm::begin(['id' => 'enquiry-form']); ?>
       <div class="row">
+          <div class="col-lg-8">
+              <div class="form-group">
+                  <label><?php echo Yii::t('common', 'subject'); ?></label>
+                  <?= $form->field($model, 'subject')->textInput(['autofocus' => true, 'class' => 'form-control', 'max-length' => '40','value'=>Yii::t('common','enquiry_about').' '.$product->name, 'placeholder' => Yii::t('common', 'subject').' *', 'aria-required' => true])->label(false) ?>
+              </div>
+          </div>
         <div class="col-lg-6 col-md-6">
           <div class="form-group">
             <label><?php echo Yii::t('common', 'contact_person'); ?></label>
@@ -58,12 +64,6 @@ $product = $dataProvider->query->where(['id' => $product_id])->one();
                   <?= $form->field($model, 'address')->textInput(['autofocus' => true, 'class' => 'form-control', 'max-length' => '30', 'placeholder' => Yii::t('common', 'address').' (Optional)'])->label(false) ?>
               </div>
           </div>
-        <div class="col-lg-8">
-          <div class="form-group">
-            <label><?php echo Yii::t('common', 'subject'); ?></label>
-            <?= $form->field($model, 'subject')->textInput(['autofocus' => true, 'class' => 'form-control', 'max-length' => '40','value'=>Yii::t('common','enquiry_about').' '.$product->name, 'placeholder' => Yii::t('common', 'subject').' *', 'aria-required' => true])->label(false) ?>
-          </div>
-        </div>
       </div>
 
       <div class="form-group">

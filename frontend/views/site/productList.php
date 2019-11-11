@@ -95,6 +95,7 @@ $filter = '';
     </nav>
     <div class="row">
         <div class="col-12 fadeIn animated d03s">
+            <img src="">
             <p class="h4 bold mb-2"><?= $product_category->name; ?></p>
             <div class=""><?= $product_category->description; ?></div>
         </div>

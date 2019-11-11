@@ -44,10 +44,10 @@ use dosamigos\tinymce\TinyMce;
             </ul>
         </div>
         <!-- Tab content -->
-        <div class="tab-content col-md-12">
+        <div class="tab-content col-md-6">
             <div id="english" class="tab-pane fade in active">
                 <br>
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
                 </div>
                 <div class="col-md-12">
@@ -109,7 +109,7 @@ use dosamigos\tinymce\TinyMce;
             </div>
             <div id="thai" class="tab-pane fade">
                 <br>
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <?= $form->field($model, 'name_th')->textInput(['maxlength' => true]) ?>
                 </div>
                 <div class="col-md-12">
@@ -170,6 +170,17 @@ use dosamigos\tinymce\TinyMce;
                 </div>
             </div>
         </div>
+        <div class="col-md-6">
+            <div class="col-md-12">
+                <br>
+                <?= $form->field($model, 'brand_id')->dropDownList(ArrayHelper::map(BrandLang::find()->all(), 'brand_id', 'name'), ['prompt' => '- Select -'])->label('Related Brand') ?>
+            </div>
+            <div class="col-md-12">
+                <?= $form->field($model, 'product_type_id')->dropDownList(ArrayHelper::map(ProductTypeLang::find()->all(), 'product_type_id', 'name'), ['prompt' => '- Select -'])->label('Product Category') ?>
+            </div>
+            <div class="col-md-12"><?= $form->field($model, 'keyword')->textInput(['maxlength' => true]) ?>
+            </div>
+        </div>
     </div>
     <div class="row">
         <div class="col-md-12">
@@ -185,7 +196,7 @@ use dosamigos\tinymce\TinyMce;
                 ?>
                 <div class="col-md-6">
                     <input id="media-selector" type="checkbox" checked data-toggle="toggle"
-                           data-on="<i class='fa fa-film'></i> Video" data-off="<i class='fa fa-image'></i> Image">
+                           data-off="<i class='fa fa-film'></i> Video" data-on="<i class='fa fa-image'></i> Image">
                     <br>
                     <div id="video-box" class="col-md-12">
                         <br>
@@ -218,11 +229,11 @@ use dosamigos\tinymce\TinyMce;
                     <?php
                     if ($media_type == 1) {
                         ?>
-                        <input id="media-selector" type="checkbox" checked data-toggle="toggle"
-                               data-on="<i class='fa fa-film'></i> Video" data-off="<i class='fa fa-image'></i> Image">
-                    <?php } else { ?>
                         <input id="media-selector" type="checkbox" data-toggle="toggle"
-                               data-on="<i class='fa fa-film'></i> Video" data-off="<i class='fa fa-image'></i> Image">
+                               data-off="<i class='fa fa-film'></i> Video" data-on="<i class='fa fa-image'></i> Image">
+                    <?php } else { ?>
+                        <input id="media-selector" type="checkbox" checked data-toggle="toggle"
+                               data-off="<i class='fa fa-film'></i> Video" data-on="<i class='fa fa-image'></i> Image">
 
                     <?php } ?>
                     <div id="video-box" class="col-md-12">
@@ -258,11 +269,7 @@ use dosamigos\tinymce\TinyMce;
                 <?php
             }
             echo $form->field($model, 'media_type')->hiddenInput()->label(false) ?>
-            <div class="col-md-6">
-                <?= $form->field($model, 'product_type_id')->dropDownList(ArrayHelper::map(ProductTypeLang::find()->all(), 'product_type_id', 'name'), ['prompt' => '- Select -'])->label('Product Category') ?>
-                <?= $form->field($model, 'brand_id')->dropDownList(ArrayHelper::map(BrandLang::find()->all(), 'brand_id', 'name'), ['prompt' => '- Select -'])->label('Related Brand') ?>
-                <?= $form->field($model, 'keyword')->textInput(['maxlength' => true]) ?>
-            </div>
+
         </div>
     </div>
 
@@ -278,40 +285,40 @@ use dosamigos\tinymce\TinyMce;
         <div class="tab-content col-md-12">
             <div id="photo" class="tab-pane fade in active">
                 <div class="row">
-                <?php foreach ($modelDetails as $i => $modelDetail) : ?>
-                    <div class="product-profile product-profile-<?= $i ?>" style="margin-top: .75rem;">
-                        <div class="col-md-5 col-xs-10">
-                            <?= Html::activeHiddenInput($modelDetail, "[$i]id") ?>
-                            <?= Html::activeHiddenInput($modelDetail, "[$i]updateType", ['class' => 'update-type']) ?>
-                            <?php //echo $form->field($modelDetail, "[$i]product_photo")->fileInput()
-                            //
-                            echo $form->field($modelDetail, "[$i]product_photo")->widget(FileInput::classname(), [
-                                'options' => ['accept' => 'image/*'], 'pluginOptions' => [
-                                    'showUpload' => false,
-                                    'initialPreview' => [
-                                        ["http://www.safeboxasia.com/backend/uploads/product/related_photo/$modelDetail->photo_url"]
+                    <?php foreach ($modelDetails as $i => $modelDetail) : ?>
+                        <div class="product-profile product-profile-<?= $i ?>" style="margin-top: .75rem;">
+                            <div class="col-md-5 col-xs-10">
+                                <?= Html::activeHiddenInput($modelDetail, "[$i]id") ?>
+                                <?= Html::activeHiddenInput($modelDetail, "[$i]updateType", ['class' => 'update-type']) ?>
+                                <?php //echo $form->field($modelDetail, "[$i]product_photo")->fileInput()
+                                //
+                                echo $form->field($modelDetail, "[$i]product_photo")->widget(FileInput::classname(), [
+                                    'options' => ['accept' => 'image/*'], 'pluginOptions' => [
+                                        'showUpload' => false,
+                                        'initialPreview' => [
+                                            ["http://www.safeboxasia.com/backend/uploads/product/related_photo/$modelDetail->photo_url"]
+                                        ],
+                                        'initialPreviewAsData' => true,
+                                        'initialCaption' => "$modelDetail->photo_url",
+                                        'initialPreviewConfig' => [
+                                            ['caption' => $modelDetail->photo_url]
+                                        ],
+                                        'overwriteInitial' => false,
+                                        'maxFileSize' => 100000
                                     ],
-                                    'initialPreviewAsData' => true,
-                                    'initialCaption' => "$modelDetail->photo_url",
-                                    'initialPreviewConfig' =>[
-                                        ['caption' => $modelDetail->photo_url]
-                                    ],
-                                    'overwriteInitial' => false,
-                                    'maxFileSize' => 100000
-                                ],
-                            ]);
-                            ?>
-                        </div>
-                        <div class="col-md-1 col-xs-2">
-                            <div style="margin-top: 2rem;">
-                            <?= Html::button('x', ['class' => 'delete-button-photo btn btn-danger', 'data-target' => "product-profile-$i"]) ?>
+                                ]);
+                                ?>
+                            </div>
+                            <div class="col-md-1 col-xs-2">
+                                <div style="margin-top: 2rem;">
+                                    <?= Html::button('x', ['class' => 'delete-button-photo btn btn-danger', 'data-target' => "product-profile-$i"]) ?>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                <?php endforeach; ?>
+                    <?php endforeach; ?>
                 </div>
                 <div class="col-md-12 text-center">
-                <?= Html::submitButton('<i class="fa fa-plus"></i> photo', ['name' => 'addRowPhoto', 'value' => 'true', 'class' => 'btn btn-info']) ?>
+                    <?= Html::submitButton('<i class="fa fa-plus"></i> photo', ['name' => 'addRowPhoto', 'value' => 'true', 'class' => 'btn btn-info']) ?>
                 </div>
             </div>
         </div>
@@ -324,28 +331,31 @@ use dosamigos\tinymce\TinyMce;
 
         $this->registerJs(' 
   $(\'#media-selector\').change(function(){
-    var isVideo = $(\'#media-selector\').is(\':checked\'); 
-    if(isVideo){
-   $(\'#image-box\').hide();
-   $(\'#video-box\').show();
-     $(\'#product-media_type\').val(1);
-    }else{
-    
-   $(\'#video-box\').hide();
+    var isImage = $(\'#media-selector\').is(\':checked\'); 
+    if(isImage){
+     $(\'#video-box\').hide();
    $(\'#image-box\').show();
     $(\'#product-media_type\').val(2);
+  
+    }else{
+     $(\'#image-box\').hide();
+   $(\'#video-box\').show();
+     $(\'#product-media_type\').val(1);
+  
     }
     });
     $(document).ready(function(){
-       var isVideo = $(\'#media-selector\').is(\':checked\'); 
-        if(isVideo){
-          $(\'#image-box\').hide();
-   $(\'#video-box\').show();
-     $(\'#product-media_type\').val(1);
-        }else{
-           $(\'#video-box\').hide();
+
+       var isImage = $(\'#media-selector\').is(\':checked\'); 
+        if(isImage){
+          $(\'#video-box\').hide();
    $(\'#image-box\').show();
     $(\'#product-media_type\').val(2);
+        }else{
+         $(\'#image-box\').hide();
+   $(\'#video-box\').show();
+     $(\'#product-media_type\').val(1);
+          
         }
        
       $(\':file\').change(function(){
