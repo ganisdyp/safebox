@@ -31,8 +31,8 @@ $this->params['breadcrumbs'][] = $this->title;
             ['attribute' => 'main_photo',
                 'format' => 'html',
                 'value' => function ($dataProvider) {
-                    return Html::img(Yii::$app->getHomeUrl().'uploads/product_type/' . $dataProvider->main_photo,
-                        ['class'=>'thumbnail','width'=>'80']);
+                    return '<center>'.Html::img(Yii::$app->getHomeUrl().'uploads/product_type/' . $dataProvider->main_photo,
+                        ['class'=>'thumbnail','height'=>'80']).'</center>';
                 }
             ],
             [

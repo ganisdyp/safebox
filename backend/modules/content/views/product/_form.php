@@ -229,10 +229,10 @@ use dosamigos\tinymce\TinyMce;
                     <?php
                     if ($media_type == 1) {
                         ?>
-                        <input id="media-selector" type="checkbox" checked data-toggle="toggle"
+                        <input id="media-selector" type="checkbox" data-toggle="toggle"
                                data-off="<i class='fa fa-film'></i> Video" data-on="<i class='fa fa-image'></i> Image">
                     <?php } else { ?>
-                        <input id="media-selector" type="checkbox" data-toggle="toggle"
+                        <input id="media-selector" type="checkbox" checked data-toggle="toggle"
                                data-off="<i class='fa fa-film'></i> Video" data-on="<i class='fa fa-image'></i> Image">
 
                     <?php } ?>
@@ -345,6 +345,7 @@ use dosamigos\tinymce\TinyMce;
     }
     });
     $(document).ready(function(){
+
        var isImage = $(\'#media-selector\').is(\':checked\'); 
         if(isImage){
           $(\'#video-box\').hide();

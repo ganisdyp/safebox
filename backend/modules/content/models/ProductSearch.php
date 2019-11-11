@@ -44,7 +44,7 @@ class ProductSearch extends Product
         $query = Product::find();
 
         // add conditions that should always apply here
-
+$query->orderBy(['brand_id'=>'asc','product_type_id'=>'asc']);
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
         ]);

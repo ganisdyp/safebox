@@ -39,11 +39,27 @@ $this->params['breadcrumbs'][] = $this->title;
                 'label' => 'Name (EN)',
             ],
             [
+                'attribute' => 'productType.description_en',
+                'value' => function ($model) {
+                    return $model->description;
+                },
+                'label' => 'Description (EN)',
+                'format' => 'html'
+            ],
+            [
                 'attribute' => 'productType.name_th',
                 'value' => function ($model) {
                     return $model->name_th;
                 },
                 'label' => 'Name (TH)',
+            ],
+            [
+                'attribute' => 'productType.description_th',
+                'value' => function ($model) {
+                    return $model->description_th;
+                },
+                'label' => 'Description (TH)',
+                'format' => 'html'
             ],
         ],
     ]) ?>
