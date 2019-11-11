@@ -71,39 +71,25 @@ class ProductController extends Controller
     {
         $model = new Product();
         $modelDetails = [];
-       // $modelDetails2 = [];
         $formDetails = Yii::$app->request->post('ProductPhoto', []);
-       // $formDetails2 = Yii::$app->request->post('ProductOwner', []);
-        //   print_r($formDetails);
         foreach ($formDetails as $i => $formDetail) {
             $modelDetail = new ProductPhoto(['scenario' => ProductPhoto::SCENARIO_BATCH_UPDATE]);
             $modelDetail->setAttributes($formDetail);
             $modelDetails[] = $modelDetail;
         }
-       /* foreach ($formDetails2 as $i => $formDetail2) {
-            $modelDetail2 = new ProductOwner(['scenario' => ProductOwner::SCENARIO_BATCH_UPDATE]);
-            $modelDetail2->setAttributes($formDetail2);
-            $modelDetails2[] = $modelDetail2;
-        }*/
+
         //handling if the addRow button has been pressed
         if (Yii::$app->request->post('addRowPhoto') == 'true') {
             $model->load(Yii::$app->request->post());
             $modelDetails[] = new ProductPhoto(['scenario' => ProductPhoto::SCENARIO_BATCH_UPDATE]);
+            $modelDetails[] = new ProductPhoto(['scenario' => ProductPhoto::SCENARIO_BATCH_UPDATE]);
+
             return $this->render('create', [
                 'model' => $model,
                 'modelDetails' => $modelDetails,
-         //       'modelDetails2' => $modelDetails2,
             ]);
         }
-      /*  if (Yii::$app->request->post('addRowOwner') == 'true') {
-            $model->load(Yii::$app->request->post());
-            $modelDetails2[] = new ProductOwner(['scenario' => ProductOwner::SCENARIO_BATCH_UPDATE]);
-            return $this->render('create', [
-                'model' => $model,
-                'modelDetails' => $modelDetails,
-                'modelDetails2' => $modelDetails2,
-            ]);
-        }*/
+
         if ($model->load(Yii::$app->request->post())) {
 
 
@@ -112,8 +98,6 @@ class ProductController extends Controller
                 //print_r($model);
                 $file = UploadedFile::getInstance($model, 'main_photo_file');
                 if (isset($file->size) && $file->size != 0) {
-                    /* $model->main_photo = $file->baseName . '.' . $file->extension;
-                     $file->saveAs('uploads/product/' . $file->baseName . '.' . $file->extension);*/
 
                     $unique_name = "product_" . date("Y-m-d_H-i-s") . "_" . uniqid();
                     $path = $unique_name . ".{$file->extension}";
@@ -129,23 +113,17 @@ class ProductController extends Controller
 
                         ${'profile_file' . $c} = UploadedFile::getInstance($modelDetail, '[' . $c . ']' . 'product_photo');
                         if (isset(${'profile_file' . $c}->size) && ${'profile_file' . $c}->size != 0) {
-                            //  $modelDetail->photo_url = ${'profile_file' . $c}->baseName . '.' . ${'profile_file' . $c}->extension;
-                            //  ${'profile_file' . $c}->saveAs('uploads/product/related_photo/' . ${'profile_file' . $c}->baseName . '.' . ${'profile_file' . $c}->extension);
 
                             $unique_name = "product_" . date("Y-m-d_H-i-s") . "_". uniqid();
                             $path = $unique_name . ".{${'profile_file' . $c}->extension}";
                             $modelDetail->photo_url = $path;
                             ${'profile_file' . $c}->saveAs('uploads/product/related_photo/' . $path);
-
+                            $modelDetail->product_id = $model->id;
+                            $modelDetail->save();
                         }
-                        $modelDetail->product_id = $model->id;
-                        $modelDetail->save();
-                    }
-                  /*  foreach ($modelDetails2 as $c => $modelDetail2) {
 
-                        $modelDetail2->product_id = $model->id;
-                        $modelDetail2->save();
-                    }*/
+                    }
+
                     return $this->redirect(['view', 'id' => $model->id]);
                 }
             }
@@ -195,6 +173,8 @@ class ProductController extends Controller
         //handling if the addRow button has been pressed
         if (Yii::$app->request->post('addRowPhoto') == 'true') {
             $modelDetails[] = new ProductPhoto(['scenario' => ProductPhoto::SCENARIO_BATCH_UPDATE]);
+            $modelDetails[] = new ProductPhoto(['scenario' => ProductPhoto::SCENARIO_BATCH_UPDATE]);
+
             return $this->render('update', [
                 'model' => $model,
                 'modelDetails' => $modelDetails,
@@ -251,9 +231,10 @@ class ProductController extends Controller
                             } else {
                                 // Do nothing
                             }
+                            $modelDetail->product_id = $model->id;
+                            $modelDetail->save();
                         }
-                        $modelDetail->product_id = $model->id;
-                        $modelDetail->save();
+
                     }
                 }
                /* foreach ($modelDetails2 as $c => $modelDetail2) {
