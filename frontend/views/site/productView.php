@@ -57,7 +57,14 @@ define('PAGE_NAME', 'product');
             <div class="row no-gutters mt-3">
                 <?php
                 $related_photos = $product->getProductPhotos()->where(['product_id' => $product->id])->all();
-                foreach ($related_photos as $photo) { ?>
+                $max = count($related_photos);
+                $i=0;
+                $table_photo = null;
+                foreach ($related_photos as $photo) {
+
+                    if($i==($max-1)){
+$table_photo = $photo->photo_url;
+                    }else{?>
                     <div class="col-3 pr-2 mb-2">
                         <a href="<?= Yii::$app->getHomeUrl() . 'backend/uploads/product/related_photo/' . $photo->photo_url; ?>"
                            data-lightbox="trip">
@@ -67,22 +74,24 @@ define('PAGE_NAME', 'product');
                             </div>
                         </a>
                     </div>
-                <?php } ?>
+                <?php
+                    }
+                $i++;
+                } ?>
             </div>
         </div>
         <div class="col-lg-7 col-12">
             <p class="bigger-160 mb-1 text-purple font-weight-normal"><?php echo $product->name; ?></p>
             <div class="row mb-2">
                 <div class="col-md-6 col-12">
-
                     <span><?= $product->brand->name . " (" . $product->brand->code . ")"; ?></span>
-
-
                 </div>
 
             </div>
             <hr class="d-lg-none d-block">
             <div class=""> <?= $product->description; ?> </div>
+            <img class="card-img-top img-responsive corner-0"
+                 src="<?= Yii::$app->request->BaseUrl; ?>/backend/uploads/product/related_photo/<?= $table_photo; ?>">
             <hr>
             <div>
                 <span><?= Yii::t('common', 'tag') . ':' ?></span>
