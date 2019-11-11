@@ -14,7 +14,8 @@ use kartik\file\FileInput;
 
     <?php $form = ActiveForm::begin(); ?>
     <div class="row">
-        <div class="col-md-9">
+        <div class="col-md-4">
+            <br><br><br>
             <?= $form->errorSummary($model); ?>
             <?php if ($model->isNewRecord) {
                 echo $form->field($model, 'main_photo_file')->widget(FileInput::classname(), [
@@ -46,27 +47,26 @@ use kartik\file\FileInput;
 
             } ?>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
+
+        <div class="col-md-8">
             <ul class="nav nav-tabs">
                 <li class="active"><a data-toggle="tab" href="#english">English</a></li>
                 <li><a data-toggle="tab" href="#thai">Thai</a></li>
 
             </ul>
         </div>
-        <div class="col-md-12">
+        <div class="tab-content col-md-8">
             <div class="tab-content">
                 <div id="english" class="tab-pane fade in active">
                     <br>
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                     </div>
                     <div class="col-md-12">
                         <?= $form->field($model, 'description')->widget(TinyMce::className(), [
-                            'options' => ['rows' => 6],
+                            'options' => ['rows' => 10],
                             'language' => 'en',
                             'clientOptions' => [
                                 'plugins' => [
@@ -123,16 +123,16 @@ use kartik\file\FileInput;
                 </div>
                 <div id="thai" class="tab-pane fade">
                     <br>
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         <?= $form->field($model, 'name_th')->textInput(['maxlength' => true]) ?>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                     </div>
                     <div class="col-md-12">
 
 
                         <?= $form->field($model, 'description_th')->widget(TinyMce::className(), [
-                            'options' => ['rows' => 6],
+                            'options' => ['rows' => 10],
                             'language' => 'en',
                             'clientOptions' => [
                                 'plugins' => [
