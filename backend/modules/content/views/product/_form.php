@@ -44,7 +44,7 @@ use dosamigos\tinymce\TinyMce;
             </ul>
         </div>
         <!-- Tab content -->
-        <div class="tab-content col-md-6">
+        <div class="tab-content col-md-8">
             <div id="english" class="tab-pane fade in active">
                 <br>
                 <div class="col-md-12">
@@ -52,7 +52,7 @@ use dosamigos\tinymce\TinyMce;
                 </div>
                 <div class="col-md-12">
                     <?= $form->field($model, 'description')->widget(TinyMce::className(), [
-                        'options' => ['rows' => 6],
+                        'options' => ['rows' => 10],
                         'language' => 'en',
                         'clientOptions' => [
                             'plugins' => [
@@ -114,7 +114,7 @@ use dosamigos\tinymce\TinyMce;
                 </div>
                 <div class="col-md-12">
                     <?= $form->field($model, 'description_th')->widget(TinyMce::className(), [
-                        'options' => ['rows' => 6],
+                        'options' => ['rows' => 10],
                         'language' => 'en',
                         'clientOptions' => [
                             'plugins' => [
@@ -170,7 +170,7 @@ use dosamigos\tinymce\TinyMce;
                 </div>
             </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-4">
             <div class="col-md-12">
                 <br>
                 <?= $form->field($model, 'brand_id')->dropDownList(ArrayHelper::map(BrandLang::find()->all(), 'brand_id', 'name'), ['prompt' => '- Select -'])->label('Related Brand') ?>
