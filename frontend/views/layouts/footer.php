@@ -76,7 +76,6 @@ echo '</div>';
           <img src="../images/icons/pin-outline.svg" height="24px" class="mr-1">
           <div>
             <div class="smaller-90"><?php echo Yii::t('common', 'address_content_1'); ?></div>
-            <div class="smaller-90"><?php echo Yii::t('common', 'address_content_2'); ?></div>
           </div>
         </div>
         <div class="d-flex my-2">

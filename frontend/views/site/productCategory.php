@@ -30,12 +30,12 @@ $category_list = [];
 if (isset($_GET['id']) && trim($_GET['id']) != '') {
     $brand_id = $_GET['id'];
     /**  Find category from brand */
-    $category_list = $dataProvider_product->query->where(['brand_id' => $brand_id])->groupBy('product_type_id')->orderBy(['product_type_id' => SORT_ASC])->all();
+    $category_list = $dataProvider_product->query->leftJoin('product_type_lang','product.product_type_id = product_type_lang.product_type_id AND product_type_lang.language = \'en\'')->where(['brand_id' => $brand_id])->groupBy('product_type_id')->orderBy(['product_type_lang.name' => SORT_ASC])->all();
     $selected_brand = $dataProvider_brand->query->where(['id' => $brand_id])->one();
 
 } else {
     $selected_brand = null;
-    $category_list = $dataProvider_product->query->where([])->groupBy('product_type_id')->orderBy(['brand_id' => SORT_ASC])->all();
+    $category_list = $dataProvider_product->query->leftJoin('product_type_lang','product.product_type_id = product_type_lang.product_type_id AND product_type_lang.language = \'en\'')->where([])->groupBy('product_type_id')->orderBy(['brand_id'=> SORT_ASC,'product_type_lang.name' => SORT_ASC])->all();
 }
 ?>
 <div id="product-page" class="container">

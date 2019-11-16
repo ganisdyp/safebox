@@ -38,7 +38,7 @@ define('PAGE_NAME', 'contact');
     </div>
     <div class="col-md-4 text-center mb-2 fadeIn animated d03s">
       <img src="../images/icons/email-outline-dark.svg" height="90px" class="mb-3">
-      <p class="bold bigger-120">ช่องทางติดต่อ</p>
+      <p class="bold bigger-120"><?php echo Yii::t('common', 'contact_header'); ?></p>
       <div>
         <div><?php echo Yii::t('common', 'email'); ?> : safeboxsiam@gmail.com</div>
         <div><?php echo Yii::t('common', 'phone'); ?> : 062-886-8999</div>
@@ -46,11 +46,10 @@ define('PAGE_NAME', 'contact');
     </div>
     <div class="col-md-4 text-center mb-2 fadeIn animated d03s">
       <img src="../images/icons/phone-outline-dark.svg" height="90px" class="mb-3">
-      <p class="bold bigger-120">เวลาทำการ</p>
+      <p class="bold bigger-120"><?php echo Yii::t('common', 'business_hour'); ?></p>
       <div>
-        จันทร์ - ศุกร์ 10.00 - 20.00
-        <br>เสาร์ - อาทิตย์ 10.00 - 17.00
-        <br>ปิดทำการทุกวันหยุดนักขัตฤกษ์
+          <?php echo Yii::t('common', 'business_hour_1'); ?>
+        <br> <?php echo Yii::t('common', 'business_hour_2'); ?>
       </div>
     </div>
   </div>
