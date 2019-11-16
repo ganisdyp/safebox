@@ -90,8 +90,10 @@ $table_photo = $photo->photo_url;
             </div>
             <hr class="d-lg-none d-block">
             <div class=""> <?= $product->description; ?> </div>
+            <?php if (isset($table_photo)){?>
             <img class="card-img-top img-responsive corner-0"
                  src="<?= Yii::$app->request->BaseUrl; ?>/backend/uploads/product/related_photo/<?= $table_photo; ?>">
+            <?php } ?>
             <hr>
             <div>
                 <span><?= Yii::t('common', 'tag') . ':' ?></span>
