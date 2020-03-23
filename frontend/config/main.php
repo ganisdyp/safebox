@@ -14,7 +14,7 @@ return [
     'bootstrap' =>['log',
         [
             'class' => 'common\components\LanguageSelector',
-            'supportedLanguages' => ['en-UK', 'th-TH'], //กำหนดรายการภาษาที่ support หรือใช้ได้
+            'supportedLanguages' => [ 'th-TH','en-UK'], //กำหนดรายการภาษาที่ support หรือใช้ได้
         ]
     ],
     'controllerNamespace' => 'frontend\controllers',

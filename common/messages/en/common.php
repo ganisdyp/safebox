@@ -26,7 +26,7 @@ return [
     // Contact Us
     'contact_content' => ' ',
     'address' => 'Address',
-    'address_content_1' => 'Safe Box Siam co.,ltd<br> 9415 Jpark 112/118 Moo 18,<br> Khlong Neung, Khlong Luang,<br> Pathum Thani, 12120',
+    'address_content_1' => 'Safe Box Siam Co.,Ltd<br> 9415 Jpark 112/118 Moo 18,<br> Khlong Neung, Khlong Luang,<br> Pathum Thani, 12120',
     'contact_header' => 'Contact',
     'business_hour' => 'Business hours',
     'business_hour_1' => 'Monday - Saturday 8.30 AM - 5.30 PM',
@@ -60,7 +60,7 @@ return [
     'why_point_2_content' => 'Duis aute irure dolor in reprehenderit in voluptate velit eu fugiat nulla pariatur.',
     
     // Home
-    'tag_highq' => 'high quality safes',
+    'tag_highq' => 'HIGH QUALITY SAFES',
     'content_about_1' => '<b><u>Safe Box Siam</u></b> is a new company that aims at providing <b>high quality safes</b> and <b>technical services</b> to its clients. We will also be the one stop office solution to your business by providing a full comprehensive range of
 <br><br>•	Office Equipment,<br>•	Office Supplies,<br>•	Toners & Inks,<br>•	Business Machines,<br>•	Office Furniture,<br>•	Repair Safebox,<br>•	Force Open Safebox,<br>•	Safebox Relocation,<br>•	Safebox Key Duplication',
     'content_about_2' => ' ',
